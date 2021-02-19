@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>三口一个瓜的博客</title>
+    <link>https://example.com/</link>
+    <description>Recent content on 三口一个瓜的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Feb 2021 16:34:47 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Tty</title>
+      <link>https://example.com/posts/linux-tty/</link>
+      <pubDate>Thu, 18 Feb 2021 16:34:47 +0800</pubDate>
+      
+      <guid>https://example.com/posts/linux-tty/</guid>
+      <description>linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。
+tty 在作为终端的代称的时候到底具有有什么含义？ tty 在作为命令的情形 随便打开几个终端看看，可以看到下图：
+可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看：
+在 /dev/pts 这个地址下，有几个文件</description>
+    </item>
+    
+    <item>
+      <title>Linux Tty</title>
+      <link>https://example.com/linux-tty/</link>
+      <pubDate>Thu, 18 Feb 2021 16:34:33 +0800</pubDate>
+      
+      <guid>https://example.com/linux-tty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NVM 报 ls-remote command results in “N/A 错误</title>
+      <link>https://example.com/posts/nvm-error/</link>
+      <pubDate>Fri, 15 Jan 2021 22:20:01 +0800</pubDate>
+      
+      <guid>https://example.com/posts/nvm-error/</guid>
+      <description>NVM 报 ls-remote command results in “N/A 错误 今天工作中使用 nvm 升级 node 版本遇到了这个错误，经过一番研究终于解决。
+出现这个报错的原因有许多种，我遇到的报错实际上是由代理引起。
+参考： https://stackoverflow.com/questions/26476744/nvm-ls-remote-command-results-in-n-a
+几种原因： SSL 证书过期  临时解决方案：  请使用导出用于抓取内容的镜像的非https版本：export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist
+长久解决方案：  第一种：若您运行curl $NVM_NODEJS_ORG_MIRROR 回答翻译：
+出现
+curl: (77) error setting certificate verify locations: CAfile: /etc/pki/tls/certs/ca-bundle.crt CApath: none  则考虑修改 ~/.nvm/nvm.sh 在函数 nvm_download() 里修改，加上 curl -k $*
+if nvm_has &amp;quot;curl&amp;quot;; then curl -k $* #新加的 elif nvm_has &amp;quot;wget&amp;quot;; then # Emulate curl with wget ..  实际上这个改动是啥操作呢？</description>
+    </item>
+    
+    <item>
+      <title>Webpack Error Collect</title>
+      <link>https://example.com/posts/webpack-error-collect/</link>
+      <pubDate>Thu, 14 Jan 2021 22:20:01 +0800</pubDate>
+      
+      <guid>https://example.com/posts/webpack-error-collect/</guid>
+      <description>webpack 配置错误拾遗 1. ... 展开运算符错误 错误原因：
+早期的 babel 有许多问题，一些早期的版本（可能现在也没有解决）无法识别的语法、运算符可以通过插件的形式给 babel 打补丁，这里就是其中一种。
+Just install babel-plugin-transform-object-rest-spread module.
+https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread
+Then add it to .babelrc:
+&amp;ldquo;plugins&amp;rdquo;: [ &amp;ldquo;babel-plugin-transform-object-rest-spread&amp;rdquo;, ],
+2. newwebpack No data received ERR_EMPTY_RESPONSE 错误 给 webpack-dev-server 添加 &amp;ndash;host xxxxxxxx(设好的 host 映射，或者指定的域名)</description>
+    </item>
+    
+  </channel>
+</rss>
