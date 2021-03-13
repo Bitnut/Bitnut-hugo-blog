@@ -1,15 +1,34 @@
 ---
+language: go
+go:
+  - "1.8"
+
 install:
   - curl -LO https://github.com/gohugoio/hugo/releases/download/v0.81.0/hugo_0.81.0_Linux-64bit.deb
   - sudo dpkg -i hugo_0.81.0_Linux-64bit.deb
 script:
   - hugo -D
 
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "Bitnut"
+  - git config user.email "940095072@qq.com"
+  - git add .
+  - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  # Github Pages
+  - git push --force --quiet "https://$GITHUB_TOKEN@${GH_REF}" master:master
+
+env:
+ global:
+   # Github Pages
+   - GH_REF: https://github.com/Bitnut/Bitnut.github.io
+
 deploy:
   provider: pages
   skip_cleanup: true
-  repo: Bitnut/Bitnut.github.io
-  github_token: 7368fed812176c1412296f223208f20859affe3b
+  local-dir: public
+  github_token: $GITHUB_TOKEN
   keep_history: true
   on:
     branch: main
