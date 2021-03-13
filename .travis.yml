@@ -1,0 +1,8 @@
+deploy:
+  provider: pages
+  skip_cleanup: true
+  repo: Bitnut/Bitnut.github.io
+  github_token: 7368fed812176c1412296f223208f20859affe3b
+  keep_history: true
+  on:
+    branch: main
