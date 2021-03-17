@@ -2,33 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/posts/</loc>
+    <loc>https://bitnut.github.io/posts/</loc>
     <lastmod>2021-03-04T21:00:35+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/</loc>
+    <loc>https://bitnut.github.io/</loc>
     <lastmod>2021-03-04T21:00:35+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/proxy-config/</loc>
+    <loc>https://bitnut.github.io/posts/proxy-config/</loc>
     <lastmod>2021-03-04T21:00:35+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/docker-fundation/</loc>
+    <loc>https://bitnut.github.io/posts/docker-fundation/</loc>
     <lastmod>2021-02-23T07:59:04+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/docker-wine/</loc>
+    <loc>https://bitnut.github.io/posts/docker-wine/</loc>
     <lastmod>2021-02-20T15:05:20+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/linux-ps/</loc>
+    <loc>https://bitnut.github.io/posts/linux-ps/</loc>
     <lastmod>2021-02-19T21:53:55+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/linux-tty/</loc>
+    <loc>https://bitnut.github.io/posts/linux-tty/</loc>
     <lastmod>2021-02-18T16:34:47+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/nvm-error/</loc>
+    <loc>https://bitnut.github.io/posts/nvm-error/</loc>
     <lastmod>2021-01-15T22:20:01+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/webpack-error-collect/</loc>
+    <loc>https://bitnut.github.io/posts/webpack-error-collect/</loc>
     <lastmod>2021-01-14T22:20:01+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/contact/</loc>
+    <loc>https://bitnut.github.io/contact/</loc>
   </url>
 </urlset>
