@@ -64,6 +64,23 @@ picher@pichers-laptop:~$ pstree -p picher | grep emacs |-gnome-terminal-(3023)-+
     </item>
     
     <item>
+      <title>编译安装 emacs</title>
+      <link>https://bitnut.github.io/posts/emacs-build/</link>
+      <pubDate>Fri, 19 Feb 2021 21:53:55 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/emacs-build/</guid>
+      <description>走个流程  源码下载  到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1
+解压安装包  xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项  ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+可能会遇到一些依赖保错
+可以执行：
+ X toolkit 的报错：  sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf
+ gnutls 的报错：  sudo apt-get install gnutls-dev
+执行 make  make &amp;amp;&amp;amp; make install
+如果遇到依赖问题：
+sudo apt-get install make</description>
+    </item>
+    
+    <item>
       <title>Linux Tty</title>
       <link>https://bitnut.github.io/posts/linux-tty/</link>
       <pubDate>Thu, 18 Feb 2021 16:34:47 +0800</pubDate>
@@ -111,6 +128,21 @@ https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread
 Then add it to .babelrc:
 &amp;ldquo;plugins&amp;rdquo;: [ &amp;ldquo;babel-plugin-transform-object-rest-spread&amp;rdquo;, ],
 2. newwebpack No data received ERR_EMPTY_RESPONSE 错误 给 webpack-dev-server 添加 &amp;ndash;host xxxxxxxx(设好的 host 映射，或者指定的域名)</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://bitnut.github.io/abo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitnut.github.io/abo/</guid>
+      <description>关于我  你好，我是三口一个瓜。你也可以叫我瓜。这里是我的博客，日常记录和抒情的场所。
+我是一名程序员，emacs 爱好者，平时喜欢健身、跑步, 同时我也是一名口琴初学者。
+我现在居住和工作在 中国，深圳。如果想要联系我，请发 email。
+Hi, I am Bitnut.
+Here&amp;rsquo;s my blog, where I record my life and feelings.
+I&amp;rsquo;m a programmer, emacser, runner, body builder and a harmonica player.
+I am now living and working in Shenzhen, China. If you wanna get contact, please email me.</description>
     </item>
     
     <item>
