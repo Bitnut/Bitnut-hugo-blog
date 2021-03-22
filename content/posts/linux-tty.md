@@ -8,7 +8,7 @@ draft: true
 ## tty 是什么？
 
 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。
-![tty-jpg](/static/tron.jpg)
+[tty-jpg](/static/tron.jpg)
 
 ## tty 在作为命令的情形
 
