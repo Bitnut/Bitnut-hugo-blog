@@ -118,7 +118,8 @@ sudo apt-get install make</description>
       <pubDate>Thu, 18 Feb 2021 16:34:47 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/linux-tty/</guid>
-      <description>linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty 在作为命令的情形 随便打开几个终端看看，可以看到下图：
+      <description>linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty-jpg
+tty 在作为命令的情形 随便打开几个终端看看，可以看到下图：
 可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看：
 在 /dev/pts 这个地址下，有几个文件，分别是：
 0 / 1 / 2 / 3 / ptmx
