@@ -116,7 +116,9 @@ pro-emacs.sh     picher
 | 7 / 3  | 2.33333 |
 | 7 % 3  | 1       |
 | 7 3    | 73      |
-|        |         |
+
+
+
 
 # Reference
 
