@@ -6,7 +6,53 @@
     <description>Recent content in Posts on 三口一个瓜的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 17:10:40 +0800</lastBuildDate><atom:link href="https://bitnut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 13:29:14 +0800</lastBuildDate><atom:link href="https://bitnut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 下 ‘奇怪’ 的 shell</title>
+      <link>https://bitnut.github.io/posts/linux-strange-shell/</link>
+      <pubDate>Fri, 26 Mar 2021 13:29:14 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/linux-strange-shell/</guid>
+      <description>前言 请原谅我的标题党，这篇文章主要聚焦的是 linux shell 中的引号问题。
+如果你正在和 shell 打交道，那么了解 shell 中关于引号的问题是一件很有必要的事情。
+下面的这些规则适用的对象是 POSIX 兼容的 shell 例如我们常用的 bash（GNU Bourne-Again Shell）。
+注： 注意我的措辞，单独的引号的意思是既可以是单引号也可以是双引号。单引号和双引号就是本来的意思。括起来的意思是，文本被左右引号包裹起来，例如： &#39;foo&#39;, &amp;quot;bar &amp;quot;。
+下面的一些例子使用了 awk 这个命令行工具进行实例，使用的是最简单的 awk 语法，主要是展示 shell 的解释器是怎么处理传给它的文本的。
+规则和例子 我们先创建一个叫做 shell-test.sh 的文件，接下来的例子直接放到我们的脚本内，然后执行 sh shell-test.sh，即可得到输出结果。
+ 被引号括起来的东西, 和其他没被引号括起来的东西, 是可以被链接为一个整体的。  例子：
+#!/bin/bash # \t 是制表符， \47 是一个单引号 awk &amp;#39;BEGIN {print &amp;#34;&amp;#39;-F&amp;#39;\t\47foobar&amp;#39;\tddd&amp;#39;&amp;#34; }&amp;#39; 在命令行试验一下，得到结果：
+-F &amp;#39;foobartddd  任何用反斜线作为前缀的一个字符，会被 shell 先去掉反斜线后，原封不动的传给指定的命令  注： 这里没有说要把字符和前缀括起来。
+例子：
+#!/bin/bash  awk &amp;#39;BEGIN {print &amp;#34;hello\thello&amp;#39;\t&amp;#39; &amp;#34; }&amp;#39; 执行一下脚本，看看结果：</description>
+    </item>
+    
+    <item>
+      <title>Linux Awk</title>
+      <link>https://bitnut.github.io/posts/linux-awk/</link>
+      <pubDate>Tue, 23 Mar 2021 13:46:28 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/linux-awk/</guid>
+      <description>快速入门 awk awk 的作用、优势和特点 awk 最基础的功能是用作搜索 文件、命令行输出中特定的文本。然后对找到的文本执行指定的操作。
+它最大的优势是，它是 linux 等 类 unix 系统下通用的工具，无需额外安装运行时和相关依赖即可使用。而且它 “好读”，“好写”。
+awk is：
+refreshingly easy to read and write &amp;ndash;GNU awk get started
+awk 和其他编程语言的主要区别是，它是数据驱动的语言（编程人员指定文本的特征、以及找到后需要执行的操作）。
+基础语法 简单到不能再简单：
+pattern { action } pattern { action } ... 啥意思？
+基本的 awk 程序由一条条表达式组成，每个表达式由 pattern（规则），action（操作）为了和规则区分开来被用 {} 包裹。
+简单讲一个最简单的 awk 表达式就是： 规则 { 操作 }
+执行 awk 程序  直接命令执行  awk &amp;#39;program&amp;#39; input-file1 input-file2 …  使用脚本  awk -f program-file input-file1 input-file2 …  注： 如果使用的式 bash 最好在个人启动文件中加上： set +H。见 Awk env note</description>
+    </item>
+    
+    <item>
+      <title>Linux 中必需学会的强大工具</title>
+      <link>https://bitnut.github.io/posts/linux-usefull-tools/</link>
+      <pubDate>Tue, 23 Mar 2021 13:32:31 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/linux-usefull-tools/</guid>
+      <description>linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  </description>
+    </item>
+    
     <item>
       <title>Linux 中的软链接和硬链接</title>
       <link>https://bitnut.github.io/posts/linux-link/</link>
@@ -36,7 +82,7 @@ $ touch test $ ln test test-hd1 $ ln test test-hd2 $ ln -s test test-soft $ ls -
       <guid>https://bitnut.github.io/posts/ruinyourtscode/</guid>
       <description>如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋） 前言 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge
 正文  If builders built buildings the way programmers write programs, then the first woodpecker that came along would destroy civilization. ~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law
- TS 特性  不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包装几层接口，到时候好用，最好可以把高级特性多用几遍。 随版本和提交变动我的接口： 比如说，把 showTable(col: number, row: number): Promise 改成 showTable(row: string, col: string): void，等 release 了几个版本后，再把其改回去。这样维护我写的程序的程序员们将不能很快地明白哪一个是对的。 膨胀 ENUM 类型： ENUM 把字符串类型都放某个 ENUM 里，方便复用。 TS 的 namespace 特性是美妙的东西（比 ES6 的好理解，反正就是高级），在接口定义的地方大量使用 namespace。 避免过度使用接口。BS 接口，面向接口编程加重了我的心志负担，不用。 使用包装类型： String 和 string 哪个牛逼？ 重载签名把条件更宽松的放在前面： 例： 同样传递一个参数，把使用 any 的放在最开头。 只因为参数不同就声名重载函数。 避免过度使用类： 类写起来不舒服（太长。花大力气弄成函数式的。 使用 Object.</description>
+ TS 特性  不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包装几层接口，到时候好用，最好可以把高级特性多用几遍。 随版本和提交变动我的接口： 比如说，把 showTable(col: number, row: number): Promise改成 showTable(row: string, col: string): void，等 release 了几个版本后，再把其改回去。这样维护我写的程序的程序员们将不能很快地明白哪一个是对的。 膨胀 ENUM 类型： ENUM 把字符串类型都放某个 ENUM 里，方便复用。 TS 的 namespace 特性是美妙的东西（比 ES6 的好理解，反正就是高级），在接口定义的地方大量使用 namespace。 避免过度使用接口。BS 接口，面向接口编程加重了我的心志负担，不用。 使用包装类型： String 和 string 哪个牛逼？ 重载签名把条件更宽松的放在前面： 例： 同样传递一个参数，把使用 any 的放在最开头。 只因为参数不同就声名重载函数。 避免过度使用类： 类写起来不舒服（太长。花大力气弄成函数式的。 使用 Object.</description>
     </item>
     
     <item>
@@ -118,8 +164,7 @@ sudo apt-get install make</description>
       <pubDate>Thu, 18 Feb 2021 16:34:47 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/linux-tty/</guid>
-      <description>linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty-jpg
-tty 在作为命令的情形 随便打开几个终端看看，可以看到下图：
+      <description>linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty 在作为命令的情形 随便打开几个终端看看，可以看到下图：
 可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看：
 在 /dev/pts 这个地址下，有几个文件，分别是：
 0 / 1 / 2 / 3 / ptmx
@@ -161,6 +206,33 @@ https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread
 Then add it to .babelrc:
 &amp;ldquo;plugins&amp;rdquo;: [ &amp;ldquo;babel-plugin-transform-object-rest-spread&amp;rdquo;, ],
 2. newwebpack No data received ERR_EMPTY_RESPONSE 错误 给 webpack-dev-server 添加 &amp;ndash;host xxxxxxxx(设好的 host 映射，或者指定的域名)</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://bitnut.github.io/posts/abo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/abo/</guid>
+      <description>关于我  你好，我是三口一个瓜。你也可以叫我瓜。这里是我的博客，日常记录和抒情的场所。
+我是一名程序员，emacs 爱好者，平时喜欢健身、跑步, 同时我也是一名口琴初学者。
+我现在居住和工作在 中国，深圳。如果想要联系我，请发 email。
+Hi, I am Bitnut.
+Here&amp;rsquo;s my blog, where I record my life and feelings.
+I&amp;rsquo;m a programmer, emacser, runner, body builder and a harmonica player.
+I am now living and working in Shenzhen, China. If you wanna get contact, please email me.</description>
+    </item>
+    
+    <item>
+      <title>联系方式</title>
+      <link>https://bitnut.github.io/posts/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/contact/</guid>
+      <description> Email: 940095072@qq.com Phone: 13427520205 Github: Bitnut QQ: 940095072 微信: h940095072   邮寄地址  中国 China
+广东省深圳市
+西丽街道，松坪山路，松坪村菊园
+  </description>
     </item>
     
   </channel>

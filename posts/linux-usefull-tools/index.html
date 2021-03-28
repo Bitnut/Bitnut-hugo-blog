@@ -4,25 +4,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>使用 Docker Wine 安装 win 下的各类软件 - 三口一个瓜的博客</title>
+	<title>Linux 中必需学会的强大工具 - 三口一个瓜的博客</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="使用 Docker Wine 安装 win 下的各类软件" />
-<meta property="og:description" content="" />
+		<meta property="og:title" content="Linux 中必需学会的强大工具" />
+<meta property="og:description" content="linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bitnut.github.io/posts/docker-wine/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-02-20T15:05:20&#43;08:00" />
-<meta property="article:modified_time" content="2021-02-20T15:05:20&#43;08:00" />
+<meta property="og:url" content="https://bitnut.github.io/posts/linux-usefull-tools/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-23T13:32:31&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-23T13:32:31&#43;08:00" />
 
 
-		<meta itemprop="name" content="使用 Docker Wine 安装 win 下的各类软件">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-02-20T15:05:20&#43;08:00" />
-<meta itemprop="dateModified" content="2021-02-20T15:05:20&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+		<meta itemprop="name" content="Linux 中必需学会的强大工具">
+<meta itemprop="description" content="linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  "><meta itemprop="datePublished" content="2021-03-23T13:32:31&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-23T13:32:31&#43;08:00" />
+<meta itemprop="wordCount" content="29">
 <meta itemprop="keywords" content="" />
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="使用 Docker Wine 安装 win 下的各类软件"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Linux 中必需学会的强大工具"/>
+<meta name="twitter:description" content="linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  "/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -59,14 +59,72 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">使用 Docker Wine 安装 win 下的各类软件</h1>
+			<h1 class="post__title">Linux 中必需学会的强大工具</h1>
 			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-20T15:05:20&#43;08:00">2021-02-20</time></div></div>
-		</header><div class="content post__content clearfix">
-			
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-23T13:32:31&#43;08:00">2021-03-23</time></div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#文本处理">文本处理</a></li>
+    <li><a href="#文件相关">文件相关</a></li>
+    <li><a href="#硬件相关">硬件相关</a></li>
+    <li><a href="#进程相关">进程相关</a></li>
+    <li><a href="#网络相关">网络相关</a></li>
+    <li><a href="#提高效率">提高效率</a></li>
+    <li><a href="#文本编辑">文本编辑</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h1 id="linux-原生命令行">linux 原生命令行</h1>
+<h2 id="文本处理">文本处理</h2>
+<ul>
+<li>awk</li>
+<li>sed</li>
+<li>grep</li>
+<li>xargs</li>
+<li>sort</li>
+</ul>
+<h2 id="文件相关">文件相关</h2>
+<ul>
+<li>find</li>
+<li>cd</li>
+<li>ls</li>
+</ul>
+<h2 id="硬件相关">硬件相关</h2>
+<ul>
+<li>ifconfig</li>
+<li>du</li>
+<li>df</li>
+</ul>
+<h2 id="进程相关">进程相关</h2>
+<ul>
+<li>ps</li>
+<li>pstree</li>
+<li>systemctl</li>
+<li>top</li>
+</ul>
+<h2 id="网络相关">网络相关</h2>
+<ul>
+<li>netstat</li>
+<li>NetworkManager</li>
+</ul>
+<h2 id="提高效率">提高效率</h2>
+<ul>
+<li>alias</li>
+</ul>
+<h2 id="文本编辑">文本编辑</h2>
+<ul>
+<li>emacs</li>
+<li>vim/vi</li>
+</ul>
+
 		</div>
 	</article>
 </main>
@@ -82,15 +140,15 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/posts/linux-ps/" rel="prev">
+		<a class="pager__link" href="/posts/linux-link/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Linux 下的 ps 命令和常用组合</p>
+			<p class="pager__title">Linux 中的软链接和硬链接</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/posts/docker-fundation/" rel="next">
+		<a class="pager__link" href="/posts/linux-awk/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">为什么/如何使用 Docker？</p>
+			<p class="pager__title">Linux Awk</p>
 		</a>
 	</div>
 </nav>
