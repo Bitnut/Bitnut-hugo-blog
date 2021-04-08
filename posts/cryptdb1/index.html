@@ -192,13 +192,23 @@ if (!doNotTrack) {
 <p>SPEAK_FOR的实现原理是用主体a的 key 对主体b的 key 进行加密，当需要访问相应数据的时候，可以通过主体a的 key 对主体b的 key 进行解密，然后通过主体b的 key 对相应数据进行访问。当主体A通过SPEAK_FOR语句与主体B相连的时候，主体B的 key 会用主体A的 key 加密，然后放在一个特殊的表access_ key 表上面。但是数据的加密在共享数据双方都在线的情况下采用对称密钥（加密和解密的密钥相同）进行加密，而当某一个主体没有登陆进系统的时候，无法得到该主体的symmetric  key ，所以这个时候会采用公钥加密数据并保存，当主体再次登录的时候使用自己的私钥进行解密，获得数据。多个SPEAK_FOR就形成一条 key  chain，要找某个数据的时候，只需要顺着 key  chain，从用户密码，一直找到要找的数据为止。</p>
 <p>每当敌方想要通过更改SPEAKS_FOR来窥探隐私信息的时候，CryptDB 的机制告诉我们，需要对access_ key s表格进行相应的更改，想要更改这个表格必须获得被授权principle的 key ，这就意味着只有这个principle登录的时候，敌方才能获取相应的 key 从而对这个principle的私密信息进行窥探。</p>
 <h2 id="五参考文献列表">五、参考文献列表</h2>
-<p>1.极简密码学,by曾兵</p>
-<p>2.CryptDB .Popa, R. A., et al. (2011). CryptDB : protecting confidentiality withencrypted query processing. Proceedings of the Twenty-Third ACM Symposium onOperating Systems Principles. Cascais, Portugal, ACM: 85-100</p>
-<ol start="3">
-<li><a href="https://eprint.iacr.org/2015/979">Guidelines for Using the CryptDB  SystemSecurely</a></li>
+<ol>
+<li>
+<p>极简密码学,by曾兵</p>
+</li>
+<li>
+<p>CryptDB .Popa, R. A., et al. (2011). CryptDB : protecting confidentiality withencrypted query processing. Proceedings of the Twenty-Third ACM Symposium onOperating Systems Principles. Cascais, Portugal, ACM: 85-100</p>
+</li>
+<li>
+<p><a href="https://eprint.iacr.org/2015/979">Guidelines for Using the CryptDB  SystemSecurely</a></p>
+</li>
+<li>
+<p><a href="http://css.csail.mit.edu/cryptdb/">CryptDB 项目主页:</a></p>
+</li>
+<li>
+<p><a href="https://people.eecs.berkeley.edu/~raluca/">CryptDB 发明人主页:</a></p>
+</li>
 </ol>
-<p>4.<a href="http://css.csail.mit.edu/cryptdb/">CryptDB 项目主页:</a></p>
-<p>5.<a href="https://people.eecs.berkeley.edu/~raluca/">CryptDB 发明人主页:</a></p>
 
 		</div>
 	</article>
