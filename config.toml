@@ -1,46 +1,81 @@
+baseurl = "https://bitnut.github.io"
 title = "三口一个瓜的博客"
-baseURL = "https://bitnut.github.io"
 languageCode = "en-us"
-theme = "researcher"
+theme = "mainroad"
+paginate = "10" # Number of posts per page
+googleAnalytics = "G-1LMXK0VTF1" # Enable Google Analytics by entering your tracking id
 
-disableKinds = ["taxonomy", "term"]
-enableEmoji = true
-math = false          # enable KaTeX (https://katex.org/) globally
-googleAnalytics = ""  # add your tracking id
-
-[params]
-  author = "三口一个瓜"
-  description = "A simple monospaced resume theme for Hugo."
-  favicon = "favicon.ico"  # path to a .ico to use as favicon
-  logo = ""  # url or path to a logo to put in the header
-  [params.footer]
-    text = "By 三口一个瓜"
-    url = "https://github.com/Bitnut"
-  [params.style]  # appearance options (can be omitted)
-    fontFamily = "Inconsolata"
-    pageWidth = "750px"
-    avatarSize = "90px"
-    colorBlack = "#222222"
-    colorRed = "#dc3545"
-
-[permalinks]
-  "/" = "/:filename"
-
-[menu]
-  [[menu.main]]
-    name = "博客"
-    url = "/posts/"
-    weight = 1
-  [[menu.main]]
-    name = "关于我"
-    url = "/abo"
-    weight = 2
-  [[menu.main]]
-    name = "联系方式"
-    url = "/contact"
-    weight = 3
+[Author] # Used in authorbox
+  name = "三口一个瓜"
+  bio = "你好，我是三口一个瓜。你也可以叫我瓜。我是一名程序员，emacs 爱好者，平时喜欢健身、跑步, 同时我也是一名口琴初学者。我现在居住和工作在 中国，深圳。如果想要联系我，请发 email。"
 
 
+[Params]
+  subtitle = "" # Deprecated in favor of .Site.Params.logo.subtitle
+  description = "这里是我的博客，日常记录和抒情的场所。" # Site description. Used in meta description
+  copyright = "三口一个瓜" # Footer copyright holder, otherwise will use site title
+  opengraph = true # Enable OpenGraph if true
+  schema = true # Enable Schema
+  twitter_cards = true # Enable Twitter Cards if true
+  readmore = true # Show "Read more" button in list if true
+  authorbox = true # Show authorbox at bottom of pages if true
+  toc = true # Enable Table of Contents
+  pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
+  post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
+  mainSections = ["posts"] # Specify section pages to show on home page and the "Recent articles" widget
+  dateformat = "2006-01-02" # Change the format of dates
+  mathjax = true # Enable MathJax
+  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
+  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
+  googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
+  highlightColor = "" # Deprecated in favor of .Site.Params.style.vars.highlightColor
+  customCSS = ["css/custom.css"] # Include custom CSS files
+  customJS = ["js/custom.js"] # Include custom JS files
 
-[markup.goldmark.renderer]
-  unsafe = true  # allow raw HTML in markdown files
+[Params.style.vars]
+  highlightColor = "#e22d30" # Override highlight color
+
+  # Override font-family sets. Secondary font-family set responsible for pre, code, kbd, and samp tags font
+  # Take care of different quotes OR escaping symbols in these params if necessary
+  fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
+  fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+
+[Params.logo]
+  image = "static/gua.jpg" # Logo image. Path relative to "static"
+  title = "三口一个瓜的博客" # Logo title, otherwise will use site title
+  subtitle = "怀春不如尝春，看文不如写博。" # Logo subtitle
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "left"  # Configure layout for list pages
+  single = "right" # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+  # alternatively "ddg-search" can be used, to search via DuckDuckGo
+  # widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets]
+  recent_num = 10 # Set the number of articles in the "Recent articles" widget
+  tags_counter = false # Enable counter for each tag in "Tags" widget
+
+[Params.widgets.social]
+  # Enable parts of social widget
+  # facebook = "username"
+  # twitter = "username"
+  # instagram = "username"
+  # linkedin = "username"
+  # telegram = "username"
+  github = "Bitnut"
+  gitlab = "Bitnut"
+  # bitbucket = "username"
+  email = "940095072@qq.com"
+
+# Custom social links
+# [[Params.widgets.social.custom]]
+#   title = "Youtube"
+#   url = "https://youtube.com/user/username"
+#   icon = "youtube.svg" # Optional. Path relative to "layouts/partials"
+
+# [[Params.widgets.social.custom]]
+#   title = "My Home Page"
+#   url = "http://example.com"
