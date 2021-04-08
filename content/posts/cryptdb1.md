@@ -119,12 +119,12 @@ SPEAK_FOR的实现原理是用主体a的 key 对主体b的 key 进行加密，�
 
 ## 五、参考文献列表
 
-1.极简密码学,by曾兵
+1. 极简密码学,by曾兵
 
-2.CryptDB .Popa, R. A., et al. (2011). CryptDB : protecting confidentiality withencrypted query processing. Proceedings of the Twenty-Third ACM Symposium onOperating Systems Principles. Cascais, Portugal, ACM: 85-100
+2. CryptDB .Popa, R. A., et al. (2011). CryptDB : protecting confidentiality withencrypted query processing. Proceedings of the Twenty-Third ACM Symposium onOperating Systems Principles. Cascais, Portugal, ACM: 85-100
 
 3. [Guidelines for Using the CryptDB  SystemSecurely](https://eprint.iacr.org/2015/979)
 
-4.[CryptDB 项目主页:](http://css.csail.mit.edu/cryptdb/)
+4. [CryptDB 项目主页:](http://css.csail.mit.edu/cryptdb/)
 
-5.[CryptDB 发明人主页:](https://people.eecs.berkeley.edu/~raluca/)
+5. [CryptDB 发明人主页:](https://people.eecs.berkeley.edu/~raluca/)

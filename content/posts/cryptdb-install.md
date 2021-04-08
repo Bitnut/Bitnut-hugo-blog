@@ -20,28 +20,28 @@ Popa, R.A 在 MIT 攻读博士时发明了 CryptDB;
 作者毕业后自己创立了公司PreVeil;
 同时也是Assistantprofessor (讲师), UC Berkeley;
 
-######*想要理解CryptDB, 你可能需要阅读如下资料*：
+###### *想要理解CryptDB, 你可能需要阅读如下资料*：
 
 CryptDB.	 Popa, R. A., et al. (2011). CryptDB: protecting confidentiality	with encrypted query processing. [文章链接](http://web.cs.ucdavis.edu/~franklin/ecs228/2013/popa_etal_sosp_2011.pdf)
 Guidelines	for Using the CryptDB System Securely [链接](https://eprint.iacr.org/2015/979)
 
-######其他可能有用的资源:
+###### 其他可能有用的资源:
 
 CryptDB
 * [项目主页:](http://css.csail.mit.edu/cryptdb/) 有软件的下载和使用介绍。
 * [github主页:](https://github.com/CryptDB/cryptdb)这个比较方便，建议看这个！
 * [发明人主页:](https://people.eecs.berkeley.edu/~raluca/)建议～
 
-##本文会详细介绍CryptDB的安装过程，以及它的使用方法
+## 本文会详细介绍CryptDB的安装过程，以及它的使用方法
 -----------------------------------------
-####准备阶段
-####GitHub 上官方 readme 截取的提示文字
+#### 准备阶段
+#### GitHub 上官方 readme 截取的提示文字
 Convention : When this document uses syntax like single-quote text single-quote + 'some-text-here' + 'a second example' it indicates that the reader is to use the value without the single-quotes.
 
 意思是 readme 中用到【文字+文字+文字】的段落只要理解单引号中的文字就好。
 
 
-###### Getting started
+######  Getting started
 
 * Requirements:
     > Ubuntu 12.04, 13.04; Not tested on a different OS.
@@ -55,7 +55,7 @@ Convention : When this document uses syntax like single-quote text single-quote 
 * Rebuildling CryptDB If you modify the source and want to rebuild, issue 'make' in the cryptdb directory. If you change the UDFs you will also need to do 'make install' (which will likely require root privilege).
 
 
-####开始安装
+#### 开始安装
 
  1. 请安装 Ubuntu 12.04, 13.04。本文只在 *12.04* 上运行所有的指令和测试！(下面给出镜像地址)    http://releases.ubuntu.com/12.04/
 
@@ -85,7 +85,7 @@ __注__： *apt-get 下载失败的问题几乎都可以通过 update 和 upgrad
 ![InstallGood.jpg](http://upload-images.jianshu.io/upload_images/7277397-45fccac3c1b02317.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-####修改一些配置
+#### 修改一些配置
 
  1. 安装 vim 编辑器
  		命令：`apt-get install vim`
@@ -94,14 +94,14 @@ __注__： *apt-get 下载失败的问题几乎都可以通过 update 和 upgrad
  3. 修改第一个函数 read_auth() 下的*os.getenv("CRYPTDB_PASS") or "letmein"*为*os.getenv("CRYPTDB_PASS") or "root"*
  4. 回到 cryptdb 根目录执行 make 语句(就是直接在命令行输入 `make`，回车)
 
-##接下来瓜哥决定用半小时带你走进cryptdb的世界！！
+## 接下来瓜哥决定用半小时带你走进cryptdb的世界！！
 
-####一些前期准备
-####首先在 *MySQL* 上面建立自己的数据库 *test*
+#### 一些前期准备
+#### 首先在 *MySQL* 上面建立自己的数据库 *test*
 MySQL 的语法和我们学习的（在大二学的 Oracle）略有出入，我这里把我们数据库实验的脚本编写了一下，重新导入到 MySQL 中。
 
 步骤：
-######一. 共享文件夹（如果你习惯使用 win）
+###### 一. 共享文件夹（如果你习惯使用 win）
  1. 安装VBox的增强功能，点击一下上方的按键，找到：设备==>安装增强功能
 
 ![applySharing.jpg](http://upload-images.jianshu.io/upload_images/7277397-3825f3bc3ee3b068.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -117,7 +117,7 @@ MySQL 的语法和我们学习的（在大二学的 Oracle）略有出入，我�
 
 
 
-######二.搭建数据库
+###### 二.搭建数据库
 
  6. 终端中打开 MySQL 命令:`mysql -u root -p`
  7. 输入你的密码:`blablabla`
@@ -128,7 +128,8 @@ MySQL 的语法和我们学习的（在大二学的 Oracle）略有出入，我�
  12. 搞定，可以用命令：`show tables;`查看一下已经导入的表格。
 这里给出脚本：
 
-    use test;
+``` sql
+use test;
     drop table prereq;
     drop table time_slot;
     drop table advisor;
@@ -397,11 +398,14 @@ MySQL 的语法和我们学习的（在大二学的 Oracle）略有出入，我�
     insert into prereq values ('CS-319', 'CS-101');
     insert into prereq values ('CS-347', 'CS-101');
     insert into prereq values ('EE-181', 'PHY-101');
+```
 
 
-####使用cryptdb的开始
+#### 使用cryptdb的开始
+
 步骤：
-######一. 登陆，以及登陆会遇到的问题
+
+###### 一. 登陆，以及登陆会遇到的问题
 1. 首先把另外一个文件 Mysql Proxy 放到共享目录下并且打开，方便复制。
 Mysql Proxy( 来自github ):
 
@@ -427,6 +431,7 @@ Mysql Proxy( 来自github ):
         to send a single command to mysql:
 
         % mysql -u root -p -h 127.0.0.1 -P 3307 -e 'command'
+
 2. 把里面的环境变量先设置一下，把第二个命令路径改成你自己的，主要是cryptdb的安装路径（其实你要是用脚本安装的话基本不会变了）。
 3. 运行第二条命令，进入到cryptdb的代理服务器中。
 4. 可以看到我们利用命令设置了两个端口,其中：
@@ -443,12 +448,12 @@ Mysql Proxy( 来自github ):
 	> * 第二个原因是你没有root，这时候登录的终端窗口显示Lost connection to MySQL server at ‘reading authorization packet’
 	> * 第三个原因可能是你密码输错了，这样 proxy 会运行一段时间然后跳出，返回错误信息，登录的终端会显示 Access denied for user....YES),请注意这里的密码是之前我们在wrapper.lua中修改的CRYPTDB_PASS的变量，应该是‘root’，你可以自己试着改一改来玩一玩。
 
-###使用cryptdb
+### 使用cryptdb
 
 这时候就已经可以通信了
 登录的终端root不root无所谓（按道理也应该是这样的嘛~哪有说是个登陆者都要root的权限才能访问数据库的）
 
-######先是在3307端口的操作
+###### 先是在3307端口的操作
 1. 查看一下数据库
 	命令：`show databases;`
 2. 看到了我们之前建立的 test
@@ -460,7 +465,7 @@ Mysql Proxy( 来自github ):
 5. 哈哈，被骗了吧。没看论文的你就会跟着我在前面不断犯错在 MySQL 上面直接导入脚本中的数据库。
 6. 实际上你必须在连接proxy的条件下创建表格或者创建数据库，否则你创建的表格在你使用 proxy 访问数据库的时候肯定会出错。
 
-######重新在3307端口操作（本操作主要是为了建立数据库，在 3306 或者 3307 端口都是可行的）
+###### 重新在3307端口操作（本操作主要是为了建立数据库，在 3306 或者 3307 端口都是可行的）
 7. 打开已经准备好的 demo 文档（来自 Github），重新创建数据库，复制里面的命令试一下吧~~~
 8. 当你使用 show tables; 的时候你会发现表格名称都是不能识别的加密之后的表格名字。然而如果你试图通过查询这些表格来获取里面的信息，那将会遭受很大的挫折（never success），你必须知道原来的名字，并且用他们来查询信息。
 9. 这个是正常的访问 proxy 代理的操作，可见必须是 application 才会知道这些表格名称，要不然怎么访问都是徒劳的。
@@ -529,7 +534,7 @@ Mysql Proxy( 来自github ):
     (log in Alice as above)
     SELECT * FROM msgs; --> should be able to see the secret message
 
-######重新在3307端口操作
+###### 重新在3307端口操作
 1. 查看一下数据库
 	命令：`show databases;`
 2. 看到了我们之前建立的 test
@@ -539,12 +544,12 @@ Mysql Proxy( 来自github ):
 	命令：`show tables;`
 		   `select * from advisor;`
 
-######再是3306端口的操作
+###### 再是3306端口的操作
 1. 在使用3306端口的时候，查询到的的将会全都是密文（鬼画符一样）
 2. 而且在输入原来的名字的时候没有自动补全，很烦，只能输入错误的表格名最后输出密文。
 3. 目前只知道这个是针对内鬼的（curious DMA）真实可怕，诸位大佬玩玩就好，不需要耗费太多时间在这上面。
 
-######看截图对比一下两个端口
+###### 看截图对比一下两个端口
 
 1. `show tables;`两个端口显示的 tables 数据一致 （右上是3306，右下是3307）
 ![compareTables.png](http://upload-images.jianshu.io/upload_images/7277397-f14b56f25af1d471.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
