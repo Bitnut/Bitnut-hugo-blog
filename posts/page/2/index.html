@@ -146,6 +146,148 @@ Then add it to .babelrc:
 </article><article class="list__item post">
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/posts/icontransform/" rel="bookmark">
+			解决按钮移动动画伴随光标样式抖动的问题
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-04-30T00:01:55&#43;08:00">2020-04-30</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。
+但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的，要是鼠标是从下往上缓缓进入，或者停留在上移的距离内，这个特效会导致鼠标和按钮/卡片样式不断抖动，非常鬼畜。具体效果不便直接截图给大家展示，但是我在下面给出了解决方案后会给出一个模拟的效果 gif 和代码（gif制作中）。
+问题解决 虽然这个问题不在我的工作职责范围内，但是作为一个“前端”工程师，这个问题真的唤醒了我的强迫症，不能忍啊！有没有。
+但是又因为本人是一个真实菜鸡前端，css方面急需恶补那种。。。刚遇到这个问题连怎么实现元素上移都不知道T.T。所以一时间对这个问题实在想不出啥解决方法。然而在几天之后，我在休息的时候解决了这个问题。
+其实解决方法很简单，其实就是原本代码实现移动效果使用的是css的top属性结合position: relative；要解决这个问题只需要把实现方式更换成transform并使用相应的transform函数即可，无需结合relative布局。
+下面给出情景模拟的代码，大家可以拷贝到一个 html 文件里看看是啥效果。
+&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;style&gt; body { text-align: center; } #head { height: 100px; width: 100%; } #middle { margin: 0 auto; } #top-button { top: 0; position: relative; transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; -o-transition: .5s; -ms-transition: .5s; cursor: pointer; } #top-button:hover { top: -8px; } #transform-button { margin-left: 100px; transition: .
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/icontransform/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/blackwhite/" rel="bookmark">
+			如何简单粗暴地让网页变黑白？
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-04-14T22:31:55&#43;08:00">2020-04-14</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。
+今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大幅的网页黑白效果了。那么，如何不修改网页的大多数属性、重新打包图片等，简单地实现页面的黑白效果呢？
+可以借用 CSS3 的 filter滤镜属性 最直接的想法应该就是修改CSS样式表了。通过简单的查询可以了解到，CSS3中有filter这个属性。
+ grayscale(%) 将图像转换为灰度图像。值定义转换的比例。值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0；  简单的用法：
+img { -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */ filter: grayscale(100%); } 上面的代码通过 img 选择器将所有图片改成了黑白色
+如果想要将整个页面改成黑白色，可以选择使用 html 选择器。
+html { -webkit-filter:grayscale(100%); filter: grayscale(100%); } 具体可以到菜鸟教程里查看filter这个属性的各种滤镜，功能可以说是非常强大。
+CSS3 filter(滤镜) 属性
+但是问题就在于这是一个CSS3属性。兼容问题目前始终是 CSS3 绕不开的问题，我们通过can i use查阅，可以看到该属性对于IE等老旧浏览器并不友好。
+目前查询到的能兼容其它浏览器的较全版本如下所示：
+html{ filter: gray; filter: grayscale(100%); /* 标准写法 */ -webkit-filter: grayscale(100%); /* webkit内核支持程度较好 */ -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/blackwhite/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/cryptdb1/" rel="bookmark">
+			CryptDB  简单原理论述
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-09-11T08:52:53&#43;08:00">2017-09-11</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明
+详细论述 CryptDB 的原理
+1.面对threat 1  解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上  这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加密过的数据上。因此就意味着需要在数据库服务端存放多种经过不同方式加密的数据。当用户执行特定操作时，Mysql-proxy就会截获操作请求并使用使用特定的加密方式对该操作进行加密，使得该操作能够正确运行在Server端。
+以下是proxy采用的几种加密算法
+1. Random (RND) RND是最安全的一种加密方法，即使是两个相同的明文，也可以映射到不同的密文上面。这种方法可以用来抵抗自适应选择明文攻击，但是缺点就是很难在密文上进行操作。实现方法有AES等，这里不详说。
+2. Deterministic (DET) DET的安全性会相对弱一点，相同的明文映射到相同的密文中，所以可以很方便地对密文进行操作，例如相同值查询等，但是对于不同的表，相同的列，使用的 key 不一定相同。
+3. Order-preserving encryption (OPE). OPE允许数据的顺序查找，它保证当x
+4. Homomorphic encryption (HOM) HOM类型的加密可以使得一些计算可以直接在加密后的数据上面，例如HOMK(x)·HOMK(y) = HOMK(x + y)，这类算法可以保证一些数学运算例如SUM等操作。
+5. Join ( JOIN and OPE- JOIN ) 这种加密可以支持 join 运算，包括范围 join 以及等值 join （自然连接）。因为在DET中，相同的列，在不同的表中可以用不同的 key 来加密，所以相同的值在不同的表加密后的值不一样。所以此类算法就是为了使加密后的列表能正确地进行连接。
+JOIN-ADJ JOIN-ADJ 是一种【对输入确定性的函数】（就是相同的明文对应的一定是相同的 JOIN-ADJ 值），同时也是【可调整的利用秘钥加密之后的hash值】（意思是这个hash值由对应的加密算法生成，而且带有可调整的附加属性的）。
+JOIN-ADJ 怎么使用？ 首先 JOIN-ADJ 是不可置反的。
+因此利用了 JOIN-ADJ 的 JOIN 加密方案由如下所示：
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/cryptdb1/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/cryptdb2/" rel="bookmark">
+			详细论述 CryptDB 的原理
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-09-11T08:52:18&#43;08:00">2017-09-11</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥
+ 博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明
+CryptDB 简单原理论述
+相关资料 想要理解CryptDB, 你可能需要阅读如下资料： CryptDB. Popa, R. A., et al. (2011). CryptDB: protecting confidentiality with encrypted query processing. 文章链接
+Guidelines for Using the CryptDB System Securely 链接
+ 其他可能有用的资源:  CryptDB 有软件的下载和使用介绍。
+GitHub - CryptDB/cryptdb: A database system that can process SQL queries over encrypted data. 这个比较方便，建议看这个！
+Raluca Ada Popa&rsquo;s Homepage 建议～
+主要结构： Database proxy和一个unmodifiedDBMS
+User-defined functions (UDFs) [用来执行密码操作]
+安全保障：  面对thread1：  将所有的SQL查询用proxy拦截。
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/cryptdb2/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/cryptdb-install/" rel="bookmark">
+			cryptdb 安装及使用说明
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-08-07T20:44:51&#43;08:00">2017-08-07</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D
+ 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述
+详细论述 CryptDB 的原理
+这个暑假的数据库实训内容，研究的项目背景下面会介绍～
+背景资料
+Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil; 同时也是Assistantprofessor (讲师), UC Berkeley;
+######想要理解CryptDB, 你可能需要阅读如下资料：
+CryptDB.	Popa, R. A., et al. (2011). CryptDB: protecting confidentiality	with encrypted query processing. 文章链接 Guidelines	for Using the CryptDB System Securely 链接
+######其他可能有用的资源:
+CryptDB
+ 项目主页: 有软件的下载和使用介绍。 github主页:这个比较方便，建议看这个！ 发明人主页:建议～  ##本文会详细介绍CryptDB的安装过程，以及它的使用方法 ####准备阶段 ####GitHub 上官方 readme 截取的提示文字 Convention : When this document uses syntax like single-quote text single-quote + &lsquo;some-text-here&rsquo; + &lsquo;a second example&rsquo; it indicates that the reader is to use the value without the single-quotes.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/cryptdb-install/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/posts/abo/" rel="bookmark">
 			关于我
 			</a>
