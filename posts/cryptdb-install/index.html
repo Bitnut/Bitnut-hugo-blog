@@ -8,15 +8,7 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="cryptdb 安装及使用说明" />
-<meta property="og:description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D
- 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述
-详细论述 CryptDB 的原理
-这个暑假的数据库实训内容，研究的项目背景下面会介绍～
-背景资料
-Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil; 同时也是Assistantprofessor (讲师), UC Berkeley;
-想要理解CryptDB, 你可能需要阅读如下资料： CryptDB.	Popa, R. A., et al. (2011). CryptDB: protecting confidentiality	with encrypted query processing. 文章链接 Guidelines	for Using the CryptDB System Securely 链接
-其他可能有用的资源: CryptDB
- 项目主页: 有软件的下载和使用介绍。 github主页:这个比较方便，建议看这个！ 发明人主页:建议～  本文会详细介绍CryptDB的安装过程，以及它的使用方法  准备阶段 GitHub 上官方 readme 截取的提示文字 Convention : When this document uses syntax like single-quote text single-quote &#43; &lsquo;some-text-here&rsquo; &#43; &lsquo;a second example&rsquo; it indicates that the reader is to use the value without the single-quotes." />
+<meta property="og:description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述 详细论述 CryptDB 的原理 这个暑假的数据库实训内容，研究的项目背景下面会介绍～ 背景资料 Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bitnut.github.io/posts/cryptdb-install/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-08-07T20:44:51&#43;08:00" />
@@ -24,29 +16,13 @@ Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案�
 
 
 		<meta itemprop="name" content="cryptdb 安装及使用说明">
-<meta itemprop="description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D
- 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述
-详细论述 CryptDB 的原理
-这个暑假的数据库实训内容，研究的项目背景下面会介绍～
-背景资料
-Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil; 同时也是Assistantprofessor (讲师), UC Berkeley;
-想要理解CryptDB, 你可能需要阅读如下资料： CryptDB.	Popa, R. A., et al. (2011). CryptDB: protecting confidentiality	with encrypted query processing. 文章链接 Guidelines	for Using the CryptDB System Securely 链接
-其他可能有用的资源: CryptDB
- 项目主页: 有软件的下载和使用介绍。 github主页:这个比较方便，建议看这个！ 发明人主页:建议～  本文会详细介绍CryptDB的安装过程，以及它的使用方法  准备阶段 GitHub 上官方 readme 截取的提示文字 Convention : When this document uses syntax like single-quote text single-quote &#43; &lsquo;some-text-here&rsquo; &#43; &lsquo;a second example&rsquo; it indicates that the reader is to use the value without the single-quotes."><meta itemprop="datePublished" content="2017-08-07T20:44:51&#43;08:00" />
+<meta itemprop="description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述 详细论述 CryptDB 的原理 这个暑假的数据库实训内容，研究的项目背景下面会介绍～ 背景资料 Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil"><meta itemprop="datePublished" content="2017-08-07T20:44:51&#43;08:00" />
 <meta itemprop="dateModified" content="2017-08-07T20:44:51&#43;08:00" />
-<meta itemprop="wordCount" content="2561">
-<meta itemprop="keywords" content="" />
+<meta itemprop="wordCount" content="5066">
+<meta itemprop="keywords" content="cryptdb,database," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="cryptdb 安装及使用说明"/>
-<meta name="twitter:description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D
- 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述
-详细论述 CryptDB 的原理
-这个暑假的数据库实训内容，研究的项目背景下面会介绍～
-背景资料
-Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil; 同时也是Assistantprofessor (讲师), UC Berkeley;
-想要理解CryptDB, 你可能需要阅读如下资料： CryptDB.	Popa, R. A., et al. (2011). CryptDB: protecting confidentiality	with encrypted query processing. 文章链接 Guidelines	for Using the CryptDB System Securely 链接
-其他可能有用的资源: CryptDB
- 项目主页: 有软件的下载和使用介绍。 github主页:这个比较方便，建议看这个！ 发明人主页:建议～  本文会详细介绍CryptDB的安装过程，以及它的使用方法  准备阶段 GitHub 上官方 readme 截取的提示文字 Convention : When this document uses syntax like single-quote text single-quote &#43; &lsquo;some-text-here&rsquo; &#43; &lsquo;a second example&rsquo; it indicates that the reader is to use the value without the single-quotes."/>
+<meta name="twitter:description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述 详细论述 CryptDB 的原理 这个暑假的数据库实训内容，研究的项目背景下面会介绍～ 背景资料 Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -687,6 +663,20 @@ SELECT * FROM msgs; --&gt; should be able to see the secret message
 <p>最后的操作请看官自己完成。。。已经没有任何难度了。</p>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/cryptdb/" rel="tag">cryptdb</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/database/" rel="tag">database</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -739,16 +729,32 @@ SELECT * FROM msgs; --&gt; should be able to see the secret message
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-usefull-tools/">Linux 中必需学会的强大工具</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/ruinyourtscode/">如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/proxy-config/">代理实践纪录</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-fundation/">为什么/如何使用 Docker？</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-wine/">使用 Docker Wine 安装 win 下的各类软件</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-ps/">Linux 下的 ps 命令和常用组合</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">Linux Tty</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/icontransform/">解决按钮移动动画伴随光标样式抖动的问题</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/cryptdb/" title="cryptdb">cryptdb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
 </div>
 <div class="widget-social widget">

@@ -2,23 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bitnut.github.io/tags/gnu/</loc>
+    <lastmod>2021-03-26T13:29:14+08:00</lastmod>
+  </url><url>
+    <loc>https://bitnut.github.io/tags/linux/</loc>
+    <lastmod>2021-03-26T13:29:14+08:00</lastmod>
+  </url><url>
     <loc>https://bitnut.github.io/posts/linux-strange-shell/</loc>
     <lastmod>2021-03-26T13:29:14+08:00</lastmod>
   </url><url>
     <loc>https://bitnut.github.io/posts/</loc>
     <lastmod>2021-03-26T13:29:14+08:00</lastmod>
   </url><url>
+    <loc>https://bitnut.github.io/tags/</loc>
+    <lastmod>2021-03-26T13:29:14+08:00</lastmod>
+  </url><url>
     <loc>https://bitnut.github.io/</loc>
     <lastmod>2021-03-26T13:29:14+08:00</lastmod>
   </url><url>
-    <loc>https://bitnut.github.io/posts/linux-awk/</loc>
-    <lastmod>2021-03-23T13:46:28+08:00</lastmod>
-  </url><url>
-    <loc>https://bitnut.github.io/posts/linux-usefull-tools/</loc>
-    <lastmod>2021-03-23T13:32:31+08:00</lastmod>
-  </url><url>
     <loc>https://bitnut.github.io/posts/linux-link/</loc>
     <lastmod>2021-03-21T17:10:40+08:00</lastmod>
+  </url><url>
+    <loc>https://bitnut.github.io/tags/ms/</loc>
+    <lastmod>2021-03-20T19:11:51+08:00</lastmod>
+  </url><url>
+    <loc>https://bitnut.github.io/tags/node/</loc>
+    <lastmod>2021-03-20T19:11:51+08:00</lastmod>
+  </url><url>
+    <loc>https://bitnut.github.io/tags/ts/</loc>
+    <lastmod>2021-03-20T19:11:51+08:00</lastmod>
   </url><url>
     <loc>https://bitnut.github.io/posts/ruinyourtscode/</loc>
     <lastmod>2021-03-20T19:11:51+08:00</lastmod>
@@ -26,11 +38,8 @@
     <loc>https://bitnut.github.io/posts/proxy-config/</loc>
     <lastmod>2021-03-04T21:00:35+08:00</lastmod>
   </url><url>
-    <loc>https://bitnut.github.io/posts/docker-fundation/</loc>
-    <lastmod>2021-02-23T07:59:04+08:00</lastmod>
-  </url><url>
-    <loc>https://bitnut.github.io/posts/docker-wine/</loc>
-    <lastmod>2021-02-20T15:05:20+08:00</lastmod>
+    <loc>https://bitnut.github.io/tags/emacs/</loc>
+    <lastmod>2021-02-19T21:53:55+08:00</lastmod>
   </url><url>
     <loc>https://bitnut.github.io/posts/linux-ps/</loc>
     <lastmod>2021-02-19T21:53:55+08:00</lastmod>
@@ -44,8 +53,17 @@
     <loc>https://bitnut.github.io/posts/nvm-error/</loc>
     <lastmod>2021-01-15T22:20:01+08:00</lastmod>
   </url><url>
+    <loc>https://bitnut.github.io/tags/frontend/</loc>
+    <lastmod>2021-01-14T22:20:01+08:00</lastmod>
+  </url><url>
+    <loc>https://bitnut.github.io/tags/web/</loc>
+    <lastmod>2021-01-14T22:20:01+08:00</lastmod>
+  </url><url>
     <loc>https://bitnut.github.io/posts/webpack-error-collect/</loc>
     <lastmod>2021-01-14T22:20:01+08:00</lastmod>
+  </url><url>
+    <loc>https://bitnut.github.io/tags/css/</loc>
+    <lastmod>2020-04-30T00:01:55+08:00</lastmod>
   </url><url>
     <loc>https://bitnut.github.io/posts/icontransform/</loc>
     <lastmod>2020-04-30T00:01:55+08:00</lastmod>
@@ -53,7 +71,13 @@
     <loc>https://bitnut.github.io/posts/blackwhite/</loc>
     <lastmod>2020-04-14T22:31:55+08:00</lastmod>
   </url><url>
+    <loc>https://bitnut.github.io/tags/cryptdb/</loc>
+    <lastmod>2017-09-11T08:52:53+08:00</lastmod>
+  </url><url>
     <loc>https://bitnut.github.io/posts/cryptdb1/</loc>
+    <lastmod>2017-09-11T08:52:53+08:00</lastmod>
+  </url><url>
+    <loc>https://bitnut.github.io/tags/database/</loc>
     <lastmod>2017-09-11T08:52:53+08:00</lastmod>
   </url><url>
     <loc>https://bitnut.github.io/posts/cryptdb2/</loc>
@@ -63,8 +87,6 @@
     <lastmod>2017-08-07T20:44:51+08:00</lastmod>
   </url><url>
     <loc>https://bitnut.github.io/categories/</loc>
-  </url><url>
-    <loc>https://bitnut.github.io/tags/</loc>
   </url><url>
     <loc>https://bitnut.github.io/posts/abo/</loc>
   </url><url>

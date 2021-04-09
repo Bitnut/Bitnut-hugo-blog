@@ -4,25 +4,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Linux 中必需学会的强大工具 - 三口一个瓜的博客</title>
+	<title>MS - 三口一个瓜的博客</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="Linux 中必需学会的强大工具" />
-<meta property="og:description" content="linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://bitnut.github.io/posts/linux-usefull-tools/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-03-23T13:32:31&#43;08:00" />
-<meta property="article:modified_time" content="2021-03-23T13:32:31&#43;08:00" />
+		<meta property="og:title" content="MS" />
+<meta property="og:description" content="这里是我的博客，日常记录和抒情的场所。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bitnut.github.io/tags/ms/" />
 
 
-		<meta itemprop="name" content="Linux 中必需学会的强大工具">
-<meta itemprop="description" content="linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  "><meta itemprop="datePublished" content="2021-03-23T13:32:31&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-23T13:32:31&#43;08:00" />
-<meta itemprop="wordCount" content="29">
-<meta itemprop="keywords" content="" />
+		<meta itemprop="name" content="MS">
+<meta itemprop="description" content="这里是我的博客，日常记录和抒情的场所。">
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux 中必需学会的强大工具"/>
-<meta name="twitter:description" content="linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  "/>
+<meta name="twitter:title" content="MS"/>
+<meta name="twitter:description" content="这里是我的博客，日常记录和抒情的场所。"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -31,6 +26,7 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="alternate" type="application/rss+xml" href="/tags/ms/index.xml" title="三口一个瓜的博客">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -67,115 +63,35 @@ if (!doNotTrack) {
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main" role="main">
-	<article class="post">
-		<header class="post__header">
-			<h1 class="post__title">Linux 中必需学会的强大工具</h1>
-			<div class="post__meta meta"><div class="meta__item-author meta__item">
+<main class="main list" role="main">
+	<header class="main__header">
+		<h1 class="main__title">MS</h1>
+	</header><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/ruinyourtscode/" rel="bookmark">
+			如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-23T13:32:31&#43;08:00">2021-03-23</time></div></div>
-		</header>
-<div class="post__toc toc">
-	<div class="toc__title">Page content</div>
-	<div class="toc__menu">
-		<nav id="TableOfContents">
-  <ul>
-    <li><a href="#文本处理">文本处理</a></li>
-    <li><a href="#文件相关">文件相关</a></li>
-    <li><a href="#硬件相关">硬件相关</a></li>
-    <li><a href="#进程相关">进程相关</a></li>
-    <li><a href="#网络相关">网络相关</a></li>
-    <li><a href="#提高效率">提高效率</a></li>
-    <li><a href="#文本编辑">文本编辑</a></li>
-  </ul>
-</nav>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-20T19:11:51&#43;08:00">2021-03-20</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋） 前言 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge 正文 If builders built buildings the way programmers write programs, then the first woodpecker that came along would destroy civilization. ~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law TS 特性 不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包
 	</div>
-</div><div class="content post__content clearfix">
-			<h1 id="linux-原生命令行">linux 原生命令行</h1>
-<h2 id="文本处理">文本处理</h2>
-<ul>
-<li>awk</li>
-<li>sed</li>
-<li>grep</li>
-<li>xargs</li>
-<li>sort</li>
-</ul>
-<h2 id="文件相关">文件相关</h2>
-<ul>
-<li>find</li>
-<li>cd</li>
-<li>ls</li>
-</ul>
-<h2 id="硬件相关">硬件相关</h2>
-<ul>
-<li>ifconfig</li>
-<li>du</li>
-<li>df</li>
-</ul>
-<h2 id="进程相关">进程相关</h2>
-<ul>
-<li>ps</li>
-<li>pstree</li>
-<li>systemctl</li>
-<li>top</li>
-</ul>
-<h2 id="网络相关">网络相关</h2>
-<ul>
-<li>netstat</li>
-<li>NetworkManager</li>
-</ul>
-<h2 id="提高效率">提高效率</h2>
-<ul>
-<li>alias</li>
-</ul>
-<h2 id="文本编辑">文本编辑</h2>
-<ul>
-<li>emacs</li>
-<li>vim/vi</li>
-</ul>
-
-		</div>
-	</article>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/ruinyourtscode/">Read more…</a>
+	</div>
+</article>
 </main>
-
-<div class="authorbox clearfix">
-	<div class="authorbox__header">
-		<span class="authorbox__name">About 三口一个瓜</span>
-	</div>
-	<div class="authorbox__description">
-		你好，我是三口一个瓜。你也可以叫我瓜。我是一名程序员，emacs 爱好者，平时喜欢健身、跑步, 同时我也是一名口琴初学者。我现在居住和工作在 中国，深圳。如果想要联系我，请发 email。
-	</div>
-</div>
-
-<nav class="pager flex">
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/posts/linux-link/" rel="prev">
-			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Linux 中的软链接和硬链接</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/posts/linux-awk/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">Linux Awk</p>
-		</a>
-	</div>
-</nav>
-<section class="comments">
-    <script src="https://utteranc.es/client.js"
-            repo="Bitnut/comment"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
-</section>
 
 
 			</div>
-			<aside class="sidebar"><div class="widget-search widget">
+			
+<aside class="sidebar sidebar--left"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
@@ -189,16 +105,32 @@ if (!doNotTrack) {
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-usefull-tools/">Linux 中必需学会的强大工具</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/ruinyourtscode/">如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/proxy-config/">代理实践纪录</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-fundation/">为什么/如何使用 Docker？</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-wine/">使用 Docker Wine 安装 win 下的各类软件</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-ps/">Linux 下的 ps 命令和常用组合</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">Linux Tty</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/icontransform/">解决按钮移动动画伴随光标样式抖动的问题</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/cryptdb/" title="cryptdb">cryptdb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
 </div>
 <div class="widget-social widget">
@@ -239,7 +171,5 @@ if (!doNotTrack) {
 </footer>
 	</div>
 <script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
-</body>
+<script src="/js/custom.js"></script></body>
 </html>

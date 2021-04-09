@@ -13,44 +13,7 @@
       <pubDate>Fri, 26 Mar 2021 13:29:14 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/linux-strange-shell/</guid>
-      <description>前言 请原谅我的标题党，这篇文章主要聚焦的是 linux shell 中的引号问题。
-如果你正在和 shell 打交道，那么了解 shell 中关于引号的问题是一件很有必要的事情。
-下面的这些规则适用的对象是 POSIX 兼容的 shell 例如我们常用的 bash（GNU Bourne-Again Shell）。
-注： 注意我的措辞，单独的引号的意思是既可以是单引号也可以是双引号。单引号和双引号就是本来的意思。括起来的意思是，文本被左右引号包裹起来，例如： &#39;foo&#39;, &amp;quot;bar &amp;quot;。
-下面的一些例子使用了 awk 这个命令行工具进行实例，使用的是最简单的 awk 语法，主要是展示 shell 的解释器是怎么处理传给它的文本的。
-规则和例子 我们先创建一个叫做 shell-test.sh 的文件，接下来的例子直接放到我们的脚本内，然后执行 sh shell-test.sh，即可得到输出结果。
- 被引号括起来的东西, 和其他没被引号括起来的东西, 是可以被链接为一个整体的。  例子：
-#!/bin/bash # \t 是制表符， \47 是一个单引号 awk &amp;#39;BEGIN {print &amp;#34;&amp;#39;-F&amp;#39;\t\47foobar&amp;#39;\tddd&amp;#39;&amp;#34; }&amp;#39; 在命令行试验一下，得到结果：
--F &amp;#39;foobartddd  任何用反斜线作为前缀的一个字符，会被 shell 先去掉反斜线后，原封不动的传给指定的命令  注： 这里没有说要把字符和前缀括起来。
-例子：
-#!/bin/bash  awk &amp;#39;BEGIN {print &amp;#34;hello\thello&amp;#39;\t&amp;#39; &amp;#34; }&amp;#39; 执行一下脚本，看看结果：</description>
-    </item>
-    
-    <item>
-      <title>Linux Awk</title>
-      <link>https://bitnut.github.io/posts/linux-awk/</link>
-      <pubDate>Tue, 23 Mar 2021 13:46:28 +0800</pubDate>
-      
-      <guid>https://bitnut.github.io/posts/linux-awk/</guid>
-      <description>快速入门 awk awk 的作用、优势和特点 awk 最基础的功能是用作搜索 文件、命令行输出中特定的文本。然后对找到的文本执行指定的操作。
-它最大的优势是，它是 linux 等 类 unix 系统下通用的工具，无需额外安装运行时和相关依赖即可使用。而且它 “好读”，“好写”。
-awk is：
-refreshingly easy to read and write &amp;ndash;GNU awk get started
-awk 和其他编程语言的主要区别是，它是数据驱动的语言（编程人员指定文本的特征、以及找到后需要执行的操作）。
-基础语法 简单到不能再简单：
-pattern { action } pattern { action } ... 啥意思？
-基本的 awk 程序由一条条表达式组成，每个表达式由 pattern（规则），action（操作）为了和规则区分开来被用 {} 包裹。
-简单讲一个最简单的 awk 表达式就是： 规则 { 操作 }
-执行 awk 程序  直接命令执行  awk &amp;#39;program&amp;#39; input-file1 input-file2 …  使用脚本  awk -f program-file input-file1 input-file2 …  注： 如果使用的式 bash 最好在个人启动文件中加上： set +H。见 Awk env note</description>
-    </item>
-    
-    <item>
-      <title>Linux 中必需学会的强大工具</title>
-      <link>https://bitnut.github.io/posts/linux-usefull-tools/</link>
-      <pubDate>Tue, 23 Mar 2021 13:32:31 +0800</pubDate>
-      
-      <guid>https://bitnut.github.io/posts/linux-usefull-tools/</guid>
-      <description>linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  </description>
+      <description>前言 请原谅我的标题党，这篇文章主要聚焦的是 linux shell 中的引号问题。 如果你正在和 shell 打交道，那么了解 shell 中关于引号的问题是一件很有必要的事情。 下面的这些规则适用的对象是 POSIX 兼容的 shell 例如我们常用的 bash（GNU Bourne-Again Shell）。 注： 注意我的措辞，单独的引号的意思是既可以是单引号也可以是双引号。单引号和双引号就是本来</description>
     </item>
     
     <item>
@@ -59,19 +22,7 @@ pattern { action } pattern { action } ... 啥意思？
       <pubDate>Sun, 21 Mar 2021 17:10:40 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/linux-link/</guid>
-      <description>Linux 中的软链接和硬链接 前言 在 linux 中，硬链接（hard link）和软链接（symbolic link）是两个非常重要的概念，以前上课的时候听老师讲过这两个概念结果后来给忘了。这篇文章将通过实例，加深我们对这两个概念的印象。
-了解 inode 在理解软/硬链接之前，我们必需了解一下， linux 里面 存储文件 的方式。
-对于 linux 有一定了解的朋友都知道 linux 里面有一个重要的概念叫做 i 结点，即 inode。
-当文件存储在硬盘上，硬盘的最小存储单位叫做 扇区（Sector）。每个扇区储存 512 字节（即 0.5KB ）。有人会问，平时讨论文件存储的时候总是说的 块（test）又是啥？
-实际上，扇区是硬盘的概念，我们的操作系统把扇区的概念透明化，因为这个单位实在太小了，也太过具体不够抽象。因此操作系统引入了块的概念，块，实际上就是连续的多个扇区。
-读取硬盘的时候，操作系统不会一个个扇区的读取，这样效率太低，一次性连续读取多个扇区，即一次性读取一个块。这种由多个扇区组成的“块”，是操作系统层面上文件存取的最小单位。块的大小，最常见的是4KB，可以简单的理解为连续八个 sector 组成一个 test。
-那么既然文件数据都储存在块中，我们明白了文件存储的方式，如何管理已经存储好的文件呢？
-文件存储、文件读取是相对而言非常慢的操作，好的操作系统必然会寻找加快这些操作的方法。我们知道在数据库中有索引的概念，可以很好的提升查询速度。那么不如给每个文件加上索引？最好顺便能把文件信息也放一起好了！
-这种储存文件元信息的区域就叫做 inode ，也叫 索引节点。
-每一个文件都会有对应的 inode ，每个 inode 里面包含了与该文件有关的一些信息，如文件的创建者、文件的创建日期、文件的大小、权限等等。
-了解软硬链接 接下来，我们动手实践一下，去观察观察：
-首先，我们建立一个源文件 test，再建立两个硬链接和一个软链接文件
-$ touch test $ ln test test-hd1 $ ln test test-hd2 $ ln -s test test-soft $ ls -li 结果如下图：</description>
+      <description>Linux 中的软链接和硬链接 前言 在 linux 中，硬链接（hard link）和软链接（symbolic link）是两个非常重要的概念，以前上课的时候听老师讲过这两个概念结果后来给忘了。这篇文章将通过实例，加深我们对这两个概念的印象。 了解 inode 在理解软/硬链接之前，我们必需了解一下， linux 里面 存储文件 的方式。 对于 linux 有一定了解的</description>
     </item>
     
     <item>
@@ -80,9 +31,7 @@ $ touch test $ ln test test-hd1 $ ln test test-hd2 $ ln -s test test-soft $ ls -
       <pubDate>Sat, 20 Mar 2021 19:11:51 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/ruinyourtscode/</guid>
-      <description>如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋） 前言 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge
-正文  If builders built buildings the way programmers write programs, then the first woodpecker that came along would destroy civilization. ~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law
- TS 特性  不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包装几层接口，到时候好用，最好可以把高级特性多用几遍。 随版本和提交变动我的接口： 比如说，把 showTable(col: number, row: number): Promise改成 showTable(row: string, col: string): void，等 release 了几个版本后，再把其改回去。这样维护我写的程序的程序员们将不能很快地明白哪一个是对的。 膨胀 ENUM 类型： ENUM 把字符串类型都放某个 ENUM 里，方便复用。 TS 的 namespace 特性是美妙的东西（比 ES6 的好理解，反正就是高级），在接口定义的地方大量使用 namespace。 避免过度使用接口。BS 接口，面向接口编程加重了我的心志负担，不用。 使用包装类型： String 和 string 哪个牛逼？ 重载签名把条件更宽松的放在前面： 例： 同样传递一个参数，把使用 any 的放在最开头。 只因为参数不同就声名重载函数。 避免过度使用类： 类写起来不舒服（太长。花大力气弄成函数式的。 使用 Object.</description>
+      <description>如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋） 前言 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge 正文 If builders built buildings the way programmers write programs, then the first woodpecker that came along would destroy civilization. ~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law TS 特性 不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包</description>
     </item>
     
     <item>
@@ -91,36 +40,7 @@ $ touch test $ ln test test-hd1 $ ln test test-hd2 $ ln -s test test-soft $ ls -
       <pubDate>Thu, 04 Mar 2021 21:00:35 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/proxy-config/</guid>
-      <description>变化的 GFW 实在是令人很苦恼 在开发和学习的过程中，飞机始终是我们的好朋友。为了不在一些特别的时刻偶尔的失去他，我们也需要不断变化和学习和改进。
-配置 Trojan 服务   一、 准备一台 VPS（境外），不需要购买域名和配置证书。
-  二、 VPS 安装 LINUX 系统.
-  注意，系统最好是以下几个。其他的发行版本没有做过测试。
-ubuntu 16.04+ debian 9 centos 7+   三、 替换镜像源  安装好后接着替换原本的镜像源为国内镜像源，如我使用 ubuntu 系统，则替换 /etc/apt/sources.list 下的内容为下面的任意一个地址，然后依次执行：
-sudo apt-get update
-sudo apt-get upgrade
-#阿里源 deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse deb http://mirrors.</description>
-    </item>
-    
-    <item>
-      <title>为什么/如何使用 Docker？</title>
-      <link>https://bitnut.github.io/posts/docker-fundation/</link>
-      <pubDate>Tue, 23 Feb 2021 07:59:04 +0800</pubDate>
-      
-      <guid>https://bitnut.github.io/posts/docker-fundation/</guid>
-      <description>Docker 需要解决的难题 现在当我们提到布署、容器和虚拟化技术，我们首先想到的就是 Docker。 毫无疑问，Docker 已经成为了我们在开发过程中不可缺少的一部分了。在本文中，我更希望抛开底层的技术细节，从宏观的、简单的角度对 Docker 进行分析，并在分析中得出一些软件设计和产品设计的灵感。
-在 Docker 出现之前，我们在软件开发过程中到底遇到了什么难题？  运行时的维护  在相对简单的情形下（例如开发、测试、和线上布署都使用相对较少的 server），服务器的维护和代码升级并不会给我们带来太大的困扰，我们甚至可以手动完成这些维护和升级（包括系统、系统组件和依赖、配置等），就像是在自己的开发环境下一样。
-但是在可以想见的未来，一旦 server 的数量大量增加，如公司的业务进行了拓展、用户出现指数型增长等等，手动的完成这些维护工作将会是一种开发过程中的负担。
- debug 需求  当我们在布署的时候采用了负载均衡这一类方案的时候，用户可能会访问到出错的 server，这个时候用户可能会试图去刷新页面，反向代理会把用户的请求代理到另一台服务器上。这个过程并没有太大毛病。
-问题在于我们如何定位到问题？如果说这是一个配置问题，而且我们的服务器集群中使用了超过 100 台 server，这个时候一个一个去对比具体配置并试图定位问题将会是一场灾难。  </description>
-    </item>
-    
-    <item>
-      <title>使用 Docker Wine 安装 win 下的各类软件</title>
-      <link>https://bitnut.github.io/posts/docker-wine/</link>
-      <pubDate>Sat, 20 Feb 2021 15:05:20 +0800</pubDate>
-      
-      <guid>https://bitnut.github.io/posts/docker-wine/</guid>
-      <description></description>
+      <description>变化的 GFW 实在是令人很苦恼 在开发和学习的过程中，飞机始终是我们的好朋友。为了不在一些特别的时刻偶尔的失去他，我们也需要不断变化和学习和改进。 配置 Trojan 服务 一、 准备一台 VPS（境外），不需要购买域名和配置证书。 二、 VPS 安装 LINUX 系统. 注意，系统最好是以下几个。其他的发行版本没有做过测试。 ubuntu 16.04+ debian 9 centos 7+ 三、 替换镜像源</description>
     </item>
     
     <item>
@@ -129,16 +49,7 @@ sudo apt-get upgrade
       <pubDate>Fri, 19 Feb 2021 21:53:55 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/linux-ps/</guid>
-      <description>一、查看进程 命令： ps
-命令解释： 全称是 process status ，使用它相当于在 win 下的 任务管理器。
-常用命令参数： -a 显示同一终端下的所有程序 -e 等于“-A” -e 显示环境变量 -f 显示程序间的关系 -r 显示当前终端的进程 -u 指定用户的所有进程
-常用命令组合：
--au 显示较详细的资讯 -aux 显示所有包含其他使用者的行程
--C &amp;lt;命令&amp;gt; 列出指定命令的状况 &amp;ndash;lines&amp;lt;行数&amp;gt; 每页显示的行数 &amp;ndash;width&amp;lt;字符数&amp;gt; 每页显示的字符数 &amp;ndash;help 显示帮助信息 &amp;ndash;version 显示版本显示
-二、查看进程（树结构） 命令： pstree
-命令参数：
--p 为显示进程识别码，最后加上用户名。
-picher@pichers-laptop:~$ pstree -p picher | grep emacs |-gnome-terminal-(3023)-+-bash(3030)-+-emacs(5517)-+-bash(28980) | | | |-{emacs}(5518) | | | |-{emacs}(5519) | | | `-{emacs}(5520) 可以看到，emacs(5517)这个进程共启动了 4 个子线程，加上主线程共 5 个线程。</description>
+      <description>前言 总结整理一下简单、常用的 ps 命令用法。 一、查看进程 命令： ps 命令解释： 全称是 process status ，使用它相当于在 win 下的 任务管理器。 常用命令参数： -a 显示同一终端下的所有程序 -e 等于“-A” -e 显示环境变量 -f 显示程序间的关系 -r 显示当前终端的进程 -u 指定用户的所有进程 常用命令组合： -au 显示较详细的资讯 -aux 显示所有包含其他使用者的行</description>
     </item>
     
     <item>
@@ -147,15 +58,7 @@ picher@pichers-laptop:~$ pstree -p picher | grep emacs |-gnome-terminal-(3023)-+
       <pubDate>Fri, 19 Feb 2021 21:53:55 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/emacs-build/</guid>
-      <description>走个流程  源码下载  到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1
-解压安装包  xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项  ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
-可能会遇到一些依赖保错
-可以执行：
- X toolkit 的报错：  sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf
- gnutls 的报错：  sudo apt-get install gnutls-dev
-执行 make  make &amp;amp;&amp;amp; make install
-如果遇到依赖问题：
-sudo apt-get install make</description>
+      <description>走个流程 源码下载 到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1 解压安装包 xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项 ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 可能会遇到一些依赖保错 可以执行： X toolkit 的报错： sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf gnutls 的报错： sudo apt-get install gnutls-dev 执行 make make &amp;amp;&amp;amp; make install 如果遇到依赖问题： sudo apt-get install make 添加软连接 ln -s /opt/emacs/bin/emacs /usr/bin/emacs 下面给出我写好的</description>
     </item>
     
     <item>
@@ -164,17 +67,7 @@ sudo apt-get install make</description>
       <pubDate>Thu, 18 Feb 2021 16:34:47 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/linux-tty/</guid>
-      <description>linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty 在作为命令的情形 随便打开几个终端看看，可以看到下图：
-可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看：
-在 /dev/pts 这个地址下，有几个文件，分别是：
-0 / 1 / 2 / 3 / ptmx
-几个文件是啥意思？ 在 Linux 系统的设备特殊文件目录 /dev/ 下，终端特殊设备文件一般有:
-注：以下几列中的地址，末尾带有&#39;/&amp;lsquo;的是目录，否则是一个文件；n 应直接看作数字的代称，如 0,1,2,3&amp;hellip;&amp;hellip;
- 串行端口终端(/dev/ttySn) 伪终端(/dev/pty/) 控制终端(/dev/tty) 控制台终端(/dev/ttyn, /dev/console) 虚拟终端(/dev/pts/n) 其他  我们用 tty 命令打印出的结果属于虚拟终端。
-深入理解 tty 命令关联到的终端设备文件 tty 命令得到的是一个虚拟终端的文件，那么什么是终端什么是虚拟终端呢？
-从命名中其实已经可以窥见一二了，一个虚拟终端就是终端的一种而已。而虚拟终端又和伪终端联系紧密。
-伪终端 伪终端（pty），其中的 pt 全称是： pesudo terminal。顾名思义，这是一种和实际物理设备相对的概念。它不是实际意义上的串口设备，而且是一套主从工具(master-slave, 不知道现在还能不能这么写了&amp;hellip;&amp;hellip;狗头)。
-至于为什么 pty 要写成 pty 而不是 pt，这应该是个历史遗留问题，pty 实际上指的是 pseudo-teletype， tty 原本也指的是 teletype。</description>
+      <description>linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty 在作为命令的情形 随便打开几个终端看看，可以看到下图： 可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看： 在 /dev/pts 这个地址下，有几个文件，分别是： 0 / 1 / 2 / 3 / ptmx 几个文件是啥意思？ 在 Linux</description>
     </item>
     
     <item>
@@ -183,29 +76,16 @@ sudo apt-get install make</description>
       <pubDate>Fri, 15 Jan 2021 22:20:01 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/nvm-error/</guid>
-      <description>NVM 报 ls-remote command results in “N/A 错误 今天工作中使用 nvm 升级 node 版本遇到了这个错误，经过一番研究终于解决。
-出现这个报错的原因有许多种，我遇到的报错实际上是由代理引起。
-参考： https://stackoverflow.com/questions/26476744/nvm-ls-remote-command-results-in-n-a
-几种原因： SSL 证书过期  临时解决方案：  请使用导出用于抓取内容的镜像的非https版本：export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist
-长久解决方案：  第一种：若您运行curl $NVM_NODEJS_ORG_MIRROR 回答翻译：
-出现
-curl: (77) error setting certificate verify locations: CAfile: /etc/pki/tls/certs/ca-bundle.crt CApath: none  则考虑修改 ~/.nvm/nvm.sh 在函数 nvm_download() 里修改，加上 curl -k $*
-if nvm_has &amp;quot;curl&amp;quot;; then curl -k $* #新加的 elif nvm_has &amp;quot;wget&amp;quot;; then # Emulate curl with wget ..  实际上这个改动是啥操作呢？</description>
+      <description>NVM 报 ls-remote command results in “N/A 错误 今天工作中使用 nvm 升级 node 版本遇到了这个错误，经过一番研究终于解决。 出现这个报错的原因有许多种，我遇到的报错实际上是由代理引起。 参考： https://stackoverflow.com/questions/26476744/nvm-ls-remote-command-results-in-n-a 几种原因： SSL 证书过期 临时解决方案： 请使用导出用于抓取内容的镜像的非https版本：export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist 长久解决方案： 第一种：若您运行curl $NVM_NODEJS_ORG_MIRROR 回答翻译</description>
     </item>
     
     <item>
-      <title>Webpack Error Collect</title>
+      <title>webpack 配置错误拾遗</title>
       <link>https://bitnut.github.io/posts/webpack-error-collect/</link>
       <pubDate>Thu, 14 Jan 2021 22:20:01 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/webpack-error-collect/</guid>
-      <description>webpack 配置错误拾遗 1. ... 展开运算符错误 错误原因：
-早期的 babel 有许多问题，一些早期的版本（可能现在也没有解决）无法识别的语法、运算符可以通过插件的形式给 babel 打补丁，这里就是其中一种。
-Just install babel-plugin-transform-object-rest-spread module.
-https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread
-Then add it to .babelrc:
-&amp;ldquo;plugins&amp;rdquo;: [ &amp;ldquo;babel-plugin-transform-object-rest-spread&amp;rdquo;, ],
-2. newwebpack No data received ERR_EMPTY_RESPONSE 错误 给 webpack-dev-server 添加 &amp;ndash;host xxxxxxxx(设好的 host 映射，或者指定的域名)</description>
+      <description>1. ... 展开运算符错误 错误原因： 早期的 babel 有许多问题，一些早期的版本（可能现在也没有解决）无法识别的语法、运算符可以通过插件的形式给 babel 打补丁，这里就是其中一种。 Just install babel-plugin-transform-object-rest-spread module. https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread Then add it to .babelrc: &amp;ldquo;plugins&amp;rdquo;: [ &amp;ldquo;babel-plugin-transform-object-rest-spread&amp;rdquo;, ], 2. newwebpack No data received ERR_EMPTY_RESPONSE 错误 给 webpack-dev-server 添加 &amp;ndash;host xxxxxxxx(设好的 host 映射，或者指定的域名)</description>
     </item>
     
     <item>
@@ -214,13 +94,7 @@ Then add it to .babelrc:
       <pubDate>Thu, 30 Apr 2020 00:01:55 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/icontransform/</guid>
-      <description>问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。
-但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的，要是鼠标是从下往上缓缓进入，或者停留在上移的距离内，这个特效会导致鼠标和按钮/卡片样式不断抖动，非常鬼畜。具体效果不便直接截图给大家展示，但是我在下面给出了解决方案后会给出一个模拟的效果 gif 和代码（gif制作中）。
-问题解决 虽然这个问题不在我的工作职责范围内，但是作为一个“前端”工程师，这个问题真的唤醒了我的强迫症，不能忍啊！有没有。
-但是又因为本人是一个真实菜鸡前端，css方面急需恶补那种。。。刚遇到这个问题连怎么实现元素上移都不知道T.T。所以一时间对这个问题实在想不出啥解决方法。然而在几天之后，我在休息的时候解决了这个问题。
-其实解决方法很简单，其实就是原本代码实现移动效果使用的是css的top属性结合position: relative；要解决这个问题只需要把实现方式更换成transform并使用相应的transform函数即可，无需结合relative布局。
-下面给出情景模拟的代码，大家可以拷贝到一个 html 文件里看看是啥效果。
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;style&amp;gt; body { text-align: center; } #head { height: 100px; width: 100%; } #middle { margin: 0 auto; } #top-button { top: 0; position: relative; transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; -o-transition: .5s; -ms-transition: .5s; cursor: pointer; } #top-button:hover { top: -8px; } #transform-button { margin-left: 100px; transition: .</description>
+      <description>问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。 但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的</description>
     </item>
     
     <item>
@@ -229,17 +103,7 @@ Then add it to .babelrc:
       <pubDate>Tue, 14 Apr 2020 22:31:55 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/blackwhite/</guid>
-      <description>很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。
-今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大幅的网页黑白效果了。那么，如何不修改网页的大多数属性、重新打包图片等，简单地实现页面的黑白效果呢？
-可以借用 CSS3 的 filter滤镜属性 最直接的想法应该就是修改CSS样式表了。通过简单的查询可以了解到，CSS3中有filter这个属性。
- grayscale(%) 将图像转换为灰度图像。值定义转换的比例。值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0；  简单的用法：
-img { -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */ filter: grayscale(100%); } 上面的代码通过 img 选择器将所有图片改成了黑白色
-如果想要将整个页面改成黑白色，可以选择使用 html 选择器。
-html { -webkit-filter:grayscale(100%); filter: grayscale(100%); } 具体可以到菜鸟教程里查看filter这个属性的各种滤镜，功能可以说是非常强大。
-CSS3 filter(滤镜) 属性
-但是问题就在于这是一个CSS3属性。兼容问题目前始终是 CSS3 绕不开的问题，我们通过can i use查阅，可以看到该属性对于IE等老旧浏览器并不友好。
-目前查询到的能兼容其它浏览器的较全版本如下所示：
-html{ filter: gray; filter: grayscale(100%); /* 标准写法 */ -webkit-filter: grayscale(100%); /* webkit内核支持程度较好 */ -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: url(&amp;quot;data:image/svg+xml;utf8,&amp;lt;svg xmlns=\&#39;http://www.w3.org/2000/svg\&#39;&amp;gt;&amp;lt;filter id=\&#39;grayscale\&#39;&amp;gt;&amp;lt;feColorMatrix type=\&#39;matrix\&#39; values=\&#39;0.</description>
+      <description>很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。 今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大</description>
     </item>
     
     <item>
@@ -248,18 +112,7 @@ html{ filter: gray; filter: grayscale(100%); /* 标准写法 */ -webkit-filter: 
       <pubDate>Mon, 11 Sep 2017 08:52:53 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/cryptdb1/</guid>
-      <description>博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明
-详细论述 CryptDB 的原理
-1.面对threat 1  解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上  这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加密过的数据上。因此就意味着需要在数据库服务端存放多种经过不同方式加密的数据。当用户执行特定操作时，Mysql-proxy就会截获操作请求并使用使用特定的加密方式对该操作进行加密，使得该操作能够正确运行在Server端。
-以下是proxy采用的几种加密算法
-1. Random (RND) RND是最安全的一种加密方法，即使是两个相同的明文，也可以映射到不同的密文上面。这种方法可以用来抵抗自适应选择明文攻击，但是缺点就是很难在密文上进行操作。实现方法有AES等，这里不详说。
-2. Deterministic (DET) DET的安全性会相对弱一点，相同的明文映射到相同的密文中，所以可以很方便地对密文进行操作，例如相同值查询等，但是对于不同的表，相同的列，使用的 key 不一定相同。
-3. Order-preserving encryption (OPE). OPE允许数据的顺序查找，它保证当x
-4. Homomorphic encryption (HOM) HOM类型的加密可以使得一些计算可以直接在加密后的数据上面，例如HOMK(x)·HOMK(y) = HOMK(x + y)，这类算法可以保证一些数学运算例如SUM等操作。
-5. Join ( JOIN and OPE- JOIN ) 这种加密可以支持 join 运算，包括范围 join 以及等值 join （自然连接）。因为在DET中，相同的列，在不同的表中可以用不同的 key 来加密，所以相同的值在不同的表加密后的值不一样。所以此类算法就是为了使加密后的列表能正确地进行连接。
-JOIN-ADJ JOIN-ADJ 是一种【对输入确定性的函数】（就是相同的明文对应的一定是相同的 JOIN-ADJ 值），同时也是【可调整的利用秘钥加密之后的hash值】（意思是这个hash值由对应的加密算法生成，而且带有可调整的附加属性的）。
-JOIN-ADJ 怎么使用？ 首先 JOIN-ADJ 是不可置反的。
-因此利用了 JOIN-ADJ 的 JOIN 加密方案由如下所示：</description>
+      <description>博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明 详细论述 CryptDB 的原理 1.面对threat 1 解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上 这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加</description>
     </item>
     
     <item>
@@ -268,17 +121,7 @@ JOIN-ADJ 怎么使用？ 首先 JOIN-ADJ 是不可置反的。
       <pubDate>Mon, 11 Sep 2017 08:52:18 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/cryptdb2/</guid>
-      <description>版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥
- 博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明
-CryptDB 简单原理论述
-相关资料 想要理解CryptDB, 你可能需要阅读如下资料： CryptDB. Popa, R. A., et al. (2011). CryptDB: protecting confidentiality with encrypted query processing. 文章链接
-Guidelines for Using the CryptDB System Securely 链接
- 其他可能有用的资源:  CryptDB 有软件的下载和使用介绍。
-GitHub - CryptDB/cryptdb: A database system that can process SQL queries over encrypted data. 这个比较方便，建议看这个！
-Raluca Ada Popa&amp;rsquo;s Homepage 建议～
-主要结构： Database proxy和一个unmodifiedDBMS
-User-defined functions (UDFs) [用来执行密码操作]
-安全保障：  面对thread1：  将所有的SQL查询用proxy拦截。</description>
+      <description>版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥 博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明 CryptDB 简单原理论述 相关资料 想要理解CryptDB, 你可能需要阅读如下资料： CryptDB. Popa, R. A., et al. (2011). CryptDB: protecting confidentiality with encrypted query processing. 文章链接 Guidelines for Using the CryptDB System Securely 链接 其他可能有用的资源: CryptDB 有软件的下载和使用介绍。 GitHub - CryptDB/cryptdb: A database system that can process SQL queries over encrypted data.</description>
     </item>
     
     <item>
@@ -287,15 +130,7 @@ User-defined functions (UDFs) [用来执行密码操作]
       <pubDate>Mon, 07 Aug 2017 20:44:51 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/cryptdb-install/</guid>
-      <description>版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D
- 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述
-详细论述 CryptDB 的原理
-这个暑假的数据库实训内容，研究的项目背景下面会介绍～
-背景资料
-Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil; 同时也是Assistantprofessor (讲师), UC Berkeley;
-想要理解CryptDB, 你可能需要阅读如下资料： CryptDB.	Popa, R. A., et al. (2011). CryptDB: protecting confidentiality	with encrypted query processing. 文章链接 Guidelines	for Using the CryptDB System Securely 链接
-其他可能有用的资源: CryptDB
- 项目主页: 有软件的下载和使用介绍。 github主页:这个比较方便，建议看这个！ 发明人主页:建议～  本文会详细介绍CryptDB的安装过程，以及它的使用方法  准备阶段 GitHub 上官方 readme 截取的提示文字 Convention : When this document uses syntax like single-quote text single-quote + &amp;lsquo;some-text-here&amp;rsquo; + &amp;lsquo;a second example&amp;rsquo; it indicates that the reader is to use the value without the single-quotes.</description>
+      <description>版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述 详细论述 CryptDB 的原理 这个暑假的数据库实训内容，研究的项目背景下面会介绍～ 背景资料 Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil</description>
     </item>
     
     <item>
@@ -304,13 +139,7 @@ Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://bitnut.github.io/posts/abo/</guid>
-      <description>关于我  你好，我是三口一个瓜。你也可以叫我瓜。这里是我的博客，日常记录和抒情的场所。
-我是一名程序员，emacs 爱好者，平时喜欢健身、跑步, 同时我也是一名口琴初学者。
-我现在居住和工作在 中国，深圳。如果想要联系我，请发 email。
-Hi, I am Bitnut.
-Here&amp;rsquo;s my blog, where I record my life and feelings.
-I&amp;rsquo;m a programmer, emacser, runner, body builder and a harmonica player.
-I am now living and working in Shenzhen, China. If you wanna get contact, please email me.</description>
+      <description>关于我 你好，我是三口一个瓜。你也可以叫我瓜。这里是我的博客，日常记录和抒情的场所。 我是一名程序员，emacs 爱好者，平时喜欢健身、跑步, 同时我也是一名口琴初学者。 我现在居住和工作在 中国，深圳。如果想要联系我，请发 email。 Hi, I am Bitnut. Here&amp;rsquo;s my blog, where I record my life and feelings. I&amp;rsquo;m a programmer, emacser, runner, body builder and a harmonica player. I am now living and working in Shenzhen, China. If you wanna get</description>
     </item>
     
     <item>
@@ -319,10 +148,7 @@ I am now living and working in Shenzhen, China. If you wanna get contact, please
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://bitnut.github.io/posts/contact/</guid>
-      <description> Email: 940095072@qq.com Phone: 13427520205 Github: Bitnut QQ: 940095072 微信: h940095072   邮寄地址  中国 China
-广东省深圳市
-西丽街道，松坪山路，松坪村菊园
-  </description>
+      <description>Email: 940095072@qq.com Phone: 13427520205 Github: Bitnut QQ: 940095072 微信: h940095072 邮寄地址 中国 China 广东省深圳市 西丽街道，松坪山路，松坪村菊园</description>
     </item>
     
   </channel>

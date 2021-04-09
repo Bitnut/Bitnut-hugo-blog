@@ -8,18 +8,7 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="CryptDB  简单原理论述" />
-<meta property="og:description" content="博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明
-详细论述 CryptDB 的原理
-1.面对threat 1  解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上  这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加密过的数据上。因此就意味着需要在数据库服务端存放多种经过不同方式加密的数据。当用户执行特定操作时，Mysql-proxy就会截获操作请求并使用使用特定的加密方式对该操作进行加密，使得该操作能够正确运行在Server端。
-以下是proxy采用的几种加密算法
-1. Random (RND) RND是最安全的一种加密方法，即使是两个相同的明文，也可以映射到不同的密文上面。这种方法可以用来抵抗自适应选择明文攻击，但是缺点就是很难在密文上进行操作。实现方法有AES等，这里不详说。
-2. Deterministic (DET) DET的安全性会相对弱一点，相同的明文映射到相同的密文中，所以可以很方便地对密文进行操作，例如相同值查询等，但是对于不同的表，相同的列，使用的 key 不一定相同。
-3. Order-preserving encryption (OPE). OPE允许数据的顺序查找，它保证当x
-4. Homomorphic encryption (HOM) HOM类型的加密可以使得一些计算可以直接在加密后的数据上面，例如HOMK(x)·HOMK(y) = HOMK(x &#43; y)，这类算法可以保证一些数学运算例如SUM等操作。
-5. Join ( JOIN and OPE- JOIN ) 这种加密可以支持 join 运算，包括范围 join 以及等值 join （自然连接）。因为在DET中，相同的列，在不同的表中可以用不同的 key 来加密，所以相同的值在不同的表加密后的值不一样。所以此类算法就是为了使加密后的列表能正确地进行连接。
-JOIN-ADJ JOIN-ADJ 是一种【对输入确定性的函数】（就是相同的明文对应的一定是相同的 JOIN-ADJ 值），同时也是【可调整的利用秘钥加密之后的hash值】（意思是这个hash值由对应的加密算法生成，而且带有可调整的附加属性的）。
-JOIN-ADJ 怎么使用？ 首先 JOIN-ADJ 是不可置反的。
-因此利用了 JOIN-ADJ 的 JOIN 加密方案由如下所示：" />
+<meta property="og:description" content="博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明 详细论述 CryptDB 的原理 1.面对threat 1 解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上 这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bitnut.github.io/posts/cryptdb1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-09-11T08:52:53&#43;08:00" />
@@ -27,35 +16,13 @@ JOIN-ADJ 怎么使用？ 首先 JOIN-ADJ 是不可置反的。
 
 
 		<meta itemprop="name" content="CryptDB  简单原理论述">
-<meta itemprop="description" content="博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明
-详细论述 CryptDB 的原理
-1.面对threat 1  解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上  这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加密过的数据上。因此就意味着需要在数据库服务端存放多种经过不同方式加密的数据。当用户执行特定操作时，Mysql-proxy就会截获操作请求并使用使用特定的加密方式对该操作进行加密，使得该操作能够正确运行在Server端。
-以下是proxy采用的几种加密算法
-1. Random (RND) RND是最安全的一种加密方法，即使是两个相同的明文，也可以映射到不同的密文上面。这种方法可以用来抵抗自适应选择明文攻击，但是缺点就是很难在密文上进行操作。实现方法有AES等，这里不详说。
-2. Deterministic (DET) DET的安全性会相对弱一点，相同的明文映射到相同的密文中，所以可以很方便地对密文进行操作，例如相同值查询等，但是对于不同的表，相同的列，使用的 key 不一定相同。
-3. Order-preserving encryption (OPE). OPE允许数据的顺序查找，它保证当x
-4. Homomorphic encryption (HOM) HOM类型的加密可以使得一些计算可以直接在加密后的数据上面，例如HOMK(x)·HOMK(y) = HOMK(x &#43; y)，这类算法可以保证一些数学运算例如SUM等操作。
-5. Join ( JOIN and OPE- JOIN ) 这种加密可以支持 join 运算，包括范围 join 以及等值 join （自然连接）。因为在DET中，相同的列，在不同的表中可以用不同的 key 来加密，所以相同的值在不同的表加密后的值不一样。所以此类算法就是为了使加密后的列表能正确地进行连接。
-JOIN-ADJ JOIN-ADJ 是一种【对输入确定性的函数】（就是相同的明文对应的一定是相同的 JOIN-ADJ 值），同时也是【可调整的利用秘钥加密之后的hash值】（意思是这个hash值由对应的加密算法生成，而且带有可调整的附加属性的）。
-JOIN-ADJ 怎么使用？ 首先 JOIN-ADJ 是不可置反的。
-因此利用了 JOIN-ADJ 的 JOIN 加密方案由如下所示："><meta itemprop="datePublished" content="2017-09-11T08:52:53&#43;08:00" />
+<meta itemprop="description" content="博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明 详细论述 CryptDB 的原理 1.面对threat 1 解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上 这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加"><meta itemprop="datePublished" content="2017-09-11T08:52:53&#43;08:00" />
 <meta itemprop="dateModified" content="2017-09-11T08:52:53&#43;08:00" />
-<meta itemprop="wordCount" content="261">
-<meta itemprop="keywords" content="" />
+<meta itemprop="wordCount" content="3871">
+<meta itemprop="keywords" content="cryptdb,database," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CryptDB  简单原理论述"/>
-<meta name="twitter:description" content="博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明
-详细论述 CryptDB 的原理
-1.面对threat 1  解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上  这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加密过的数据上。因此就意味着需要在数据库服务端存放多种经过不同方式加密的数据。当用户执行特定操作时，Mysql-proxy就会截获操作请求并使用使用特定的加密方式对该操作进行加密，使得该操作能够正确运行在Server端。
-以下是proxy采用的几种加密算法
-1. Random (RND) RND是最安全的一种加密方法，即使是两个相同的明文，也可以映射到不同的密文上面。这种方法可以用来抵抗自适应选择明文攻击，但是缺点就是很难在密文上进行操作。实现方法有AES等，这里不详说。
-2. Deterministic (DET) DET的安全性会相对弱一点，相同的明文映射到相同的密文中，所以可以很方便地对密文进行操作，例如相同值查询等，但是对于不同的表，相同的列，使用的 key 不一定相同。
-3. Order-preserving encryption (OPE). OPE允许数据的顺序查找，它保证当x
-4. Homomorphic encryption (HOM) HOM类型的加密可以使得一些计算可以直接在加密后的数据上面，例如HOMK(x)·HOMK(y) = HOMK(x &#43; y)，这类算法可以保证一些数学运算例如SUM等操作。
-5. Join ( JOIN and OPE- JOIN ) 这种加密可以支持 join 运算，包括范围 join 以及等值 join （自然连接）。因为在DET中，相同的列，在不同的表中可以用不同的 key 来加密，所以相同的值在不同的表加密后的值不一样。所以此类算法就是为了使加密后的列表能正确地进行连接。
-JOIN-ADJ JOIN-ADJ 是一种【对输入确定性的函数】（就是相同的明文对应的一定是相同的 JOIN-ADJ 值），同时也是【可调整的利用秘钥加密之后的hash值】（意思是这个hash值由对应的加密算法生成，而且带有可调整的附加属性的）。
-JOIN-ADJ 怎么使用？ 首先 JOIN-ADJ 是不可置反的。
-因此利用了 JOIN-ADJ 的 JOIN 加密方案由如下所示："/>
+<meta name="twitter:description" content="博主写的 CryptDB 另外几篇相关文章： cryptdb 安装及使用说明 详细论述 CryptDB 的原理 1.面对threat 1 解决方案：通过把对数据库进行的操作（选择，连接，投影等操作）进行特殊处理，使得这些操作能够执行在已加密的数据上 这种解决方案存在的一大问题就是，目前还没有研究出一种加密方式，使得任何执行在数据库上的操作，都能正确运行在加"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -211,6 +178,20 @@ if (!doNotTrack) {
 </ol>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/cryptdb/" rel="tag">cryptdb</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/database/" rel="tag">database</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -263,16 +244,32 @@ if (!doNotTrack) {
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-usefull-tools/">Linux 中必需学会的强大工具</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/ruinyourtscode/">如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/proxy-config/">代理实践纪录</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-fundation/">为什么/如何使用 Docker？</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-wine/">使用 Docker Wine 安装 win 下的各类软件</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-ps/">Linux 下的 ps 命令和常用组合</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">Linux Tty</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/icontransform/">解决按钮移动动画伴随光标样式抖动的问题</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/cryptdb/" title="cryptdb">cryptdb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
 </div>
 <div class="widget-social widget">

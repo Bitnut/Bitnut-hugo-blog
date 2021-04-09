@@ -8,15 +8,7 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="编译安装 emacs" />
-<meta property="og:description" content="走个流程  源码下载  到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1
-解压安装包  xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项  ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1
-可能会遇到一些依赖保错
-可以执行：
- X toolkit 的报错：  sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf
- gnutls 的报错：  sudo apt-get install gnutls-dev
-执行 make  make &amp;&amp; make install
-如果遇到依赖问题：
-sudo apt-get install make" />
+<meta property="og:description" content="走个流程 源码下载 到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1 解压安装包 xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项 ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1 可能会遇到一些依赖保错 可以执行： X toolkit 的报错： sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf gnutls 的报错： sudo apt-get install gnutls-dev 执行 make make &amp;&amp; make install 如果遇到依赖问题： sudo apt-get install make 添加软连接 ln -s /opt/emacs/bin/emacs /usr/bin/emacs 下面给出我写好的" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bitnut.github.io/posts/emacs-build/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-19T21:53:55&#43;08:00" />
@@ -24,29 +16,13 @@ sudo apt-get install make" />
 
 
 		<meta itemprop="name" content="编译安装 emacs">
-<meta itemprop="description" content="走个流程  源码下载  到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1
-解压安装包  xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项  ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1
-可能会遇到一些依赖保错
-可以执行：
- X toolkit 的报错：  sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf
- gnutls 的报错：  sudo apt-get install gnutls-dev
-执行 make  make &amp;&amp; make install
-如果遇到依赖问题：
-sudo apt-get install make"><meta itemprop="datePublished" content="2021-02-19T21:53:55&#43;08:00" />
+<meta itemprop="description" content="走个流程 源码下载 到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1 解压安装包 xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项 ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1 可能会遇到一些依赖保错 可以执行： X toolkit 的报错： sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf gnutls 的报错： sudo apt-get install gnutls-dev 执行 make make &amp;&amp; make install 如果遇到依赖问题： sudo apt-get install make 添加软连接 ln -s /opt/emacs/bin/emacs /usr/bin/emacs 下面给出我写好的"><meta itemprop="datePublished" content="2021-02-19T21:53:55&#43;08:00" />
 <meta itemprop="dateModified" content="2021-02-19T21:53:55&#43;08:00" />
-<meta itemprop="wordCount" content="174">
-<meta itemprop="keywords" content="" />
+<meta itemprop="wordCount" content="265">
+<meta itemprop="keywords" content="emacs,GNU,linux," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="编译安装 emacs"/>
-<meta name="twitter:description" content="走个流程  源码下载  到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1
-解压安装包  xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项  ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1
-可能会遇到一些依赖保错
-可以执行：
- X toolkit 的报错：  sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf
- gnutls 的报错：  sudo apt-get install gnutls-dev
-执行 make  make &amp;&amp; make install
-如果遇到依赖问题：
-sudo apt-get install make"/>
+<meta name="twitter:description" content="走个流程 源码下载 到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1 解压安装包 xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项 ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1 可能会遇到一些依赖保错 可以执行： X toolkit 的报错： sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf gnutls 的报错： sudo apt-get install gnutls-dev 执行 make make &amp;&amp; make install 如果遇到依赖问题： sudo apt-get install make 添加软连接 ln -s /opt/emacs/bin/emacs /usr/bin/emacs 下面给出我写好的"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -208,6 +184,23 @@ ln -s /opt/bin/emacs /usr/bin/emacs
 
 </code></pre></div>
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/emacs/" rel="tag">emacs</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/gnu/" rel="tag">GNU</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/linux/" rel="tag">linux</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -260,16 +253,32 @@ ln -s /opt/bin/emacs /usr/bin/emacs
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-usefull-tools/">Linux 中必需学会的强大工具</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/ruinyourtscode/">如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/proxy-config/">代理实践纪录</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-fundation/">为什么/如何使用 Docker？</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-wine/">使用 Docker Wine 安装 win 下的各类软件</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-ps/">Linux 下的 ps 命令和常用组合</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">Linux Tty</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/icontransform/">解决按钮移动动画伴随光标样式抖动的问题</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/cryptdb/" title="cryptdb">cryptdb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
 </div>
 <div class="widget-social widget">

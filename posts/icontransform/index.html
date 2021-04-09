@@ -8,13 +8,7 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="解决按钮移动动画伴随光标样式抖动的问题" />
-<meta property="og:description" content="问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。
-但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的，要是鼠标是从下往上缓缓进入，或者停留在上移的距离内，这个特效会导致鼠标和按钮/卡片样式不断抖动，非常鬼畜。具体效果不便直接截图给大家展示，但是我在下面给出了解决方案后会给出一个模拟的效果 gif 和代码（gif制作中）。
-问题解决 虽然这个问题不在我的工作职责范围内，但是作为一个“前端”工程师，这个问题真的唤醒了我的强迫症，不能忍啊！有没有。
-但是又因为本人是一个真实菜鸡前端，css方面急需恶补那种。。。刚遇到这个问题连怎么实现元素上移都不知道T.T。所以一时间对这个问题实在想不出啥解决方法。然而在几天之后，我在休息的时候解决了这个问题。
-其实解决方法很简单，其实就是原本代码实现移动效果使用的是css的top属性结合position: relative；要解决这个问题只需要把实现方式更换成transform并使用相应的transform函数即可，无需结合relative布局。
-下面给出情景模拟的代码，大家可以拷贝到一个 html 文件里看看是啥效果。
-&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;style&gt; body { text-align: center; } #head { height: 100px; width: 100%; } #middle { margin: 0 auto; } #top-button { top: 0; position: relative; transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; -o-transition: .5s; -ms-transition: .5s; cursor: pointer; } #top-button:hover { top: -8px; } #transform-button { margin-left: 100px; transition: ." />
+<meta property="og:description" content="问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。 但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bitnut.github.io/posts/icontransform/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-30T00:01:55&#43;08:00" />
@@ -22,25 +16,13 @@
 
 
 		<meta itemprop="name" content="解决按钮移动动画伴随光标样式抖动的问题">
-<meta itemprop="description" content="问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。
-但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的，要是鼠标是从下往上缓缓进入，或者停留在上移的距离内，这个特效会导致鼠标和按钮/卡片样式不断抖动，非常鬼畜。具体效果不便直接截图给大家展示，但是我在下面给出了解决方案后会给出一个模拟的效果 gif 和代码（gif制作中）。
-问题解决 虽然这个问题不在我的工作职责范围内，但是作为一个“前端”工程师，这个问题真的唤醒了我的强迫症，不能忍啊！有没有。
-但是又因为本人是一个真实菜鸡前端，css方面急需恶补那种。。。刚遇到这个问题连怎么实现元素上移都不知道T.T。所以一时间对这个问题实在想不出啥解决方法。然而在几天之后，我在休息的时候解决了这个问题。
-其实解决方法很简单，其实就是原本代码实现移动效果使用的是css的top属性结合position: relative；要解决这个问题只需要把实现方式更换成transform并使用相应的transform函数即可，无需结合relative布局。
-下面给出情景模拟的代码，大家可以拷贝到一个 html 文件里看看是啥效果。
-&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;style&gt; body { text-align: center; } #head { height: 100px; width: 100%; } #middle { margin: 0 auto; } #top-button { top: 0; position: relative; transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; -o-transition: .5s; -ms-transition: .5s; cursor: pointer; } #top-button:hover { top: -8px; } #transform-button { margin-left: 100px; transition: ."><meta itemprop="datePublished" content="2020-04-30T00:01:55&#43;08:00" />
+<meta itemprop="description" content="问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。 但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的"><meta itemprop="datePublished" content="2020-04-30T00:01:55&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-30T00:01:55&#43;08:00" />
-<meta itemprop="wordCount" content="186">
-<meta itemprop="keywords" content="" />
+<meta itemprop="wordCount" content="1587">
+<meta itemprop="keywords" content="web,css,frontend," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="解决按钮移动动画伴随光标样式抖动的问题"/>
-<meta name="twitter:description" content="问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。
-但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的，要是鼠标是从下往上缓缓进入，或者停留在上移的距离内，这个特效会导致鼠标和按钮/卡片样式不断抖动，非常鬼畜。具体效果不便直接截图给大家展示，但是我在下面给出了解决方案后会给出一个模拟的效果 gif 和代码（gif制作中）。
-问题解决 虽然这个问题不在我的工作职责范围内，但是作为一个“前端”工程师，这个问题真的唤醒了我的强迫症，不能忍啊！有没有。
-但是又因为本人是一个真实菜鸡前端，css方面急需恶补那种。。。刚遇到这个问题连怎么实现元素上移都不知道T.T。所以一时间对这个问题实在想不出啥解决方法。然而在几天之后，我在休息的时候解决了这个问题。
-其实解决方法很简单，其实就是原本代码实现移动效果使用的是css的top属性结合position: relative；要解决这个问题只需要把实现方式更换成transform并使用相应的transform函数即可，无需结合relative布局。
-下面给出情景模拟的代码，大家可以拷贝到一个 html 文件里看看是啥效果。
-&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;style&gt; body { text-align: center; } #head { height: 100px; width: 100%; } #middle { margin: 0 auto; } #top-button { top: 0; position: relative; transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; -o-transition: .5s; -ms-transition: .5s; cursor: pointer; } #top-button:hover { top: -8px; } #transform-button { margin-left: 100px; transition: ."/>
+<meta name="twitter:description" content="问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。 但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -214,6 +196,23 @@ body {
 </ol>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/web/" rel="tag">web</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/css/" rel="tag">css</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/frontend/" rel="tag">frontend</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -236,7 +235,7 @@ body {
 	<div class="pager__item pager__item--next">
 		<a class="pager__link" href="/posts/webpack-error-collect/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">Webpack Error Collect</p>
+			<p class="pager__title">webpack 配置错误拾遗</p>
 		</a>
 	</div>
 </nav>
@@ -266,16 +265,32 @@ body {
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-usefull-tools/">Linux 中必需学会的强大工具</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/ruinyourtscode/">如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/proxy-config/">代理实践纪录</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-fundation/">为什么/如何使用 Docker？</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-wine/">使用 Docker Wine 安装 win 下的各类软件</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-ps/">Linux 下的 ps 命令和常用组合</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">Linux Tty</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/icontransform/">解决按钮移动动画伴随光标样式抖动的问题</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/cryptdb/" title="cryptdb">cryptdb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
 </div>
 <div class="widget-social widget">

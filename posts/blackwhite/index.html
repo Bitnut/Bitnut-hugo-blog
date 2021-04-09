@@ -8,17 +8,7 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="如何简单粗暴地让网页变黑白？" />
-<meta property="og:description" content="很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。
-今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大幅的网页黑白效果了。那么，如何不修改网页的大多数属性、重新打包图片等，简单地实现页面的黑白效果呢？
-可以借用 CSS3 的 filter滤镜属性 最直接的想法应该就是修改CSS样式表了。通过简单的查询可以了解到，CSS3中有filter这个属性。
- grayscale(%) 将图像转换为灰度图像。值定义转换的比例。值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0；  简单的用法：
-img { -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */ filter: grayscale(100%); } 上面的代码通过 img 选择器将所有图片改成了黑白色
-如果想要将整个页面改成黑白色，可以选择使用 html 选择器。
-html { -webkit-filter:grayscale(100%); filter: grayscale(100%); } 具体可以到菜鸟教程里查看filter这个属性的各种滤镜，功能可以说是非常强大。
-CSS3 filter(滤镜) 属性
-但是问题就在于这是一个CSS3属性。兼容问题目前始终是 CSS3 绕不开的问题，我们通过can i use查阅，可以看到该属性对于IE等老旧浏览器并不友好。
-目前查询到的能兼容其它浏览器的较全版本如下所示：
-html{ filter: gray; filter: grayscale(100%); /* 标准写法 */ -webkit-filter: grayscale(100%); /* webkit内核支持程度较好 */ -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: url(&quot;data:image/svg&#43;xml;utf8,&lt;svg xmlns=\&#39;http://www.w3.org/2000/svg\&#39;&gt;&lt;filter id=\&#39;grayscale\&#39;&gt;&lt;feColorMatrix type=\&#39;matrix\&#39; values=\&#39;0." />
+<meta property="og:description" content="很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。 今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bitnut.github.io/posts/blackwhite/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-14T22:31:55&#43;08:00" />
@@ -26,33 +16,13 @@ html{ filter: gray; filter: grayscale(100%); /* 标准写法 */ -webkit-filter: 
 
 
 		<meta itemprop="name" content="如何简单粗暴地让网页变黑白？">
-<meta itemprop="description" content="很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。
-今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大幅的网页黑白效果了。那么，如何不修改网页的大多数属性、重新打包图片等，简单地实现页面的黑白效果呢？
-可以借用 CSS3 的 filter滤镜属性 最直接的想法应该就是修改CSS样式表了。通过简单的查询可以了解到，CSS3中有filter这个属性。
- grayscale(%) 将图像转换为灰度图像。值定义转换的比例。值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0；  简单的用法：
-img { -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */ filter: grayscale(100%); } 上面的代码通过 img 选择器将所有图片改成了黑白色
-如果想要将整个页面改成黑白色，可以选择使用 html 选择器。
-html { -webkit-filter:grayscale(100%); filter: grayscale(100%); } 具体可以到菜鸟教程里查看filter这个属性的各种滤镜，功能可以说是非常强大。
-CSS3 filter(滤镜) 属性
-但是问题就在于这是一个CSS3属性。兼容问题目前始终是 CSS3 绕不开的问题，我们通过can i use查阅，可以看到该属性对于IE等老旧浏览器并不友好。
-目前查询到的能兼容其它浏览器的较全版本如下所示：
-html{ filter: gray; filter: grayscale(100%); /* 标准写法 */ -webkit-filter: grayscale(100%); /* webkit内核支持程度较好 */ -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: url(&quot;data:image/svg&#43;xml;utf8,&lt;svg xmlns=\&#39;http://www.w3.org/2000/svg\&#39;&gt;&lt;filter id=\&#39;grayscale\&#39;&gt;&lt;feColorMatrix type=\&#39;matrix\&#39; values=\&#39;0."><meta itemprop="datePublished" content="2020-04-14T22:31:55&#43;08:00" />
+<meta itemprop="description" content="很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。 今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大"><meta itemprop="datePublished" content="2020-04-14T22:31:55&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-14T22:31:55&#43;08:00" />
-<meta itemprop="wordCount" content="136">
-<meta itemprop="keywords" content="" />
+<meta itemprop="wordCount" content="1193">
+<meta itemprop="keywords" content="web,css,frontend," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何简单粗暴地让网页变黑白？"/>
-<meta name="twitter:description" content="很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。
-今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大幅的网页黑白效果了。那么，如何不修改网页的大多数属性、重新打包图片等，简单地实现页面的黑白效果呢？
-可以借用 CSS3 的 filter滤镜属性 最直接的想法应该就是修改CSS样式表了。通过简单的查询可以了解到，CSS3中有filter这个属性。
- grayscale(%) 将图像转换为灰度图像。值定义转换的比例。值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0；  简单的用法：
-img { -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */ filter: grayscale(100%); } 上面的代码通过 img 选择器将所有图片改成了黑白色
-如果想要将整个页面改成黑白色，可以选择使用 html 选择器。
-html { -webkit-filter:grayscale(100%); filter: grayscale(100%); } 具体可以到菜鸟教程里查看filter这个属性的各种滤镜，功能可以说是非常强大。
-CSS3 filter(滤镜) 属性
-但是问题就在于这是一个CSS3属性。兼容问题目前始终是 CSS3 绕不开的问题，我们通过can i use查阅，可以看到该属性对于IE等老旧浏览器并不友好。
-目前查询到的能兼容其它浏览器的较全版本如下所示：
-html{ filter: gray; filter: grayscale(100%); /* 标准写法 */ -webkit-filter: grayscale(100%); /* webkit内核支持程度较好 */ -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: url(&quot;data:image/svg&#43;xml;utf8,&lt;svg xmlns=\&#39;http://www.w3.org/2000/svg\&#39;&gt;&lt;filter id=\&#39;grayscale\&#39;&gt;&lt;feColorMatrix type=\&#39;matrix\&#39; values=\&#39;0."/>
+<meta name="twitter:description" content="很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。 今天主要来探讨一下让页面变黑白效果的方法 今年四月四的时候，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页或者所有页面做出了内容和样式的大调整。在诸多修改中，最具视觉冲击力的当属大"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -189,6 +159,23 @@ if (!doNotTrack) {
 <p>简单记录一下～</p>
 
 		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/web/" rel="tag">web</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/css/" rel="tag">css</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/frontend/" rel="tag">frontend</a>
+		</li>
+	</ul>
+</div>
+		</footer>
 	</article>
 </main>
 
@@ -241,16 +228,32 @@ if (!doNotTrack) {
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-usefull-tools/">Linux 中必需学会的强大工具</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/ruinyourtscode/">如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/proxy-config/">代理实践纪录</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-fundation/">为什么/如何使用 Docker？</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-wine/">使用 Docker Wine 安装 win 下的各类软件</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-ps/">Linux 下的 ps 命令和常用组合</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">Linux Tty</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/icontransform/">解决按钮移动动画伴随光标样式抖动的问题</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/cryptdb/" title="cryptdb">cryptdb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
 </div>
 <div class="widget-social widget">

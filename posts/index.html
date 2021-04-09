@@ -80,64 +80,10 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-26T13:29:14&#43;08:00">2021-03-26</time></div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		前言 请原谅我的标题党，这篇文章主要聚焦的是 linux shell 中的引号问题。
-如果你正在和 shell 打交道，那么了解 shell 中关于引号的问题是一件很有必要的事情。
-下面的这些规则适用的对象是 POSIX 兼容的 shell 例如我们常用的 bash（GNU Bourne-Again Shell）。
-注： 注意我的措辞，单独的引号的意思是既可以是单引号也可以是双引号。单引号和双引号就是本来的意思。括起来的意思是，文本被左右引号包裹起来，例如： 'foo', &quot;bar &quot;。
-下面的一些例子使用了 awk 这个命令行工具进行实例，使用的是最简单的 awk 语法，主要是展示 shell 的解释器是怎么处理传给它的文本的。
-规则和例子 我们先创建一个叫做 shell-test.sh 的文件，接下来的例子直接放到我们的脚本内，然后执行 sh shell-test.sh，即可得到输出结果。
- 被引号括起来的东西, 和其他没被引号括起来的东西, 是可以被链接为一个整体的。  例子：
-#!/bin/bash # \t 是制表符， \47 是一个单引号 awk &#39;BEGIN {print &#34;&#39;-F&#39;\t\47foobar&#39;\tddd&#39;&#34; }&#39; 在命令行试验一下，得到结果：
--F &#39;foobartddd  任何用反斜线作为前缀的一个字符，会被 shell 先去掉反斜线后，原封不动的传给指定的命令  注： 这里没有说要把字符和前缀括起来。
-例子：
-#!/bin/bash  awk &#39;BEGIN {print &#34;hello\thello&#39;\t&#39; &#34; }&#39; 执行一下脚本，看看结果：
+		前言 请原谅我的标题党，这篇文章主要聚焦的是 linux shell 中的引号问题。 如果你正在和 shell 打交道，那么了解 shell 中关于引号的问题是一件很有必要的事情。 下面的这些规则适用的对象是 POSIX 兼容的 shell 例如我们常用的 bash（GNU Bourne-Again Shell）。 注： 注意我的措辞，单独的引号的意思是既可以是单引号也可以是双引号。单引号和双引号就是本来
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/posts/linux-strange-shell/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/linux-awk/" rel="bookmark">
-			Linux Awk
-			</a>
-		</h2>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-23T13:46:28&#43;08:00">2021-03-23</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		快速入门 awk awk 的作用、优势和特点 awk 最基础的功能是用作搜索 文件、命令行输出中特定的文本。然后对找到的文本执行指定的操作。
-它最大的优势是，它是 linux 等 类 unix 系统下通用的工具，无需额外安装运行时和相关依赖即可使用。而且它 “好读”，“好写”。
-awk is：
-refreshingly easy to read and write &ndash;GNU awk get started
-awk 和其他编程语言的主要区别是，它是数据驱动的语言（编程人员指定文本的特征、以及找到后需要执行的操作）。
-基础语法 简单到不能再简单：
-pattern { action } pattern { action } ... 啥意思？
-基本的 awk 程序由一条条表达式组成，每个表达式由 pattern（规则），action（操作）为了和规则区分开来被用 {} 包裹。
-简单讲一个最简单的 awk 表达式就是： 规则 { 操作 }
-执行 awk 程序  直接命令执行  awk &#39;program&#39; input-file1 input-file2 …  使用脚本  awk -f program-file input-file1 input-file2 …  注： 如果使用的式 bash 最好在个人启动文件中加上： set +H。见 Awk env note
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/posts/linux-awk/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/linux-usefull-tools/" rel="bookmark">
-			Linux 中必需学会的强大工具
-			</a>
-		</h2>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-23T13:32:31&#43;08:00">2021-03-23</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		linux 原生命令行 文本处理  awk sed grep xargs sort  文件相关  find cd ls  硬件相关  ifconfig du df  进程相关  ps pstree systemctl top  网络相关  netstat NetworkManager  提高效率  alias  文本编辑  emacs vim/vi  
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -153,19 +99,7 @@ pattern { action } pattern { action } ... 啥意思？
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-21T17:10:40&#43;08:00">2021-03-21</time></div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Linux 中的软链接和硬链接 前言 在 linux 中，硬链接（hard link）和软链接（symbolic link）是两个非常重要的概念，以前上课的时候听老师讲过这两个概念结果后来给忘了。这篇文章将通过实例，加深我们对这两个概念的印象。
-了解 inode 在理解软/硬链接之前，我们必需了解一下， linux 里面 存储文件 的方式。
-对于 linux 有一定了解的朋友都知道 linux 里面有一个重要的概念叫做 i 结点，即 inode。
-当文件存储在硬盘上，硬盘的最小存储单位叫做 扇区（Sector）。每个扇区储存 512 字节（即 0.5KB ）。有人会问，平时讨论文件存储的时候总是说的 块（test）又是啥？
-实际上，扇区是硬盘的概念，我们的操作系统把扇区的概念透明化，因为这个单位实在太小了，也太过具体不够抽象。因此操作系统引入了块的概念，块，实际上就是连续的多个扇区。
-读取硬盘的时候，操作系统不会一个个扇区的读取，这样效率太低，一次性连续读取多个扇区，即一次性读取一个块。这种由多个扇区组成的“块”，是操作系统层面上文件存取的最小单位。块的大小，最常见的是4KB，可以简单的理解为连续八个 sector 组成一个 test。
-那么既然文件数据都储存在块中，我们明白了文件存储的方式，如何管理已经存储好的文件呢？
-文件存储、文件读取是相对而言非常慢的操作，好的操作系统必然会寻找加快这些操作的方法。我们知道在数据库中有索引的概念，可以很好的提升查询速度。那么不如给每个文件加上索引？最好顺便能把文件信息也放一起好了！
-这种储存文件元信息的区域就叫做 inode ，也叫 索引节点。
-每一个文件都会有对应的 inode ，每个 inode 里面包含了与该文件有关的一些信息，如文件的创建者、文件的创建日期、文件的大小、权限等等。
-了解软硬链接 接下来，我们动手实践一下，去观察观察：
-首先，我们建立一个源文件 test，再建立两个硬链接和一个软链接文件
-$ touch test $ ln test test-hd1 $ ln test test-hd2 $ ln -s test test-soft $ ls -li 结果如下图：
+		Linux 中的软链接和硬链接 前言 在 linux 中，硬链接（hard link）和软链接（symbolic link）是两个非常重要的概念，以前上课的时候听老师讲过这两个概念结果后来给忘了。这篇文章将通过实例，加深我们对这两个概念的印象。 了解 inode 在理解软/硬链接之前，我们必需了解一下， linux 里面 存储文件 的方式。 对于 linux 有一定了解的
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/posts/linux-link/">Read more…</a>
@@ -184,9 +118,7 @@ $ touch test $ ln test test-hd1 $ ln test test-hd2 $ ln -s test test-soft $ ls -
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-20T19:11:51&#43;08:00">2021-03-20</time></div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋） 前言 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge
-正文  If builders built buildings the way programmers write programs, then the first woodpecker that came along would destroy civilization. ~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law
- TS 特性  不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包装几层接口，到时候好用，最好可以把高级特性多用几遍。 随版本和提交变动我的接口： 比如说，把 showTable(col: number, row: number): Promise改成 showTable(row: string, col: string): void，等 release 了几个版本后，再把其改回去。这样维护我写的程序的程序员们将不能很快地明白哪一个是对的。 膨胀 ENUM 类型： ENUM 把字符串类型都放某个 ENUM 里，方便复用。 TS 的 namespace 特性是美妙的东西（比 ES6 的好理解，反正就是高级），在接口定义的地方大量使用 namespace。 避免过度使用接口。BS 接口，面向接口编程加重了我的心志负担，不用。 使用包装类型： String 和 string 哪个牛逼？ 重载签名把条件更宽松的放在前面： 例： 同样传递一个参数，把使用 any 的放在最开头。 只因为参数不同就声名重载函数。 避免过度使用类： 类写起来不舒服（太长。花大力气弄成函数式的。 使用 Object.
+		如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋） 前言 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge 正文 If builders built buildings the way programmers write programs, then the first woodpecker that came along would destroy civilization. ~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law TS 特性 不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/posts/ruinyourtscode/">Read more…</a>
@@ -205,53 +137,10 @@ $ touch test $ ln test test-hd1 $ ln test test-hd2 $ ln -s test test-soft $ ls -
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-03-04T21:00:35&#43;08:00">2021-03-04</time></div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		变化的 GFW 实在是令人很苦恼 在开发和学习的过程中，飞机始终是我们的好朋友。为了不在一些特别的时刻偶尔的失去他，我们也需要不断变化和学习和改进。
-配置 Trojan 服务   一、 准备一台 VPS（境外），不需要购买域名和配置证书。
-  二、 VPS 安装 LINUX 系统.
-  注意，系统最好是以下几个。其他的发行版本没有做过测试。
-ubuntu 16.04+ debian 9 centos 7+   三、 替换镜像源  安装好后接着替换原本的镜像源为国内镜像源，如我使用 ubuntu 系统，则替换 /etc/apt/sources.list 下的内容为下面的任意一个地址，然后依次执行：
-sudo apt-get update
-sudo apt-get upgrade
-#阿里源 deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse deb http://mirrors.
+		变化的 GFW 实在是令人很苦恼 在开发和学习的过程中，飞机始终是我们的好朋友。为了不在一些特别的时刻偶尔的失去他，我们也需要不断变化和学习和改进。 配置 Trojan 服务 一、 准备一台 VPS（境外），不需要购买域名和配置证书。 二、 VPS 安装 LINUX 系统. 注意，系统最好是以下几个。其他的发行版本没有做过测试。 ubuntu 16.04+ debian 9 centos 7+ 三、 替换镜像源
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/posts/proxy-config/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/docker-fundation/" rel="bookmark">
-			为什么/如何使用 Docker？
-			</a>
-		</h2>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-23T07:59:04&#43;08:00">2021-02-23</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Docker 需要解决的难题 现在当我们提到布署、容器和虚拟化技术，我们首先想到的就是 Docker。 毫无疑问，Docker 已经成为了我们在开发过程中不可缺少的一部分了。在本文中，我更希望抛开底层的技术细节，从宏观的、简单的角度对 Docker 进行分析，并在分析中得出一些软件设计和产品设计的灵感。
-在 Docker 出现之前，我们在软件开发过程中到底遇到了什么难题？  运行时的维护  在相对简单的情形下（例如开发、测试、和线上布署都使用相对较少的 server），服务器的维护和代码升级并不会给我们带来太大的困扰，我们甚至可以手动完成这些维护和升级（包括系统、系统组件和依赖、配置等），就像是在自己的开发环境下一样。
-但是在可以想见的未来，一旦 server 的数量大量增加，如公司的业务进行了拓展、用户出现指数型增长等等，手动的完成这些维护工作将会是一种开发过程中的负担。
- debug 需求  当我们在布署的时候采用了负载均衡这一类方案的时候，用户可能会访问到出错的 server，这个时候用户可能会试图去刷新页面，反向代理会把用户的请求代理到另一台服务器上。这个过程并没有太大毛病。
-问题在于我们如何定位到问题？如果说这是一个配置问题，而且我们的服务器集群中使用了超过 100 台 server，这个时候一个一个去对比具体配置并试图定位问题将会是一场灾难。  
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/docker-wine/" rel="bookmark">
-			使用 Docker Wine 安装 win 下的各类软件
-			</a>
-		</h2>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-20T15:05:20&#43;08:00">2021-02-20</time></div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -267,16 +156,7 @@ sudo apt-get upgrade
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-19T21:53:55&#43;08:00">2021-02-19</time></div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		一、查看进程 命令： ps
-命令解释： 全称是 process status ，使用它相当于在 win 下的 任务管理器。
-常用命令参数： -a 显示同一终端下的所有程序 -e 等于“-A” -e 显示环境变量 -f 显示程序间的关系 -r 显示当前终端的进程 -u 指定用户的所有进程
-常用命令组合：
--au 显示较详细的资讯 -aux 显示所有包含其他使用者的行程
--C &lt;命令&gt; 列出指定命令的状况 &ndash;lines&lt;行数&gt; 每页显示的行数 &ndash;width&lt;字符数&gt; 每页显示的字符数 &ndash;help 显示帮助信息 &ndash;version 显示版本显示
-二、查看进程（树结构） 命令： pstree
-命令参数：
--p 为显示进程识别码，最后加上用户名。
-picher@pichers-laptop:~$ pstree -p picher | grep emacs |-gnome-terminal-(3023)-+-bash(3030)-+-emacs(5517)-+-bash(28980) | | | |-{emacs}(5518) | | | |-{emacs}(5519) | | | `-{emacs}(5520) 可以看到，emacs(5517)这个进程共启动了 4 个子线程，加上主线程共 5 个线程。
+		前言 总结整理一下简单、常用的 ps 命令用法。 一、查看进程 命令： ps 命令解释： 全称是 process status ，使用它相当于在 win 下的 任务管理器。 常用命令参数： -a 显示同一终端下的所有程序 -e 等于“-A” -e 显示环境变量 -f 显示程序间的关系 -r 显示当前终端的进程 -u 指定用户的所有进程 常用命令组合： -au 显示较详细的资讯 -aux 显示所有包含其他使用者的行
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/posts/linux-ps/">Read more…</a>
@@ -295,18 +175,83 @@ picher@pichers-laptop:~$ pstree -p picher | grep emacs |-gnome-terminal-(3023)-+
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-19T21:53:55&#43;08:00">2021-02-19</time></div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		走个流程  源码下载  到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1
-解压安装包  xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项  ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1
-可能会遇到一些依赖保错
-可以执行：
- X toolkit 的报错：  sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf
- gnutls 的报错：  sudo apt-get install gnutls-dev
-执行 make  make &amp;&amp; make install
-如果遇到依赖问题：
-sudo apt-get install make
+		走个流程 源码下载 到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1 解压安装包 xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项 ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1 可能会遇到一些依赖保错 可以执行： X toolkit 的报错： sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf gnutls 的报错： sudo apt-get install gnutls-dev 执行 make make &amp;&amp; make install 如果遇到依赖问题： sudo apt-get install make 添加软连接 ln -s /opt/emacs/bin/emacs /usr/bin/emacs 下面给出我写好的
 	</div>
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/posts/emacs-build/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/linux-tty/" rel="bookmark">
+			Linux Tty
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-18T16:34:47&#43;08:00">2021-02-18</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty 在作为命令的情形 随便打开几个终端看看，可以看到下图： 可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看： 在 /dev/pts 这个地址下，有几个文件，分别是： 0 / 1 / 2 / 3 / ptmx 几个文件是啥意思？ 在 Linux
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/linux-tty/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/nvm-error/" rel="bookmark">
+			NVM 报 ls-remote command results in “N/A 错误
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-15T22:20:01&#43;08:00">2021-01-15</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		NVM 报 ls-remote command results in “N/A 错误 今天工作中使用 nvm 升级 node 版本遇到了这个错误，经过一番研究终于解决。 出现这个报错的原因有许多种，我遇到的报错实际上是由代理引起。 参考： https://stackoverflow.com/questions/26476744/nvm-ls-remote-command-results-in-n-a 几种原因： SSL 证书过期 临时解决方案： 请使用导出用于抓取内容的镜像的非https版本：export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist 长久解决方案： 第一种：若您运行curl $NVM_NODEJS_ORG_MIRROR 回答翻译
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/nvm-error/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/webpack-error-collect/" rel="bookmark">
+			webpack 配置错误拾遗
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-14T22:20:01&#43;08:00">2021-01-14</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		1. ... 展开运算符错误 错误原因： 早期的 babel 有许多问题，一些早期的版本（可能现在也没有解决）无法识别的语法、运算符可以通过插件的形式给 babel 打补丁，这里就是其中一种。 Just install babel-plugin-transform-object-rest-spread module. https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread Then add it to .babelrc: &ldquo;plugins&rdquo;: [ &ldquo;babel-plugin-transform-object-rest-spread&rdquo;, ], 2. newwebpack No data received ERR_EMPTY_RESPONSE 错误 给 webpack-dev-server 添加 &ndash;host xxxxxxxx(设好的 host 映射，或者指定的域名)
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/icontransform/" rel="bookmark">
+			解决按钮移动动画伴随光标样式抖动的问题
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-04-30T00:01:55&#43;08:00">2020-04-30</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		问题描述 最近在工作中遇到了一个很奇怪的问题，网站的页面大部分按钮和卡片都有一个向上移动的过渡动画，当鼠标悬浮在这些元素上的时候，动画会触发并在一定时间内缓缓完成、同时鼠标样式变成 pointer，。 但是问题在于这个效果的实现并不理想。鼠标要是从左右两边和上边移入按钮或者卡片的话这个效果是看不出啥问题的
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/posts/icontransform/">Read more…</a>
 	</div>
 </article>
 </main>
@@ -332,16 +277,32 @@ sudo apt-get install make
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-usefull-tools/">Linux 中必需学会的强大工具</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/ruinyourtscode/">如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/proxy-config/">代理实践纪录</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-fundation/">为什么/如何使用 Docker？</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/docker-wine/">使用 Docker Wine 安装 win 下的各类软件</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-ps/">Linux 下的 ps 命令和常用组合</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">Linux Tty</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/icontransform/">解决按钮移动动画伴随光标样式抖动的问题</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/cryptdb/" title="cryptdb">cryptdb</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
 </div>
 <div class="widget-social widget">
