@@ -1,7 +1,9 @@
 ---
 title: "NVM 报 ls-remote command results in “N/A 错误"
 date: 2021-01-15T22:20:01+08:00
-draft: false
+tags:
+  - "node"
+  - "Linux"
 ---
 
 # NVM 报 ls-remote command results in “N/A 错误

@@ -1,7 +1,9 @@
 ---
 title: "Linux 下 ‘奇怪’ 的 shell"
 date: 2021-03-26T13:29:14+08:00
-draft: true
+tags:
+  - "GNU"
+  - "Linux"
 ---
 
 

@@ -1,7 +1,9 @@
 ---
 title: "Linux Tty"
 date: 2021-02-18T16:34:47+08:00
-draft: true
+tags:
+  - "GNU"
+  - "Linux"
 ---
 # linux 下的 tty/pty/pts/ptmx (linux 概念系列)
 

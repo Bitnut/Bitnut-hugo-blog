@@ -12,7 +12,7 @@ install:
   - sudo dpkg -i hugo_extended_0.81.0_Linux-64bit.deb
 script:
   - git submodule update --init --recursive
-  - hugo -D
+  - hugo
 
 after_script:
   - cd ./public

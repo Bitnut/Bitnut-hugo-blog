@@ -1,6 +1,9 @@
 ---
 title: "CryptDB  简单原理论述"
 date: 2017-09-11T08:52:53+08:00
+tags:
+  - "cryptdb"
+  - "database"
 ---
 
 ## 博主写的 CryptDB 另外几篇相关文章：

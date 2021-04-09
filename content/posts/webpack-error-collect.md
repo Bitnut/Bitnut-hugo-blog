@@ -1,12 +1,13 @@
 ---
-title: "Webpack Error Collect"
+title: "webpack 配置错误拾遗"
 date: 2021-01-14T22:20:01+08:00
-draft: false
+tags:
+  - "web"
+  - "linux"
+  - "frontend"
 ---
-    
-# webpack 配置错误拾遗
 
-### 1.  `...` 展开运算符错误
+## 1.  `...` 展开运算符错误
 
 错误原因：
 

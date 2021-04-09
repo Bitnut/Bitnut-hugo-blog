@@ -2,6 +2,9 @@
 title: "Linux Awk"
 date: 2021-03-23T13:46:28+08:00
 draft: true
+tags:
+  - "GNU"
+  - "Linux"
 ---
 
 # 快速入门 awk

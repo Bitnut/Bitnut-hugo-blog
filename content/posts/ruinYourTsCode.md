@@ -1,6 +1,11 @@
 ---
 title: "如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）"
 date: 2021-03-20T19:11:51+08:00
+tags:
+  - "node"
+  - "Linux"
+  - "MS"
+  - "ts"
 ---
 
 # 如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）

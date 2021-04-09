@@ -1,6 +1,10 @@
 ---
 title: "编译安装 emacs"
 date: 2021-02-19T21:53:55+08:00
+tags:
+  - "emacs"
+  - GNU
+  - "linux"
 ---
 
 ### 走个流程
