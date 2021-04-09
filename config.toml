@@ -81,3 +81,10 @@ googleAnalytics = "G-1LMXK0VTF1" # Enable Google Analytics by entering your trac
 # [[Params.widgets.social.custom]]
 #   title = "My Home Page"
 #   url = "http://example.com"
+
+
+[Params.utteranc]
+  enable = true
+  repo = "Bitnut/comment"
+  issueTerm = "pathname"
+  theme = "github-light"
