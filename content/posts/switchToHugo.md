@@ -30,6 +30,19 @@ draft: true
 
 ![列表界面](/static/summary.png)
 
+查询到以前的版本是有这个问题，并有 issue 讨论。
+
+[github issue](https://github.com/gohugoio/hugo/issues/1377)
+
+可以看到已经有解决方法了：
+
+在配置文件中添加如下两行自定义 hugo 内置变量：
+
+``` toml
+hasCJKLanguage = true # 开启中文、日文、韩文字符识别，默认为 false
+summaryLength = 150 # 自定义 summary 字数，默认是 70
+```
+
 ## 使用第三方插件
 
 第二个问题是如何使用评论插件的问题，主题自带的评论插件是 disqus ，我个人不是很喜欢，主要是广告：P。我更倾向于直接快速的配置，同时可以让使用 github 的同学一起交流。
@@ -79,3 +92,49 @@ github 的评论仓库需要安装 utterances。
 其中的首行（Params 行）需要注意一下，hugo 的配置是 `大小写敏感` 的，所以，具体怎么写，视主题的配置方式而定。
 
 ## 覆盖主题的模块
+
+有没有发现，在静态博客的世界里，自定义实际上就是一层层的覆盖而已。上文的组织顺序也是如此，依次从 `预定义变量` -> `配置文件 + 插件`， 最后来到最自由的覆盖方式： `覆盖模块`。
+
+覆盖模块实际上也有几种方式：
+
+1. 覆盖模版文件；
+2. js、css 等运行时覆盖；
+
+下文将分这两点展开。
+
+### 覆盖模版文件
+
+主要参考这里： [覆盖模版文件](https://gohugobrasil.netlify.app/themes/customizing/#override-template-files)
+
+大致就是讲在 `项目根目录` 下的 `layouts` 中建立和主题目录下 `layouts` 文件夹中相应的同名文件，hugo 会依据一个 [查找顺序](https://gohugobrasil.netlify.app/templates/lookup-order/)，优先查找到这个同名文件，并使用它而不是主题定义的模版文件。
+
+接上文。
+
+由于我使用的主题 [mainroad](https://themes.gohugo.io/mainroad)，不包含 utterances 的配置，它也是默认支持的 disqus，因此，我需要覆盖一下评论模块的模版文件。
+
+步骤：
+
+1. 首先在根目录建立文件夹： `layouts/partials/comments.html`
+2. 加入 utterances 的启动脚本：
+
+``` html
+<section class="comments">
+    <script src="https://utteranc.es/client.js"
+            repo="Bitnut/comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+</section>
+```
+
+查看并测试评论插件是否生效：
+
+![评论插件效果](/static/test-comment.png)
+
+Nice.
+
+### js、css 的运行时覆盖
+
+
