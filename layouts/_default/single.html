@@ -19,10 +19,27 @@
 		<div class="content post__content clearfix">
 			{{ .Content }}
 		</div>
+        <div id="img-viewer-container">
+            <div class="img-viewer-mask"></div>
+            <div class="img-viewer">
+                <ul class="img-list"></ul>
+            </div>
+        </div>
 		{{- if .Params.tags }}
 		<footer class="post__footer">
 			{{ partial "post_tags.html" . }}
             {{ partial "share_buttons.html" . }}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://utteranc.es/client.js"
+                    repo="Bitnut/comment"
+                    issue-term="pathname"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+            {{ range .Site.Params.customJs -}}
+            <link rel="stylesheet" href="{{ . | absURL }}">
+            {{- end }}
 		</footer>
 		{{- end }}
 	</article>
