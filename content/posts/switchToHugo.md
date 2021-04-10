@@ -1,7 +1,6 @@
 ---
 title: "解决 hugo 博客框架下 中文简介、评论、扩展配置 的问题"
 date: 2021-04-09T18:53:13+08:00
-draft: true
 ---
 
 ## 前言
@@ -110,15 +109,15 @@ github 的评论仓库需要安装 utterances。
 
 接上文。
 
-由于我使用的主题 [mainroad](https://themes.gohugo.io/mainroad)，不包含 utterances 的配置，它也是默认支持的 disqus，因此，我需要覆盖一下评论模块的模版文件。
+由于我使用的主题 [mainroad](https://themes.gohugo.io/mainroad)，不包含 utterances 的配置，它也是默认支持的 disqus，因此，我需要覆盖一下原来文章页面的模版文件。我使用的主题的文章页面模板位于： `themes/mainroad/layouts/_default/single.html`。因此有了如下步骤。
 
 步骤：
 
-1. 首先在根目录建立文件夹： `layouts/partials/comments.html`
-2. 加入 utterances 的启动脚本：
+1. 首先在根目录建立文件夹： `layouts/_default/single.html`
+2. 在 footer 处（可以是你希望的别的地方）加入 utterances 的启动脚本：
 
 ``` html
-<section class="comments">
+<footer class="post__footer">
     <script src="https://utteranc.es/client.js"
             repo="Bitnut/comment"
             issue-term="pathname"
@@ -126,7 +125,7 @@ github 的评论仓库需要安装 utterances。
             crossorigin="anonymous"
             async>
     </script>
-</section>
+<footer>
 ```
 
 查看并测试评论插件是否生效：
@@ -137,4 +136,47 @@ Nice.
 
 ### js、css 的运行时覆盖
 
+hugo 还允许用户自己编写 js 脚本以及 css 覆盖页面在线上的行为和样式。
 
+而我恰好有个小需求，我博客页面的图片展示实在是惨不忍睹，我希望写个小插件改善这个问题。
+
+#### 开工
+
+这需要上面提到的模板文件覆盖的知识。
+
+首先我们选择需要覆盖的模板文件，这里我继续复用上面提到的 single.html。并在 footer 加上脚本链接：
+
+``` html
+<footer class="post__footer">
+    ...
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    ...
+    {{ range .Site.Params.customJs -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }}
+</footer>
+```
+
+#### 解释：
+
+我首先通过 cdn 引入了 jquery，便于我操作 dom，然后使用了在配置文件中定义好的 hugo 变量： `customJs`。
+
+在配置文件中这样添加 customJS 变量：
+
+``` toml
+...
+
+[Params]
+  ...
+
+  customCSS = ["css/custom.css"] # Include custom CSS files
+  customJS = ["js/custom.js"] # Include custom JS files
+```
+
+在 params 标签下添加 js 和 css 文件的相对路径（相对于根目录下的 static 目录）。
+
+然后快乐地编写脚本即可～
+
+我实现的插件效果：
+
+![看图插件](/static/img-viewer.png)
