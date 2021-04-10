@@ -102,12 +102,44 @@ if (!doNotTrack) {
 <hr>
 
 		</div>
-        <div id="img-viewer-container">
-            <div class="img-viewer-mask"></div>
-            <div class="img-viewer">
-                <ul class="img-list"></ul>
-            </div>
-        </div>
+                <div id="img-viewer-container">
+                    <div class="img-viewer-mask"></div>
+                    <div class="img-viewer">
+                        <ul class="img-list"></ul>
+                    </div>
+                </div>
+
+		<footer class="post__footer">
+                    <section class="share-buttons-container">
+    <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" target="_blank">Tweet</a>
+    <script>window.twttr = (function(d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0],
+             t = window.twttr || {};
+         if (d.getElementById(id)) return t;
+         js = d.createElement(s);
+         js.id = id;
+         js.src = "https://platform.twitter.com/widgets.js";
+         fjs.parentNode.insertBefore(js, fjs);
+
+         t._e = [];
+         t.ready = function(f) {
+             t._e.push(f);
+         };
+
+         return t;
+     }(document, "script", "twitter-wjs"));</script>
+</section>
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://utteranc.es/client.js"
+                            repo="Bitnut/comment"
+                            issue-term="pathname"
+                            theme="github-light"
+                            crossorigin="anonymous"
+                            async>
+                    </script>
+                    <link rel="stylesheet" href="https://bitnut.github.io/js/custom.js">
+		</footer>
 	</article>
 </main>
 
@@ -163,12 +195,14 @@ if (!doNotTrack) {
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/blog/" title="blog">blog</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cryptdb/" title="cryptdb">cryptdb</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/css/" title="css">css</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/database/" title="database">database</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="HUGO">HUGO</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
