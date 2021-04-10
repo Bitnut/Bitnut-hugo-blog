@@ -1,6 +1,8 @@
 ---
 title: "Linux Tty"
 date: 2021-02-18T16:34:47+08:00
+images:
+  - /static/tron.jpg
 tags:
   - "GNU"
   - "Linux"
