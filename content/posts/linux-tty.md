@@ -1,5 +1,5 @@
 ---
-title: "Linux Tty"
+title: "认识 Linux 下的 TTY"
 date: 2021-02-18T16:34:47+08:00
 images:
   - /static/tron.jpg
