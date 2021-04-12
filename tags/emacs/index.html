@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
+    <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="referrer" content="no-referrer" />
 	<title>emacs - 三口一个瓜的博客</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="emacs" />
+	<meta property="og:title" content="emacs" />
 <meta property="og:description" content="这里是我的博客，日常记录和抒情的场所。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://bitnut.github.io/tags/emacs/" />
 
 
-		<meta itemprop="name" content="emacs">
+	<meta itemprop="name" content="emacs">
 <meta itemprop="description" content="这里是我的博客，日常记录和抒情的场所。">
-		<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="emacs"/>
 <meta name="twitter:description" content="这里是我的博客，日常记录和抒情的场所。"/>
 
@@ -29,7 +30,7 @@
 	<link rel="alternate" type="application/rss+xml" href="/tags/emacs/index.xml" title="三口一个瓜的博客">
 
 	<link rel="shortcut icon" href="/favicon.ico">
-		
+	
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -41,10 +42,10 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-</head>
-<body class="body">
+    </head>
+    <body class="body">
 	<div class="container container--outer">
-		<header class="header">
+	    <header class="header">
 	<div class="container header__container">
 		
 	<div class="logo logo--mixed">
@@ -60,9 +61,9 @@ if (!doNotTrack) {
 		<div class="divider"></div>
 	</div>
 </header>
-		<div class="wrapper flex">
-			<div class="primary">
-			
+	    <div class="wrapper flex">
+		<div class="primary">
+		    
 <main class="main list" role="main">
 	<header class="main__header">
 		<h1 class="main__title">emacs</h1>
@@ -77,7 +78,7 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-19T21:53:55&#43;08:00">2021-02-19</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-19T21:53:55&#43;08:00">Fri, 19 Feb 2021 21:53:55 &#43;0800</time></div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		走个流程 源码下载 到 emacs 的官网下载安装包 当我写这篇博客的时候，emacs 的最新稳定版是 27.1 解压安装包 xz -d emacs-27.1.tar.xz tar -xvf emacs-27.1.tar 配置安装选项 ./configure --prefix=/opt/emacs/ --with-mailutils --with-pop &gt;/dev/null 2&gt;&amp;1 可能会遇到一些依赖保错 可以执行： X toolkit 的报错： sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libgtk-3-dev libncurses-dev libxpm-dev automake autoconf gnutls 的报错： sudo apt-get install gnutls-dev 执行 make make &amp;&amp; make install 如果遇到依赖问题： sudo apt-get install make 添加软连接 ln -s /opt/emacs/bin/emacs /usr/bin/emacs 下面给出我写好的
@@ -89,8 +90,8 @@ if (!doNotTrack) {
 </main>
 
 
-			</div>
-			
+		</div>
+		
 <aside class="sidebar sidebar--left"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
@@ -104,6 +105,7 @@ if (!doNotTrack) {
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/jianshu403/">解决 http 访问简书图片资源 403 问题</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/switchtohugo/">解决 hugo 博客框架下 中文简介、评论、扩展配置 的问题</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
@@ -113,7 +115,6 @@ if (!doNotTrack) {
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">认识 Linux 下的 TTY</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
 		</ul>
 	</div>
 </div>
@@ -127,10 +128,13 @@ if (!doNotTrack) {
 		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html5/" title="html5">html5</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http/" title="http">http</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="HUGO">HUGO</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/protocal/" title="Protocal">Protocal</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
@@ -161,8 +165,8 @@ if (!doNotTrack) {
 	</div>
 </div>
 </aside>
-		</div>
-		<footer class="footer">
+	    </div>
+	    <footer class="footer">
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
@@ -172,6 +176,6 @@ if (!doNotTrack) {
 	</div>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script></body>
+        <script async defer src="/js/menu.js"></script>
+        <script src="/js/custom.js"></script></body>
 </html>

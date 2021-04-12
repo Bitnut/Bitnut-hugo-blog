@@ -5,27 +5,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="referrer" content="no-referrer" />
-	<title>认识 Linux 下的 TTY - 三口一个瓜的博客</title>
+	<title>解决 http 访问简书图片资源 403 问题 - 三口一个瓜的博客</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-	<meta property="og:title" content="认识 Linux 下的 TTY" />
-<meta property="og:description" content="linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty 在作为命令的情形 随便打开几个终端看看，可以看到下图： 可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看： 在 /dev/pts 这个地址下，有几个文件，分别是： 0 / 1 / 2 / 3 / ptmx 几个文件是啥意思？ 在 Linux" />
+	<meta property="og:title" content="解决 http 访问简书图片资源 403 问题" />
+<meta property="og:description" content="问题起因 最近遇到一个问题，我有些文章放在简书还没有同步过来个人博客上。可就是当我移植过来之后，突然发现图片都显示不出来了。 具体情况如图： 识别问题 经过搜索，发现 403 报错的原因是服务器拒绝了我们的请求。说明我们可能哪儿做错了。 于是我直接在浏览器中发起请求，发现是可以正常拿到资源的。诶？？？ 这是怎么肥事？？" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bitnut.github.io/posts/linux-tty/" /><meta property="og:image" content="https://bitnut.github.io/static/tron.jpg" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-02-18T16:34:47&#43;08:00" />
-<meta property="article:modified_time" content="2021-02-18T16:34:47&#43;08:00" />
+<meta property="og:url" content="https://bitnut.github.io/posts/jianshu403/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-11T09:44:50&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-11T09:44:50&#43;08:00" />
 
 
-	<meta itemprop="name" content="认识 Linux 下的 TTY">
-<meta itemprop="description" content="linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty 在作为命令的情形 随便打开几个终端看看，可以看到下图： 可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看： 在 /dev/pts 这个地址下，有几个文件，分别是： 0 / 1 / 2 / 3 / ptmx 几个文件是啥意思？ 在 Linux"><meta itemprop="datePublished" content="2021-02-18T16:34:47&#43;08:00" />
-<meta itemprop="dateModified" content="2021-02-18T16:34:47&#43;08:00" />
-<meta itemprop="wordCount" content="1076"><meta itemprop="image" content="https://bitnut.github.io/static/tron.jpg">
-<meta itemprop="keywords" content="GNU,Linux," />
-	<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://bitnut.github.io/static/tron.jpg"/>
-
-<meta name="twitter:title" content="认识 Linux 下的 TTY"/>
-<meta name="twitter:description" content="linux 下的 tty/pty/pts/ptmx (linux 概念系列) tty 是什么？ 在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。 tty 在作为命令的情形 随便打开几个终端看看，可以看到下图： 可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看： 在 /dev/pts 这个地址下，有几个文件，分别是： 0 / 1 / 2 / 3 / ptmx 几个文件是啥意思？ 在 Linux"/>
+	<meta itemprop="name" content="解决 http 访问简书图片资源 403 问题">
+<meta itemprop="description" content="问题起因 最近遇到一个问题，我有些文章放在简书还没有同步过来个人博客上。可就是当我移植过来之后，突然发现图片都显示不出来了。 具体情况如图： 识别问题 经过搜索，发现 403 报错的原因是服务器拒绝了我们的请求。说明我们可能哪儿做错了。 于是我直接在浏览器中发起请求，发现是可以正常拿到资源的。诶？？？ 这是怎么肥事？？"><meta itemprop="datePublished" content="2021-04-11T09:44:50&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-11T09:44:50&#43;08:00" />
+<meta itemprop="wordCount" content="723">
+<meta itemprop="keywords" content="Protocal,http,html5," />
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决 http 访问简书图片资源 403 问题"/>
+<meta name="twitter:description" content="问题起因 最近遇到一个问题，我有些文章放在简书还没有同步过来个人博客上。可就是当我移植过来之后，突然发现图片都显示不出来了。 具体情况如图： 识别问题 经过搜索，发现 403 报错的原因是服务器拒绝了我们的请求。说明我们可能哪儿做错了。 于是我直接在浏览器中发起请求，发现是可以正常拿到资源的。诶？？？ 这是怎么肥事？？"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -73,96 +71,67 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">认识 Linux 下的 TTY</h1>
+			<h1 class="post__title">解决 http 访问简书图片资源 403 问题</h1>
 			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-02-18T16:34:47&#43;08:00">Thu, 18 Feb 2021 16:34:47 &#43;0800</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-04-11T09:44:50&#43;08:00">Sun, 11 Apr 2021 09:44:50 &#43;0800</time></div></div>
 		</header>
 <div class="post__toc toc">
 	<div class="toc__title">Page content</div>
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#tty-是什么">tty 是什么？</a></li>
-    <li><a href="#tty-在作为命令的情形">tty 在作为命令的情形</a>
+    <li><a href="#问题起因">问题起因</a></li>
+    <li><a href="#识别问题">识别问题</a></li>
+    <li><a href="#http-请求头中的-referer">http 请求头中的 referer</a>
       <ul>
-        <li><a href="#几个文件是啥意思">几个文件是啥意思？</a></li>
-        <li><a href="#深入理解-tty-命令关联到的终端设备文件">深入理解 tty 命令关联到的终端设备文件</a></li>
+        <li><a href="#一个小问题">一个小问题</a></li>
       </ul>
     </li>
+    <li><a href="#服务端到底做了啥配置">服务端到底做了啥配置？？</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
   </ul>
 </nav>
 	</div>
 </div><div class="content post__content clearfix">
-			<h1 id="linux-下的-ttyptyptsptmx-linux-概念系列">linux 下的 tty/pty/pts/ptmx (linux 概念系列)</h1>
-<h2 id="tty-是什么">tty 是什么？</h2>
-<p>在类 unix 系统中， tty 可以被看作是一个命令，但在更常见的情形下， tty 被认为是终端的代称。
-<img src="/static/tron.jpg" alt="tty-jpg"></p>
-<h2 id="tty-在作为命令的情形">tty 在作为命令的情形</h2>
-<p>随便打开几个终端看看，可以看到下图：</p>
-<p><img src="/static/tty-order.png" alt="tty-jpg"></p>
-<p>可以看到，输出的结果是一段地址，紧接着， cd 到这个地址下查看：</p>
-<p><img src="/static/tty-location.png" alt="tty-jpg"></p>
-<p>在 /dev/pts 这个地址下，有几个文件，分别是：</p>
-<p><code>0 / 1 / 2 / 3 / ptmx</code></p>
-<h3 id="几个文件是啥意思">几个文件是啥意思？</h3>
-<p>在 Linux 系统的设备特殊文件目录 /dev/ 下，终端特殊设备文件一般有:</p>
-<p><em>注：以下几列中的地址，末尾带有'/&lsquo;的是目录，否则是一个文件；n 应直接看作数字的代称，如 0,1,2,3&hellip;&hellip;</em></p>
+			<h2 id="问题起因">问题起因</h2>
+<p>最近遇到一个问题，我有些文章放在简书还没有同步过来个人博客上。可就是当我移植过来之后，突然发现图片都显示不出来了。</p>
+<p>具体情况如图：</p>
+<p><img src="/static/jianshu-403.png" alt="报错信息"></p>
+<h2 id="识别问题">识别问题</h2>
+<p>经过搜索，发现 403 报错的原因是服务器拒绝了我们的请求。说明我们可能哪儿做错了。</p>
+<p>于是我直接在浏览器中发起请求，发现是可以正常拿到资源的。诶？？？ 这是怎么肥事？？</p>
+<p>再经过一番研究，终于找到了罪魁祸首所在！如图，在我博客发起请求的请求头中，我的博客页面乖乖的把一个叫做 <code>referrer</code> 的字段给填上了。</p>
+<p><img src="/static/jianshu-gotcha.png" alt="referrer 字段"></p>
+<p>说下解决方法： 在 html 代码上加上 meta 标签：  <!-- raw HTML omitted --> 即可。</p>
+<p>比如我在自己的模版文件里：</p>
+<p><img src="/static/baseof-meta-config.png" alt="添加配置"></p>
+<h2 id="http-请求头中的-referer">http 请求头中的 referer</h2>
+<p>http 请求头中有一个 <code>referer</code> 字段，其作用是表示发起 http 请求的源地址信息。</p>
+<p>这是个可选的请求头，说明我们可以不传这个参数，事实上出于隐私考量，也有很多浏览器并不默认传递这个参数，如果浏览器选择传递了这个参数，那么它的值就不会改变了，不能定制referrer里面的值。</p>
+<p>这是一个对服务端有利的参数，因为服务端在拿到这个值后就可以进行相关的处理。例如简书的图片资源，可以通过 referer 值判断请求是否来自简书本站，若不是则返回 403 或者重定向返回其他信息，从而实现了图片的防盗链。</p>
+<p><a href="https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer">html5</a> 支持了所谓的 <code>noreferrer</code> 参数，从而我们可以通过在 meta 标签中设置 <code>noreferrer</code> 达到发送请求却不会带上 referer 参数的效果，对方服务器也就无法拦截了。</p>
+<h3 id="一个小问题">一个小问题</h3>
+<p>为啥一会 <code>referer</code> 一会又 <code>referrer</code> 的？ 这两个是一个东西吗？？</p>
+<p>是的，写错了 ：P，见 <a href="https://tools.ietf.org/html/rfc2616#section-14.36">rfc 2616 规范</a></p>
+<h2 id="服务端到底做了啥配置">服务端到底做了啥配置？？</h2>
+<p>主要是 nginx 防止盗链：</p>
+<p>在服务器如何配置 nginx 达到这样的效果呢？</p>
+<p>在 nginx 的配置文件: nginx.conf 中的 server 段中添加如下代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">location</span> ~<span style="color:#e6db74">*</span> <span style="color:#e6db74">\.(gif|jpg|png|jpeg)</span>$ {
+        <span style="color:#f92672">valid_referers</span> <span style="color:#e6db74">none</span>  <span style="color:#e6db74">valid.url.com</span>;
+        <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$invalid_referer<span style="color:#e6db74">)</span> {
+                <span style="color:#f92672">return</span> <span style="color:#ae81ff">403</span>;
+        }
+}
+</code></pre></div><p>第一行以文件格式后缀匹配图片资源路径，然后通过 valid_referers 添加合法的 referer 地址，加上 none，表示没有传 referer 也是合法的，最后 referer 不合法的情况返回 403。</p>
+<h2 id="参考资料">参考资料</h2>
 <ul>
-<li>串行端口终端(/dev/ttySn)</li>
-<li>伪终端(/dev/pty/)</li>
-<li>控制终端(/dev/tty)</li>
-<li>控制台终端(/dev/ttyn, /dev/console)</li>
-<li>虚拟终端(/dev/pts/n)</li>
-<li>其他</li>
-</ul>
-<p>我们用 tty 命令打印出的结果属于虚拟终端。</p>
-<h3 id="深入理解-tty-命令关联到的终端设备文件">深入理解 tty 命令关联到的终端设备文件</h3>
-<p>tty 命令得到的是一个虚拟终端的文件，那么什么是终端什么是虚拟终端呢？</p>
-<p>从命名中其实已经可以窥见一二了，一个虚拟终端就是终端的一种而已。而虚拟终端又和伪终端联系紧密。</p>
-<h4 id="伪终端">伪终端</h4>
-<p>伪终端（pty），其中的 pt 全称是： pesudo terminal。顾名思义，这是一种和实际物理设备相对的概念。它不是实际意义上的串口设备，而且是一套<code>主从工具</code>(master-slave, 不知道现在还能不能这么写了&hellip;&hellip;狗头)。</p>
-<p>至于为什么 pty 要写成 pty 而不是 pt，这应该是个历史遗留问题，pty 实际上指的是 <strong>pseudo-teletype</strong>， tty 原本也指的是 <strong>teletype</strong>。</p>
-<ul>
-<li>slave: 指的是模拟硬件设备的一端。</li>
-<li>master: 指的是为终端模拟器提供控制 slave 端方法的一端。</li>
-</ul>
-<p>可以简单得这样理解，伪终端的出现，为用户提供了一个 终端模拟器 =&gt; 伪终端 =&gt; 硬件设备 的管道，伪终端抹去了硬件设备的复杂性，提供了相对简单和统一的交互方式。因此上文的说明中也使用了 <strong>一端</strong> 这个说法，也就是（one end）的意思。</p>
-<p>在 /dev/ 这个地址下，主从伪终端的命名方式经常是： /dev/pty/mn &amp; /dev/pty/sn，其中的 m 代表 master ，而 s 代表着 slave。</p>
-<h4 id="虚拟终端">虚拟终端</h4>
-<p>虚拟终端，就是在 Xwindows 模式下的伪终端。即上文中 pty 的一种。虚拟终端 pts(pseudo-terminal slave)是 pty 的实现方法。</p>
-<h4 id="ptmx">ptmx</h4>
-<p>ptmx 代表的是： pseudoterminal master</p>
-<p>注意到，ptmx 同时出现在 /dev/ 和 /dev/pts/ 文件夹下面。我们打印一下这两个文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">picher@pichers-laptop:/dev$ ls -l /dev/ptmx /dev/pts/ptmx
-crw-rw-rw- <span style="color:#ae81ff">1</span> root tty  5, <span style="color:#ae81ff">2</span> 2月  <span style="color:#ae81ff">19</span> 21:34 /dev/ptmx
-c--------- <span style="color:#ae81ff">1</span> root root 5, <span style="color:#ae81ff">2</span> 2月  <span style="color:#ae81ff">16</span> 17:25 /dev/pts/ptmx
-</code></pre></div><p>从两个文件的 major 和 minor Number： 5, 2; 以及同样的设备类型： c (character or block) 可以得知，这两个设备文件符代表和使用的是内核中的同一个功能。</p>
-<p>实际上，在 /dev/ 文件夹下的 ptmx 是标准的实现，而 /dev/pts/ 下的，则是为软件容器（如 docker）添加的一个 master 伪终端。</p>
-<h1 id="参考资料">参考资料</h1>
-<ul>
-<li>
-<p>Pseudoterminal
-<a href="https://en.wikipedia.org/wiki/Pseudoterminal">Pseudoterminal</a></p>
-</li>
-<li>
-<p>tty (unix)
-<a href="https://en.wikipedia.org/wiki/Tty_(unix)">tty(unix)</a></p>
-</li>
-<li>
-<p>pty(7) — Linux manual page
-<a href="https://man7.org/linux/man-pages/man7/pty.7.html">pty(7) — Linux manual page4</a></p>
-</li>
-<li>
-<p>ptmx(4) - Linux man page
-<a href="https://linux.die.net/man/4/ptmx">ptmx(4) - Linux man page</a></p>
-</li>
-<li>
-<p>some-confused-concept-ptmx-and-tty
-<a href="https://unix.stackexchange.com/questions/449315/some-confused-concept-ptmx-and-tty">some-confused-concept-ptmx-and-tty</a></p>
-</li>
+<li><a href="https://tools.ietf.org/html/rfc2616#section-14.36">RFC 2616</a></li>
+<li><a href="https://en.wikipedia.org/wiki/HTTP_referer">wikipedia</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer">HTML Living Standard</a></li>
 </ul>
 
 		</div>
@@ -179,10 +148,13 @@ c--------- <span style="color:#ae81ff">1</span> root root 5, <span style="color:
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/gnu/" rel="tag">GNU</a>
+			<a class="tags__link btn" href="/tags/protocal/" rel="tag">Protocal</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/linux/" rel="tag">Linux</a>
+			<a class="tags__link btn" href="/tags/http/" rel="tag">http</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/html5/" rel="tag">html5</a>
 		</li>
 	</ul>
 </div>
@@ -230,15 +202,9 @@ c--------- <span style="color:#ae81ff">1</span> root root 5, <span style="color:
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/posts/nvm-error/" rel="prev">
+		<a class="pager__link" href="/posts/switchtohugo/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">NVM 报 ls-remote command results in “N/A 错误</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/posts/emacs-build/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">编译安装 emacs</p>
+			<p class="pager__title">解决 hugo 博客框架下 中文简介、评论、扩展配置 的问题</p>
 		</a>
 	</div>
 </nav>

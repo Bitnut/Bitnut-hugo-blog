@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
+    <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="referrer" content="no-referrer" />
 	<title>cryptdb 安装及使用说明 - 三口一个瓜的博客</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="cryptdb 安装及使用说明" />
+	<meta property="og:title" content="cryptdb 安装及使用说明" />
 <meta property="og:description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述 详细论述 CryptDB 的原理 这个暑假的数据库实训内容，研究的项目背景下面会介绍～ 背景资料 Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bitnut.github.io/posts/cryptdb-install/" /><meta property="article:section" content="posts" />
@@ -15,12 +16,12 @@
 <meta property="article:modified_time" content="2017-08-07T20:44:51&#43;08:00" />
 
 
-		<meta itemprop="name" content="cryptdb 安装及使用说明">
+	<meta itemprop="name" content="cryptdb 安装及使用说明">
 <meta itemprop="description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述 详细论述 CryptDB 的原理 这个暑假的数据库实训内容，研究的项目背景下面会介绍～ 背景资料 Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil"><meta itemprop="datePublished" content="2017-08-07T20:44:51&#43;08:00" />
 <meta itemprop="dateModified" content="2017-08-07T20:44:51&#43;08:00" />
 <meta itemprop="wordCount" content="5066">
 <meta itemprop="keywords" content="cryptdb,database," />
-		<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="cryptdb 安装及使用说明"/>
 <meta name="twitter:description" content="版权声明：本文为博主原创文章，欢迎转载；转载请注明来自 瓜哥：D 博主写的 CryptDB 另外几篇相关文章： CryptDB 简单原理论述 详细论述 CryptDB 的原理 这个暑假的数据库实训内容，研究的项目背景下面会介绍～ 背景资料 Popa, R.A 在 MIT 攻读博士时发明了 CryptDB; 后来这个数据库方案迅速被微软和谷歌等知名企业采用和学习; 作者毕业后自己创立了公司PreVeil"/>
 
@@ -33,7 +34,7 @@
 	<link rel="stylesheet" href="/css/custom.css">
 
 	<link rel="shortcut icon" href="/favicon.ico">
-		
+	
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -45,10 +46,10 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-</head>
-<body class="body">
+    </head>
+    <body class="body">
 	<div class="container container--outer">
-		<header class="header">
+	    <header class="header">
 	<div class="container header__container">
 		
 	<div class="logo logo--mixed">
@@ -64,9 +65,9 @@ if (!doNotTrack) {
 		<div class="divider"></div>
 	</div>
 </header>
-		<div class="wrapper flex">
-			<div class="primary">
-			
+	    <div class="wrapper flex">
+		<div class="primary">
+		    
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
@@ -75,7 +76,7 @@ if (!doNotTrack) {
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-08-07T20:44:51&#43;08:00">2017-08-07</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-08-07T20:44:51&#43;08:00">Mon, 07 Aug 2017 20:44:51 &#43;0800</time></div></div>
 		</header>
 <div class="post__toc toc">
 	<div class="toc__title">Page content</div>
@@ -744,8 +745,8 @@ SELECT * FROM msgs; --&gt; should be able to see the secret message
 </section>
 
 
-			</div>
-			<aside class="sidebar"><div class="widget-search widget">
+		</div>
+		<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
@@ -758,6 +759,7 @@ SELECT * FROM msgs; --&gt; should be able to see the secret message
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/jianshu403/">解决 http 访问简书图片资源 403 问题</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/switchtohugo/">解决 hugo 博客框架下 中文简介、评论、扩展配置 的问题</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-strange-shell/">Linux 下 ‘奇怪’ 的 shell</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-link/">Linux 中的软链接和硬链接</a></li>
@@ -767,7 +769,6 @@ SELECT * FROM msgs; --&gt; should be able to see the secret message
 			<li class="widget__item"><a class="widget__link" href="/posts/emacs-build/">编译安装 emacs</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/linux-tty/">认识 Linux 下的 TTY</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/nvm-error/">NVM 报 ls-remote command results in “N/A 错误</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/webpack-error-collect/">webpack 配置错误拾遗</a></li>
 		</ul>
 	</div>
 </div>
@@ -781,10 +782,13 @@ SELECT * FROM msgs; --&gt; should be able to see the secret message
 		<a class="widget-taglist__link widget__link btn" href="/tags/emacs/" title="emacs">emacs</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/frontend/" title="frontend">frontend</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gnu/" title="GNU">GNU</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html5/" title="html5">html5</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/http/" title="http">http</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="HUGO">HUGO</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="linux">linux</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ms/" title="MS">MS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/node/" title="node">node</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/protocal/" title="Protocal">Protocal</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ts/" title="ts">ts</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/web/" title="web">web</a>
 	</div>
@@ -815,8 +819,8 @@ SELECT * FROM msgs; --&gt; should be able to see the secret message
 	</div>
 </div>
 </aside>
-		</div>
-		<footer class="footer">
+	    </div>
+	    <footer class="footer">
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
@@ -826,8 +830,8 @@ SELECT * FROM msgs; --&gt; should be able to see the secret message
 	</div>
 </footer>
 	</div>
-<script async defer src="/js/menu.js"></script>
-<script src="/js/custom.js"></script>
+        <script async defer src="/js/menu.js"></script>
+        <script src="/js/custom.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
 </body>
 </html>
