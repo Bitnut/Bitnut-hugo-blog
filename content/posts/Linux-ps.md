@@ -1,6 +1,8 @@
 ---
 title: "Linux 下的 ps 命令和常用组合"
 date: 2021-02-19T21:53:55+08:00
+categories:
+  - 专题
 tags:
   - "Linux"
 ---

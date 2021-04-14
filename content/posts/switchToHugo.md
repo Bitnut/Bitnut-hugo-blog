@@ -1,6 +1,8 @@
 ---
 title: "解决 hugo 博客框架下 中文简介、评论、扩展配置 的问题"
 date: 2021-04-09T18:53:13+08:00
+categories:
+  - 随笔
 tags:
   - "HUGO"
   - "blog"

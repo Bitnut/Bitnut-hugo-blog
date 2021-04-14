@@ -1,6 +1,8 @@
 ---
 title: "Socks5 协议详解"
 date: 2021-04-12T22:13:37+08:00
+categories:
+  - 专题
 draft: true
 ---
 

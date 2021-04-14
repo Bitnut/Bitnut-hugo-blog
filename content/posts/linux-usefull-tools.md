@@ -1,6 +1,8 @@
 ---
 title: "Linux 中必需学会的强大工具"
 date: 2021-03-23T13:32:31+08:00
+categories:
+  - 专题
 tags:
   - "GNU"
   - "Linux"

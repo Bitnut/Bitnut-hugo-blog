@@ -1,6 +1,8 @@
 ---
 title: "详细论述 CryptDB 的原理"
 date: 2017-09-11T08:52:18+08:00
+categories:
+  - 专题
 tags:
   - "cryptdb"
   - "database"
