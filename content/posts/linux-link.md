@@ -1,6 +1,8 @@
 ---
 title: "Linux 中的软链接和硬链接"
 date: 2021-03-21T17:10:40+08:00
+categories:
+  - 专题
 tags:
   - "GNU"
   - "Linux"

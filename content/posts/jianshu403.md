@@ -1,6 +1,8 @@
 ---
 title: "解决 http 访问简书图片资源 403 问题"
 date: 2021-04-11T09:44:50+08:00
+categories:
+  - 随笔
 tags:
   - Protocal
   - http

@@ -1,6 +1,8 @@
 ---
 title: "如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）"
 date: 2021-03-20T19:11:51+08:00
+categories:
+  - 随笔
 tags:
   - "node"
   - "Linux"
@@ -10,29 +12,30 @@ tags:
 
 # 如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋）
 
+>If builders built buildings the way programmers write programs, then
+> the first woodpecker that came along would destroy civilization.
+
+>~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law
+
 ## 前言
 
 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge
 
 ## 正文
 
->If builders built buildings the way programmers write programs, then
-> the first woodpecker that came along would destroy civilization.
->~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law
-
-## TS 特性
+### TS 特性
 
 * 不封装代码： 调用者需要知道被调用的所有的细节。
 * 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包装几层接口，到时候好用，最好可以把高级特性多用几遍。
 * 随版本和提交变动我的接口： 比如说，把 showTable(col: number, row: number): Promise<void> 改成  showTable(row: string, col: string): void，等 release 了几个版本后，再把其改回去。这样维护我写的程序的程序员们将不能很快地明白哪一个是对的。
-* 膨胀 ENUM 类型： ENUM 把字符串类型都放某个 ENUM 里，方便复用。
+* 膨胀 ENUM 类型：  把字符串类型都放某个 ENUM 里，方便复用。
 * TS 的 namespace 特性是美妙的东西（比 ES6 的好理解，反正就是高级），在接口定义的地方大量使用 namespace。
 * 避免过度使用接口。BS 接口，面向接口编程加重了我的心志负担，不用。
 * 使用包装类型： String 和 string 哪个牛逼？
 * 重载签名把条件更宽松的放在前面： 例： 同样传递一个参数，把使用 any 的放在最开头。
 * 只因为参数不同就声名重载函数。
 * 避免过度使用类： 类写起来不舒服（太长。花大力气弄成函数式的。
-* 使用 Object.keys(): 我就要在 ts 里用这个方法，它太好用了。见[link](https://github.com/microsoft/TypeScript/pull/12253)
+* 使用 Object.keys(): 我就要在 ts 里用这个方法，它太好用了。
 * 遇到难题就写断言： 类型判断老是过不了，又不能写 any，写非空断言好了。
 * 使用缺乏设计的接口： 遇到难题又不能写断言，那随便定义个 interface 就好了。
 * TS 的类型检查是老中医神药： ts 不是有类型检查么，很好，我不做测试也可以保证结果是对的。

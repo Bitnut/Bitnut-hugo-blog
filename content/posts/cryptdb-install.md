@@ -1,6 +1,8 @@
 ---
 title: "cryptdb 安装及使用说明"
 date: 2017-08-07T20:44:51+08:00
+categories:
+  - 专题
 tags:
   - "cryptdb"
   - "database"
