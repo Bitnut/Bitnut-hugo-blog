@@ -1,12 +1,29 @@
 ---
 title: "Socks5 协议详解"
 date: 2021-04-12T22:13:37+08:00
+tags:
+  - Protocal
+  - Web
 draft: true
 ---
 
+## 简介
 
+socks5 是一个简单的代理协议，它的全称是 `SOCKS Protocol Version 5` 顾名思义就是第五代的 `socks` 协议。
 
-socks5 是一个简单的代理协议，这里是 RFC。
+socks5 的前身是 socks4, 作为新一代的协议，socks5 肯定是做出了一定的改进，具体是哪些，接下来都会慢慢了解到。
+
+socks5 的正式发布时间是 1996 年 3 月，实际上是非常年长的协议（和我同岁）。它的出现并非是因为对抗众所周知的一些不可抗力，但也是有部分联系，毕竟针对的也都是防火墙技术。
+
+但是 socks 协议的关注点并不在于如何突破防火墙，而是聚焦在如何为大量的应用层协议提供合适的协议框架，以便在运用防火墙技术控制的网络中进行信息交互和传输。注意这里的重点是`整合`和`统一`，说明这个协议的要点在于提供一个类似我们开发中的统一接口，抽象实现，以便于协议的更好复用和扩展。
+
+本文主要是基于 [RFC](https://tools.ietf.org/html/rfc1928) 文档内容的展开。
+
+## 协议基础
+
+作为一个网络协议，我们想要了解它，首先最需要明确的事情是这个网络协议到底处于网络模型中的哪一层？
+
+RFC 文档中开篇就讲到了这个问题
 
 firefox proxy settings
 
@@ -109,7 +126,9 @@ socks5 server traffic
 总结
 socks5是一个非常通用的代理协议，因此，无论我们自己要实现什么加密传输，都需要在client端设置一个socks5服务器，用于将 客户端例如浏览器等的请求理解之后，转换成私有协议。这篇文章中我们初步的看了一下socks5的结构，了解了一下socks5协议的 传输流程。
 
-参考资料：
+## 参考资料：
 
-https://tools.ietf.org/html/rfc1928
-https://www.giac.org/paper/gsec/2326/understanding-implementing-socks-server-guide-set-socks-environment/104018
+* [Socks5 RFC](https://tools.ietf.org/html/rfc1928)
+* [](https://www.giac.org/paper/gsec/2326/understanding-implementing-socks-server-guide-set-socks-environment/104018)
+* []()
+* []()
