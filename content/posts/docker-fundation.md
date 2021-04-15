@@ -2,6 +2,8 @@
 title: "为什么/如何使用 Docker？"
 date: 2021-02-23T07:59:04+08:00
 draft: true
+categories:
+  - 专题
 tags:
   - "docker"
   - "linux"

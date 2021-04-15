@@ -1,6 +1,8 @@
 ---
 title: "代理实践纪录"
 date: 2021-03-04T21:00:35+08:00
+categories:
+  - 工具
 tags:
   - "GNU"
   - "Linux"
