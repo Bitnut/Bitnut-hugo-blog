@@ -40,6 +40,15 @@
 	{{- if not .Site.IsServer }}
 	{{ template "_internal/google_analytics.html" . }}
 	{{- end }}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LMXK0VTF1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-1LMXK0VTF1');
+    </script>
     </head>
     <body class="body">
 	<div class="container container--outer">
