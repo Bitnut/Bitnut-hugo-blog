@@ -5,6 +5,34 @@
     <link>https://bitnut.github.io/categories/</link>
     <description>Recent content in Categories on 三口一个瓜的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://bitnut.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Apr 2021 09:44:50 +0800</lastBuildDate><atom:link href="https://bitnut.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>随笔</title>
+      <link>https://bitnut.github.io/categories/%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Sun, 11 Apr 2021 09:44:50 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/categories/%E9%9A%8F%E7%AC%94/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>专题</title>
+      <link>https://bitnut.github.io/categories/%E4%B8%93%E9%A2%98/</link>
+      <pubDate>Fri, 26 Mar 2021 13:29:14 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/categories/%E4%B8%93%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>https://bitnut.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Thu, 04 Mar 2021 21:00:35 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

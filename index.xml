@@ -49,7 +49,7 @@
       <pubDate>Sat, 20 Mar 2021 19:11:51 +0800</pubDate>
       
       <guid>https://bitnut.github.io/posts/ruinyourtscode/</guid>
-      <description>如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋） 前言 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge 正文 If builders built buildings the way programmers write programs, then the first woodpecker that came along would destroy civilization. ~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law TS 特性 不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包</description>
+      <description>如何写出无法维护的 TS 代码（挫败 Microsoft 试图接管 javascript 的阴谋） If builders built buildings the way programmers write programs, then the first woodpecker that came along would destroy civilization. ~ Gerald Weinberg (born: 1933-10-27 age: 77) Weinberg’s Second Law 前言 这篇文章主要来介绍一些毁掉你 ts 代码的方法。(doge 正文 TS 特性 不封装代码： 调用者需要知道被调用的所有的细节。 接口包装，包装，包装： TS 的 Utility Types 和继承特性让我快乐起来，尽量多包</description>
     </item>
     
     <item>
@@ -122,6 +122,24 @@
       
       <guid>https://bitnut.github.io/posts/blackwhite/</guid>
       <description>很久没有更新博客了，而且前段时间也在忙着找工作，到现在才新入职两天T.T，今天开始重新更新个人博客了。 今天主要来探讨一下让页面变黑白效果的方法 今年早些时候，新冠疫情给国内造成了巨大损失。因此在今年四月四的时候，为了叨念逝者、寄托哀思，国内不仅暂停了大部分娱乐活动，而且各大门户网站、视频网站，都对首页</description>
+    </item>
+    
+    <item>
+      <title>Hexo&#43;GithubPages 非常简单易行的搭建个人博客</title>
+      <link>https://bitnut.github.io/posts/hexoblog/</link>
+      <pubDate>Sun, 29 Jul 2018 09:45:55 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/hexoblog/</guid>
+      <description>前言：搭建博客要自己打代码吗？ 开始动手：搭建博客的步骤 个性化：更换主题！！ 写博客：初识 markdown 语法 倒腾主题 前言 搭建博客难吗？ 看完这篇你就知道有多简单 :P 搭建个人博客需要自己打代码吗？ 想要美美哒，肯定是要一点的啊:disappointed_relieved: 但是说白咯，搭建博客和做程序一个道理：个人的时间和精</description>
+    </item>
+    
+    <item>
+      <title>浅谈《周易》</title>
+      <link>https://bitnut.github.io/posts/zhouyi/</link>
+      <pubDate>Sat, 21 Jul 2018 01:07:19 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/zhouyi/</guid>
+      <description>周易的现实意义 《周易》是我国的独特文化结晶，也称作《易经》，是《三易》之一、儒门圣典。《周易》在创始之初就试图从天、神性的角度说明做某件事情的合理性。而这正是古代生产力落后的典型作法，古代人类通过用龟壳、蓍草、铜钱、竹签、纸牌或占星等手段和征兆来推断未来的吉凶祸福，为指点前途命运、抚慰心灵着想。 周易</description>
     </item>
     
     <item>
