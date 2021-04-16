@@ -1,11 +1,12 @@
 ---
-title: "Socks5 协议详解"
+title: "Socks5 协议详解（经典设计）"
 date: 2021-04-12T22:13:37+08:00
 tags:
   - Protocal
   - Web
 categories:
   - 专题
+  - 经典设计
 draft: true
 ---
 
@@ -25,30 +26,36 @@ socks5 的正式发布时间是 1996 年 3 月，实际上是非常年长的协�
 
 作为一个网络协议，我们想要了解它，首先最需要明确的事情是这个网络协议到底处于网络模型中的哪一层？
 
-RFC 文档中开篇就讲到了这个问题
+![osi-tcp/ip-model](/static/osi-tcp-model.png)
 
-firefox proxy settings
+RFC 文档中开篇就讲到了这个问题:
 
-整个协议其实就是在建立TCP连接之后，真正的内容传输之前，加一点内容。以下是简述：
+> The protocol is conceptually a "shim-layer" between the application
+> layer and the transport layer, and as such does not provide network-
+> layer gateway services, such as forwarding of ICMP messages.
 
-首先定义一下名词：
+我们知道，传输层是负责提供数据传输服务的网络层。在这一层里，包含有著名的 tcp 、udp 协议，也包含有 ssl 、 tsl 这样的传输层安全协议。因此，按照 RFC 的描述，socks 协议是处于传输层和应用层之间的层次，所以 sock 肯定是不包含文中所说： `network-layer gateway services` 的数据传输、以及数据完整性校验的功能的。
 
-      /-> | Firewall(防火墙) | ->\
-    Client -> Server(代理服务器) -> Dst(目标地址)
-然后定义一下表示形式：
+实际上，使用过 sock 协议的同鞋应该都知道，socks 是需要配置的，在一些网络配置工具、或者传输工具眼里，socks 和 http 是不一样的东西。但是我们所说 socks 协议，
+
+
+
+## 协议描述
+
+我们首先来定义一下表示形式：
 
 | VER | NMETHODS | METHODS  |
 |:---:|:--------:|:--------:|
 | 1   | 1        | 1 to 255 |
 
+如上表所示：
 
-+----+----------+----------+
-|VER | NMETHODS | METHODS  |
-+----+----------+----------+
-| 1  |    1     | 1 to 255 |
-+----+----------+----------+
+1. 表头代指的是协议中的字段名。如 `VER` 指的是协议中有字段 `VER`。
+2. 所有表内纯数字，代指的是字段名的长度。如 1 代指长度为 1 byte， 1 to 255 代指长度为 1~255 byte。
+3. X'hh 语法。表内的类似写法代表的是某字段的用一个 byte 存储的实值，它采用的是 `十六进制`。 X'05' 那么就是 05 也就是 0x05 的意思。
+4. Variable。表内的 Variable 代表着某字段的长度`可变`，可能是 1 或 2 个 byte，或者是另外一个字段指定的。
 
-例如上述，1就是指长度是一个byte，因此 1 to 255 也就是 1~255个byte。如果是 X'05' 那么就是八进制的 05 也就是 0x05 的意思。
+# 深入细节
 
 第一步，Client建立与Server之间的连接
 建立TCP连接之后，Client发送如下数据：
