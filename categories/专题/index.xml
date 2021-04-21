@@ -6,7 +6,16 @@
     <description>Recent content in 专题 on 三口一个瓜的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Apr 2021 22:13:37 +0800</lastBuildDate><atom:link href="https://bitnut.github.io/categories/%E4%B8%93%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Apr 2021 12:00:28 +0800</lastBuildDate><atom:link href="https://bitnut.github.io/categories/%E4%B8%93%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Awk</title>
+      <link>https://bitnut.github.io/posts/linux-awk/</link>
+      <pubDate>Wed, 21 Apr 2021 12:00:28 +0800</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/linux-awk/</guid>
+      <description>快速入门 awk 一、 awk 的作用、优势和特点 awk 最基础的功能是用作搜索 文件、命令行输出中特定的文本。然后对找到的文本执行指定的操作。 它最大的优势是，它是 linux 等 类 unix 系统下通用的工具，无需额外安装运行时和相关依赖即可使用。而且它 “好读”，“好写” : P。 awk is： refreshingly easy to read and write &amp;ndash; GNU awk get started awk 和其他编程语言的主要区别是，它是数</description>
+    </item>
+    
     <item>
       <title>Socks5 协议详解（经典设计）</title>
       <link>https://bitnut.github.io/posts/socks5-protocal/</link>
