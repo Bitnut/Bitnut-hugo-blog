@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="referrer" content="no-referrer" />
-	<title>Linux Awk - 三口一个瓜的博客</title>
+	<title>Linux Awk 入门（01） - 三口一个瓜的博客</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-	<meta property="og:title" content="Linux Awk" />
+	<meta property="og:title" content="Linux Awk 入门（01）" />
 <meta property="og:description" content="快速入门 awk 一、 awk 的作用、优势和特点 awk 最基础的功能是用作搜索 文件、命令行输出中特定的文本。然后对找到的文本执行指定的操作。 它最大的优势是，它是 linux 等 类 unix 系统下通用的工具，无需额外安装运行时和相关依赖即可使用。而且它 “好读”，“好写” : P。 awk is： refreshingly easy to read and write &ndash; GNU awk get started awk 和其他编程语言的主要区别是，它是数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bitnut.github.io/posts/linux-awk/" /><meta property="article:section" content="posts" />
@@ -16,13 +16,13 @@
 <meta property="article:modified_time" content="2021-04-21T12:00:28&#43;08:00" />
 
 
-	<meta itemprop="name" content="Linux Awk">
+	<meta itemprop="name" content="Linux Awk 入门（01）">
 <meta itemprop="description" content="快速入门 awk 一、 awk 的作用、优势和特点 awk 最基础的功能是用作搜索 文件、命令行输出中特定的文本。然后对找到的文本执行指定的操作。 它最大的优势是，它是 linux 等 类 unix 系统下通用的工具，无需额外安装运行时和相关依赖即可使用。而且它 “好读”，“好写” : P。 awk is： refreshingly easy to read and write &ndash; GNU awk get started awk 和其他编程语言的主要区别是，它是数"><meta itemprop="datePublished" content="2021-04-21T12:00:28&#43;08:00" />
 <meta itemprop="dateModified" content="2021-04-21T12:00:28&#43;08:00" />
-<meta itemprop="wordCount" content="1222">
+<meta itemprop="wordCount" content="1115">
 <meta itemprop="keywords" content="GNU,Linux,Awk," />
 	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux Awk"/>
+<meta name="twitter:title" content="Linux Awk 入门（01）"/>
 <meta name="twitter:description" content="快速入门 awk 一、 awk 的作用、优势和特点 awk 最基础的功能是用作搜索 文件、命令行输出中特定的文本。然后对找到的文本执行指定的操作。 它最大的优势是，它是 linux 等 类 unix 系统下通用的工具，无需额外安装运行时和相关依赖即可使用。而且它 “好读”，“好写” : P。 awk is： refreshingly easy to read and write &ndash; GNU awk get started awk 和其他编程语言的主要区别是，它是数"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,7 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Linux Awk</h1>
+			<h1 class="post__title">Linux Awk 入门（01）</h1>
 			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">三口一个瓜</span>
 </div>
@@ -88,11 +88,6 @@
     <li><a href="#三执行-awk-程序">三、执行 awk 程序</a></li>
     <li><a href="#四最基础的-awk-程序">四、最基础的 awk 程序</a></li>
     <li><a href="#五awk-程序的执行">五、awk 程序的执行</a></li>
-    <li><a href="#基础语法">基础语法</a>
-      <ul>
-        <li><a href="#基本运算符">基本运算符</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
 	</div>
@@ -188,86 +183,7 @@ pro-emacs.sh     picher
 <li>重复：</li>
 </ul>
 <p>若没有处理到文件末尾（EOF），awk 继续执行上述的两个步骤。</p>
-<h2 id="基础语法">基础语法</h2>
-<h3 id="基本运算符">基本运算符</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">涵义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">数学运算符</td>
-<td style="text-align:center">加法</td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">数学运算符</td>
-<td style="text-align:center">减法</td>
-</tr>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">数学运算符</td>
-<td style="text-align:center">乘法</td>
-</tr>
-<tr>
-<td style="text-align:center">/</td>
-<td style="text-align:center">数学运算符</td>
-<td style="text-align:center">除法</td>
-</tr>
-<tr>
-<td style="text-align:center">%</td>
-<td style="text-align:center">数学运算符</td>
-<td style="text-align:center">取余</td>
-</tr>
-<tr>
-<td style="text-align:center"><!-- raw HTML omitted --></td>
-<td style="text-align:center">字符串</td>
-<td style="text-align:center">连接</td>
-</tr>
-</tbody>
-</table>
-<p>使用值： &ldquo;7&rdquo; 和 &ldquo;3&rdquo; 得到的结果是：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">表达式</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">7 + 3</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
-<td style="text-align:center">7 - 3</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">7 * 3</td>
-<td style="text-align:center">21</td>
-</tr>
-<tr>
-<td style="text-align:center">7 / 3</td>
-<td style="text-align:center">2.33333</td>
-</tr>
-<tr>
-<td style="text-align:center">7 % 3</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">7 3</td>
-<td style="text-align:center">73</td>
-</tr>
-</tbody>
-</table>
-<p>。。。 未完待续</p>
-<h1 id="reference">Reference</h1>
+<h1 id="参考资料">参考资料</h1>
 <p>[1] <a href="https://www.gnu.org/software/gawk/manual/gawk.html">GNU awk guide</a></p>
 <p>[2] <a href="https://www.grymoire.com/Unix/Awk.html#toc_Awk">awk tutorial</a></p>
 
@@ -364,7 +280,7 @@ pro-emacs.sh     picher
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/linux-awk/">Linux Awk 入门（01）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/socks5-protocal/">Socks5 协议详解（经典设计）</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/jianshu403/">解决 http 访问简书图片资源 403 问题</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/switchtohugo/">解决 hugo 博客框架下 中文简介、评论、扩展配置 的问题</a></li>
