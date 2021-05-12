@@ -1,7 +1,6 @@
 ---
 title: "Linux Awk 入门（02）"
-date: 2021-04-21T12:00:28+08:00
-draft: true
+date: 2021-05-12T13:00:28+08:00
 categories:
   - 专题
   - 教程

@@ -46,7 +46,7 @@ summaryLength = 150
 [Params.logo]
   image = "static/gua.jpg" # Logo image. Path relative to "static"
   title = "三口一个瓜的博客" # Logo title, otherwise will use site title
-  subtitle = "怀春不如尝春，看文不如写博。" # Logo subtitle
+  subtitle = "coding & life" # Logo subtitle
 
 [Params.sidebar]
   home = "right" # Configure layout for home page
