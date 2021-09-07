@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on 三口一个瓜的博客</title>
+    <link>https://bitnut.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on 三口一个瓜的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://bitnut.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在 nodejs 中使用正确地使用 session</title>
+      <link>https://bitnut.github.io/posts/node-secure-seesions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitnut.github.io/posts/node-secure-seesions/</guid>
+      <description>前言 最近公司希望重构论坛项目，计划使用 nodebb 这个基于 nodejs 的论坛开源项目。 nodebb 这个项目有个不错的设计，它的一些非核心功能是可以使用插件化的方式进行拓展的。因此稍微研究一下就可以在不修改源代码的前提下，对 nodebb 进行个性化的定制。 一番折腾之后，论坛对接上了账户中心。但是在布署 nodebb 的时候却遇到了这样一个问题： 论坛布署起来</description>
+    </item>
+    
+  </channel>
+</rss>

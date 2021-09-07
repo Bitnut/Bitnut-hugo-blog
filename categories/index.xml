@@ -6,11 +6,11 @@
     <description>Recent content in Categories on 三口一个瓜的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 May 2021 13:00:28 +0800</lastBuildDate><atom:link href="https://bitnut.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Jun 2021 14:53:55 +0800</lastBuildDate><atom:link href="https://bitnut.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>专题</title>
       <link>https://bitnut.github.io/categories/%E4%B8%93%E9%A2%98/</link>
-      <pubDate>Wed, 12 May 2021 13:00:28 +0800</pubDate>
+      <pubDate>Mon, 14 Jun 2021 14:53:55 +0800</pubDate>
       
       <guid>https://bitnut.github.io/categories/%E4%B8%93%E9%A2%98/</guid>
       <description></description>
@@ -49,6 +49,15 @@
       <pubDate>Thu, 04 Mar 2021 21:00:35 +0800</pubDate>
       
       <guid>https://bitnut.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>backend</title>
+      <link>https://bitnut.github.io/categories/backend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitnut.github.io/categories/backend/</guid>
       <description></description>
     </item>
     
