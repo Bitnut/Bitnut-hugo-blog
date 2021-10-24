@@ -1,6 +1,6 @@
 ---
 title: "如何在 nodejs 中使用正确地使用 session"
-date: 2021-0907T08:04:50+08:00
+date: 2021-09-07T08:04:50+08:00
 categories:
   - backend
 tags:
@@ -54,7 +54,8 @@ if ((port !== 80 && port !== 443) || nconf.get('trust_proxy') === true) {
 
 其实这是一个关于建立安全 session 的问题。这个问题很简单，但是可能就是因为太简单了，导致 express/session 的[文档](https://github.com/expressjs/session)里也没有咋提。
 
->When running an Express app behind a reverse proxy, some of the Express APIs may return different values than expected. In order to adjust for this, the trust proxy application setting may be used to expose information provided by the reverse proxy in the Express APIs. The most common issue is express APIs that expose the client’s IP address may instead show an internal IP address of the reverse proxy.
+>When running an Express app behind a reverse proxy, s
+ome of the Express APIs may return different values than expected. In order to adjust for this, the trust proxy application setting may be used to expose information provided by the reverse proxy in the Express APIs. The most common issue is express APIs that expose the client’s IP address may instead show an internal IP address of the reverse proxy.
 >
 > 原文里就是这么写的，大意就是当使用反向代理代理 express app 的时候，有得 express api 会提供和预期不一样的返回值。为了使用反向代理提供的一些值，`trust proxy` 这个玄想需要被打开。
 >
