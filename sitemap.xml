@@ -3,28 +3,70 @@
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2021-10-24T08:04:50+08:00</lastmod>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/eslint/</loc>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/javascript/</loc>
-    <lastmod>2021-10-24T08:04:50+08:00</lastmod>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/nodejs/</loc>
-    <lastmod>2021-10-24T08:04:50+08:00</lastmod>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2021-10-24T08:04:50+08:00</lastmod>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/programming-language/</loc>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/typescript/</loc>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/eslint-automic/</loc>
+    <lastmod>2021-12-08T03:00:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -37,21 +79,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2021-10-24T08:04:50+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/post/js-higher-functions/</loc>
-    <lastmod>2021-10-24T08:04:50+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2021-10-24T08:04:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
