@@ -24,7 +24,6 @@ JavaScript 到底是如何构建和管理数组的呢？这篇文章就以 nodej
 首先来看一下 MDN 的文档是怎么定义 JS 中的数组类型的：
 
 > The JavaScript Array class is a global object that is used in the construction of arrays; which are high-level, list-like objects.
-> JavaScript 数组是
 
 [MDN Array 定义](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
