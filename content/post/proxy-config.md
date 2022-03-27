@@ -34,7 +34,7 @@ tags:
 `sudo apt-get upgrade`
 
 ```bash
-#阿里源
+ #阿里源
     deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
     deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
     deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
