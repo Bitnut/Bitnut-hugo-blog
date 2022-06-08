@@ -18,7 +18,7 @@ hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否�
 paginate = 100                                              # 首页每页显示的文章数
 disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
-copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
+copyright = ""            # default: author.name ↓        # 默认为下面配置的 author.name ↓
 
 [author]                  # essential                     # 必需
   name = "Bitnut/三口一个瓜"
@@ -59,7 +59,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   gitRepo = ""
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  # logoTitle = "Even"        # default: the title value    # 默认值: 上面设置的title值
+  # logoTitle = "Even"        # default: the title value    # 默认值: 上面设置的 title 值
   # keywords = ["Hugo", "theme","even"]
   description = "三口一个瓜的博客"
 
@@ -82,16 +82,16 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
   toc = true                                                                            # 是否开启目录
   autoCollapseToc = false   # Auto expand and collapse toc                              # 目录自动展开/折叠
-  fancybox = true           # see https://github.com/fancyapps/fancybox                 # 是否启用fancybox（图片可点击）
+  fancybox = true           # see https://github.com/fancyapps/fancybox                 # 是否启用 fancybox（图片可点击）
 
   # mathjax
-  mathjax = false           # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
-  mathjaxEnableSingleDollar = false                                                     # 是否使用 $...$ 即可進行inline latex渲染
+  mathjax = false           # see https://www.mathjax.org/                              # 是否使用 mathjax（数学公式）
+  mathjaxEnableSingleDollar = false                                                     # 是否使用 $...$ 即可進行 inline latex 渲染
   mathjaxEnableAutoNumber = false                                                       # 是否使用公式自动编号
   mathjaxUseLocalFiles = false  # You should install mathjax in `your-site/static/lib/mathjax`
 
-  postMetaInFooter = true   # contain author, lastMod, markdown link, license           # 包含作者，上次修改时间，markdown链接，许可信息
-  linkToMarkDown = false    # Only effective when hugo will output .md files.           # 链接到markdown原始文件（仅当允许hugo生成markdown文件时有效）
+  postMetaInFooter = true   # contain author, lastMod, markdown link, license           # 包含作者，上次修改时间，markdown 链接，许可信息
+  linkToMarkDown = false    # Only effective when hugo will output .md files.           # 链接到 markdown 原始文件（仅当允许 hugo 生成 markdown 文件时有效）
   contentCopyright = ''     # e.g. '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
 
   changyanAppid = ""        # Changyan app id             # 畅言
@@ -114,7 +114,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   # Show language selector for multilingual site.
   showLanguageSelector = false
 
-  [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
+  [params.publicCDN]        # load these files from public cdn                          # 启用公共 CDN，需自行定义
     enable = true
     jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
     slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
@@ -140,8 +140,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     clientSecret = ""       # Your client secret
 
   [params.utterances]       # https://utteranc.es/
-    owner = ""              # Your GitHub ID
-    repo = ""               # The repo to store comments
+    owner = "Bitnut"              # Your GitHub ID
+    repo = "comment"               # The repo to store comments
 
   [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
     owner = ""              # Your GitHub ID
@@ -154,8 +154,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   # more info please open https://valine.js.org
   [params.valine]
     enable = false
-    appId = '你的appId'
-    appKey = '你的appKey'
+    appId = '你的 appId'
+    appKey = '你的 appKey'
     notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
     verify = false # Verification code
     avatar = 'mm'
